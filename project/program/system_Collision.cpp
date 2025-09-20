@@ -190,8 +190,8 @@ void CollisionSystem::Update()
 		const auto& tag1 = tags.first;
 		const auto& tag2 = tags.second;
 		//	タグに該当するGameObjectのリストを取得
-		auto objList1 = GameObjectManager::Instance().FindGameObjectsByTag(Tag::FromString(tag1));
-		auto objList2 = GameObjectManager::Instance().FindGameObjectsByTag(Tag::FromString(tag2));
+		auto objList1 = GameObjectRegistry::Instance().FindGameObjectsByTag(Tag::FromString(tag1));
+		auto objList2 = GameObjectRegistry::Instance().FindGameObjectsByTag(Tag::FromString(tag2));
 
 		// どちらかのリストが空ならスキップ
         if (objList1.empty() || objList2.empty()) {

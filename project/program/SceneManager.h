@@ -6,18 +6,24 @@
 #include"OverlayScene.h"
 
 
+
 /// <summary>
 /// 画面インスタンスの管理
 /// overlayでポーズやトランスの追加
 /// </summary>
 class SceneManager : public Singleton<SceneManager> {
 	friend class Singleton<SceneManager>;
-	SceneManager();
+	SceneManager() = default;
 	virtual ~SceneManager() = default;
 
 public:
 	void Update();
 	void Render();
+
+	//	シーン内の破棄されたGameObjectを削除
+	void DestoryGameObjects() {
+		if (scene_) scene_->RemoveDestroyedObjects();
+	}
 
 	template<typename SC>
 	void ChangeScene() {
@@ -34,6 +40,7 @@ public:
 			overlayScene_ = overPtr;
 		}
 	}
+
 
 private:
 	std::unique_ptr<Scene> scene_;

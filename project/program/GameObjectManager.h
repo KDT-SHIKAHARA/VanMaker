@@ -2,13 +2,13 @@
 #include"singleton.h"
 #include"GameObject.h"
 
-class GameObjectManager : public Singleton<GameObjectManager> {
-	friend class Singleton<GameObjectManager>;
-	GameObjectManager() = default;
-	~GameObjectManager() = default;
+class GameObjectRegistry : public Singleton<GameObjectRegistry> {
+	friend class Singleton<GameObjectRegistry>;
+	GameObjectRegistry() = default;
+	~GameObjectRegistry() = default;
 
-
-	using GameObejctPtrVector = std::vector<std::shared_ptr<GameObject>>;
+	using GameObjectWeakPtrVector = std::vector<std::weak_ptr<GameObject>>;
+	using GameObjectSharedPtrVector = std::vector<std::shared_ptr<GameObject>>;
 
 public:
 	//	GameObjectの追加
@@ -18,22 +18,10 @@ public:
 
 	//	すべての更新処理
 	void Update() {
-		for (auto& obj : gameObjects_) {
-			if (obj) obj->Update();
-		}
-	}
-
-	//	削除フラグが立っているGameObjectを削除する
-	void RemoveDestroyedObjects() {
-		gameObjects_.erase(
-			std::remove_if(
-				gameObjects_.begin(),
-				gameObjects_.end(),
-				[](const std::shared_ptr<GameObject>& obj) {
-					return obj->isDestory_;
-				}),
+		//	中身が存在しないGameObjectを削除
+		gameObjects_.erase(std::remove_if(gameObjects_.begin(), gameObjects_.end(),
+			[](const std::weak_ptr<GameObject>& obj) { return obj.expired(); }),
 			gameObjects_.end());
-
 	}
 
 
@@ -43,9 +31,10 @@ public:
 	}
 
 	//	検索したタグを持つGameObjectのリスト取得
-	GameObejctPtrVector FindGameObjectsByTag(GameObjectTag tag) {
-		GameObejctPtrVector result;
-		for (auto& obj : gameObjects_) {
+	GameObjectSharedPtrVector FindGameObjectsByTag(GameObjectTag tag) {
+		std::vector<std::shared_ptr<GameObject>>  result;
+		for (auto& obj_weak : gameObjects_) {
+			auto obj = obj_weak.lock();
 			if (obj && obj->tag_ == tag) {
 				result.push_back(obj);
 			}
@@ -54,6 +43,6 @@ public:
 	}
 
 private:
-	GameObejctPtrVector  gameObjects_;	//	管理しているGameObjectのリスト
+	GameObjectWeakPtrVector  gameObjects_;	//	管理しているGameObjectのリスト
 
 };

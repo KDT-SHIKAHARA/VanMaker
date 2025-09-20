@@ -6,6 +6,8 @@
 #include "system_rigidbody.h"
 #include "GameObjectManager.h"
 #include "system_Renderer.h"
+#include "SceneManager.h"
+
 
 GameManager::GameManager()
 	:isRunning_(true),
@@ -45,12 +47,14 @@ void GameManager::Run()
 		fps_.Update();							//	fps.update
 		TimeManager::Instance().Update();		//	Time.update
 		InputManager::Instance().Update();		//	Input.update
-		GameObjectManager::Instance().RemoveDestroyedObjects(); //	GameObject.RemoveDestroyedObjects
 		RigidbodySystem::Instance().Update();	//	Rigid.update
-		GameObjectManager::Instance().Update();	//	GameObject.update
+		SceneManager::Instance().Update();	//	Scene.update
 		CollisionSystem::Instance().Update();	//	Collision.update
 		RigidbodySystem::Instance().Move();		//	Rigid.move
 		RendererSystem::Instance().Update();	//	Render.update
+		SceneManager::Instance().DestoryGameObjects(); //	Scene.removeDestroyedObjects
+		GameObjectRegistry::Instance().Update();	//	GameObject.update
+
 		fps_.Wait();						//	fps.wait
 
 #ifdef _DEBUG
