@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="project">
+      <UniqueIdentifier>{d22280b4-888e-483e-9229-f30aab97bb16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS">
+      <UniqueIdentifier>{5d78710e-7121-4f8a-a1ac-da687834fb88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game">
+      <UniqueIdentifier>{3b81a0f6-ee06-4084-9d52-e5f9fb02d4c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\GameObject">
+      <UniqueIdentifier>{64b62b73-63c5-48a7-82d7-b64248fc36bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Component">
+      <UniqueIdentifier>{1dacfaae-b012-416f-abed-875bc156fa20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\System">
+      <UniqueIdentifier>{f04ae9ca-351f-4746-bc06-7b242db3c6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE">
+      <UniqueIdentifier>{ecdf637d-d7e0-4821-9de1-610244a8da50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Camera">
+      <UniqueIdentifier>{01a7ba18-c6e4-4cba-9c19-f13fc9a406b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Time">
+      <UniqueIdentifier>{c29e2401-fbf5-4231-a731-e5bfe03a91f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Input">
+      <UniqueIdentifier>{1f6b35e2-2f86-4c1c-a049-e3c10100ad3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Base">
+      <UniqueIdentifier>{b3a9c622-f94f-4195-8c58-d6b9f21a0945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\GameManager">
+      <UniqueIdentifier>{b631e35b-15dd-467d-8a4d-8d6f6287498f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Base\base_monobehaviour">
+      <UniqueIdentifier>{ba411bf8-d0f3-4ea8-b770-fb30c31490ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Base\base_component">
+      <UniqueIdentifier>{f63e5171-1c5a-429a-aa43-2628d7978699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Scene">
+      <UniqueIdentifier>{2330fa48-c2cb-4ac4-9f00-c54454964cf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility">
+      <UniqueIdentifier>{ac564792-ebd0-4826-9703-d5d45b72d7af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Data">
+      <UniqueIdentifier>{182cc1ab-ab49-4fd5-ba01-0d5cef0ed7b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\color">
+      <UniqueIdentifier>{d8b00757-7508-40fa-a3ad-bfb96eb54e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\fileUtility">
+      <UniqueIdentifier>{2de5b9ad-1138-404e-bbae-9e846e3c507f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\singleton">
+      <UniqueIdentifier>{ba2783ad-a935-4709-981c-b40310ac20e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Component\collider">
+      <UniqueIdentifier>{aa4b1fdd-0558-4e5b-a934-31b68a5d7050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Component\rigidbody">
+      <UniqueIdentifier>{9c5c9f53-1ccb-43b9-9119-79d371ce9990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Data\configData">
+      <UniqueIdentifier>{20355f35-f4de-4a9f-b084-40d44b5ea786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Data\windowData">
+      <UniqueIdentifier>{abb4340b-5a16-4a48-b8d8-d1483a206a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Resource">
+      <UniqueIdentifier>{04071542-cc08-4e3e-861e-fc4c3064315f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Transform">
+      <UniqueIdentifier>{7b8d1754-e158-4b57-996e-b56b81f603d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\flag">
+      <UniqueIdentifier>{14c3200a-00e8-434e-8b01-268a2d80c132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Tag">
+      <UniqueIdentifier>{5d07660b-b926-41d5-b307-76a8627a83b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\vector2d">
+      <UniqueIdentifier>{3f49dd72-6890-4f02-8bd4-adea545d5d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Scene\base_scene">
+      <UniqueIdentifier>{df733946-b869-490f-8e37-198fc3e94ed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Scene\manager_scene">
+      <UniqueIdentifier>{f337e7c4-7f64-4a71-b4f4-9d52324e62c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\System\collider">
+      <UniqueIdentifier>{65d45ad0-7991-44cd-bc2c-bb192ca77a32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\Hit">
+      <UniqueIdentifier>{03be8d2b-441f-4078-ac7a-9fc529d4a8d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\System\rigidbody">
+      <UniqueIdentifier>{08a7c5a4-4462-403d-a001-de420857edaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Base\base_drawable">
+      <UniqueIdentifier>{68feebc3-85b6-4fde-a936-d1cc078ed765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\System\drawable">
+      <UniqueIdentifier>{10d68268-3318-4bde-ab68-eafe6e6a8430}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="program\WinMain.cpp">
+      <Filter>project</Filter>
+    </ClCompile>
+    <ClCompile Include="program\GameManager.cpp">
+      <Filter>project\CORE\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="program\transform.cpp">
+      <Filter>project\ECS\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="program\InputManager.cpp">
+      <Filter>project\CORE\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="program\SceneManager.cpp">
+      <Filter>project\CORE\Scene\manager_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="program\system_Collision.cpp">
+      <Filter>project\ECS\System\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_Rigidbody.cpp">
+      <Filter>project\ECS\Component\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Drawable.cpp">
+      <Filter>project\ECS\Base\base_drawable</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="program\GameManager.h">
+      <Filter>project\CORE\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="program\singleton.h">
+      <Filter>project\CORE\Utility\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Resource.h">
+      <Filter>project\CORE\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="program\data_Window.h">
+      <Filter>project\CORE\Data\windowData</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Time.h">
+      <Filter>project\CORE\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="program\transform.h">
+      <Filter>project\ECS\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Component.h">
+      <Filter>project\ECS\Base\base_component</Filter>
+    </ClInclude>
+    <ClInclude Include="program\GameObject.h">
+      <Filter>project\ECS\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="program\flag.h">
+      <Filter>project\CORE\Utility\flag</Filter>
+    </ClInclude>
+    <ClInclude Include="program\GameObjectTag.h">
+      <Filter>project\ECS\Tag</Filter>
+    </ClInclude>
+    <ClInclude Include="program\MonoBehaviour.h">
+      <Filter>project\ECS\Base\base_monobehaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="program\vector2d.h">
+      <Filter>project\CORE\Utility\vector2d</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Scene.h">
+      <Filter>project\CORE\Scene\base_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="program\InputManager.h">
+      <Filter>project\CORE\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="program\ActionMap.h">
+      <Filter>project\CORE\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_Collider.h">
+      <Filter>project\ECS\Component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="program\system_Collision.h">
+      <Filter>project\ECS\System\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="program\CollisionRule.h">
+      <Filter>project\ECS\System\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="program\SceneManager.h">
+      <Filter>project\CORE\Scene\manager_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="program\OverlayScene.h">
+      <Filter>project\CORE\Scene\base_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="program\CheckHit.h">
+      <Filter>project\CORE\Utility\Hit</Filter>
+    </ClInclude>
+    <ClInclude Include="program\GameObjectManager.h">
+      <Filter>project\ECS\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_Rigidbody.h">
+      <Filter>project\ECS\Component\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="program\system_rigidbody.h">
+      <Filter>project\ECS\System\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Collision.h">
+      <Filter>project\ECS\Component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Drawable.h">
+      <Filter>project\ECS\Base\base_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="program\system_Renderer.h">
+      <Filter>project\ECS\System\drawable</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
