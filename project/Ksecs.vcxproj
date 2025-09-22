@@ -50,6 +50,8 @@
     <ClInclude Include="program\data_Window.h" />
     <ClInclude Include="program\factory_title.h" />
     <ClInclude Include="program\flag.h" />
+    <ClInclude Include="program\GameData.h" />
+    <ClInclude Include="program\db_Game.h" />
     <ClInclude Include="program\GameManager.h" />
     <ClInclude Include="program\GameObject.h" />
     <ClInclude Include="program\GameObjectManager.h" />

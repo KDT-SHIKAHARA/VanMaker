@@ -176,6 +176,15 @@
     <Filter Include="project\Game\DataTable">
       <UniqueIdentifier>{fa034760-4aa2-47c8-88d8-7c563cc70774}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\DataTable\Data">
+      <UniqueIdentifier>{6bbdef50-1fa5-4e7d-a1e7-30aec453ee84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\DataTable\base">
+      <UniqueIdentifier>{395c1b16-2c7d-40d4-ad21-3b99f26d4a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\DataTable\DB">
+      <UniqueIdentifier>{a4bd1435-6973-40cd-8fd8-c938ae7c69d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -345,8 +354,14 @@
     <ClInclude Include="program\loader_player.h">
       <Filter>project\Game\entity\Player\loader</Filter>
     </ClInclude>
+    <ClInclude Include="program\GameData.h">
+      <Filter>project\Game\DataTable\Data</Filter>
+    </ClInclude>
     <ClInclude Include="program\DataTable.h">
-      <Filter>project\Game\DataTable</Filter>
+      <Filter>project\Game\DataTable\base</Filter>
+    </ClInclude>
+    <ClInclude Include="program\db_Game.h">
+      <Filter>project\Game\DataTable\DB</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
