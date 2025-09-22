@@ -2,6 +2,8 @@
 #include"Component.h"
 #include"Drawable.h"
 #include"Resource.h"
+#include"vector2d.h"
+#include"flag.h"
 
 #include<memory>
 #include<string>
@@ -17,13 +19,15 @@ enum class Pivot {
 /// </summary>
 class Image : public Component, public Drawable {
 public:
-	Image(int a_layer, Pivot a_pivot,std::string a_filePath);
+	Image(int a_layer,const std::string& a_filePath, Pivot a_pivot = Pivot::TopLeft);
 	virtual ~Image() = default;
+	virtual void Update() override {};
 	virtual void Draw() override;
 protected:
 	Vector2Df scale_{ 1.0f,1.0f };	//	表示スケール
 	Vector2Df size_;	//	画像のサイズ
 	std::shared_ptr<Resource> texture_;	//	画像リソース
 	Pivot pivot_;	//	基準点
-
+public:
+	Flag isTrans_ = Flag::On;	//	透過フラグ
 };

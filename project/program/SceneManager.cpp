@@ -17,11 +17,4 @@ void SceneManager::Update()
 	scene_->Update();
 }
 
-void SceneManager::Render()
-{
-	if (!scene_) return;
-	scene_->Render();
-	if (overlayScene_) {
-		overlayScene_->Render();
-	}
-}
+

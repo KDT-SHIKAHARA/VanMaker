@@ -18,7 +18,6 @@ class SceneManager : public Singleton<SceneManager> {
 
 public:
 	void Update();
-	void Render();
 
 	//	ƒV[ƒ““à‚Ì”jŠü‚³‚ê‚½GameObject‚ğíœ
 	void DestoryGameObjects() {

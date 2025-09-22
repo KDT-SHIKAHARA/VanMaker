@@ -163,7 +163,9 @@
     <ClCompile Include="program\loader_Texture.cpp">
       <Filter>project\CORE\Resource\texture</Filter>
     </ClCompile>
-    <ClCompile Include="program\loader_Sound.cpp" />
+    <ClCompile Include="program\loader_Sound.cpp">
+      <Filter>project\CORE\Resource\sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
