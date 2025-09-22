@@ -22,7 +22,10 @@
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\Drawable.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
+    <ClCompile Include="program\Image.cpp" />
     <ClCompile Include="program\InputManager.cpp" />
+    <ClCompile Include="program\loader_Sound.cpp" />
+    <ClCompile Include="program\loader_Texture.cpp" />
     <ClCompile Include="program\SceneManager.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
     <ClCompile Include="program\transform.cpp" />
@@ -43,7 +46,10 @@
     <ClInclude Include="program\GameObject.h" />
     <ClInclude Include="program\GameObjectManager.h" />
     <ClInclude Include="program\GameObjectTag.h" />
+    <ClInclude Include="program\Image.h" />
     <ClInclude Include="program\InputManager.h" />
+    <ClInclude Include="program\loader_Sound.h" />
+    <ClInclude Include="program\loader_Texture.h" />
     <ClInclude Include="program\MonoBehaviour.h" />
     <ClInclude Include="program\OverlayScene.h" />
     <ClInclude Include="program\Resource.h" />

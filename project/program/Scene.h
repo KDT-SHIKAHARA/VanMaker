@@ -17,8 +17,6 @@ public:
 			if (obj) obj->Update();
 		}
 	};
-	
-	virtual void Render() = 0;
 
 	//	インスタンスの破棄
 	void RemoveDestroyedObjects() {

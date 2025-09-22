@@ -113,6 +113,24 @@
     <Filter Include="project\ECS\System\drawable">
       <UniqueIdentifier>{10d68268-3318-4bde-ab68-eafe6e6a8430}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\ECS\Canvas">
+      <UniqueIdentifier>{511a177b-bcf6-455c-98d7-4be78ca2c3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Canvas\Image">
+      <UniqueIdentifier>{81dfa915-8090-41f6-a1f3-8d5d0e21c633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Canvas\Rect">
+      <UniqueIdentifier>{7be9a3bc-862f-4757-ab5f-32d3e40879af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Canvas\Circle">
+      <UniqueIdentifier>{4f39235d-8dc3-49b9-9817-1175d9496ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Resource\texture">
+      <UniqueIdentifier>{d84143c7-26fa-4dd5-bab9-a9288114bbc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Resource\sound">
+      <UniqueIdentifier>{26977716-78ca-4ace-8132-eab77f0457e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -139,6 +157,13 @@
     <ClCompile Include="program\Drawable.cpp">
       <Filter>project\ECS\Base\base_drawable</Filter>
     </ClCompile>
+    <ClCompile Include="program\Image.cpp">
+      <Filter>project\ECS\Canvas\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="program\loader_Texture.cpp">
+      <Filter>project\CORE\Resource\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="program\loader_Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -221,6 +246,15 @@
     </ClInclude>
     <ClInclude Include="program\system_Renderer.h">
       <Filter>project\ECS\System\drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Image.h">
+      <Filter>project\ECS\Canvas\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="program\loader_Texture.h">
+      <Filter>project\CORE\Resource\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="program\loader_Sound.h">
+      <Filter>project\CORE\Resource\sound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
