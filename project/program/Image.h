@@ -8,21 +8,26 @@
 #include<memory>
 #include<string>
 
-//	基準点
-enum class Pivot {
-	TopLeft,
-	Center,
-};
+
 
 /// <summary>
 /// 画像描画コンポーンネント
 /// </summary>
 class Image : public Component, public Drawable {
 public:
+	//	基準点
+	enum class Pivot {
+		TopLeft,
+		Center,
+	};
+
 	Image(int a_layer,const std::string& a_filePath, Pivot a_pivot = Pivot::TopLeft);
 	virtual ~Image() = default;
 	virtual void Update() override {};
 	virtual void Draw() override;
+
+	void SetScale(const Vector2Df& a_scale) { scale_ = a_scale; };
+
 protected:
 	Vector2Df scale_{ 1.0f,1.0f };	//	表示スケール
 	Vector2Df size_;	//	画像のサイズ

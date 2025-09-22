@@ -48,10 +48,11 @@ void GameManager::Run()
 		TimeManager::Instance().Update();		//	Time.update
 		InputManager::Instance().Update();		//	Input.update
 		RigidbodySystem::Instance().Update();	//	Rigid.update
-		SceneManager::Instance().Update();	//	Scene.update
+		SceneManager::Instance().Update();		//	Scene.update
 		CollisionSystem::Instance().Update();	//	Collision.update
 		RigidbodySystem::Instance().Move();		//	Rigid.move
 		RendererSystem::Instance().Update();	//	Render.update
+		SceneManager::Instance().Render();		//	Scene.render
 		SceneManager::Instance().DestoryGameObjects(); //	Scene.removeDestroyedObjects
 		GameObjectRegistry::Instance().Update();	//	GameObject.update
 

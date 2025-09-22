@@ -1,7 +1,7 @@
 #pragma once
 #include"GameObject.h"
 #include"GameObjectManager.h"
-
+#include"SceneSclipt.h"
 
 #include<vector>
 #include<memory>
@@ -13,10 +13,18 @@ public:
 	virtual void Initialize() {};
 	
 	virtual void Update() {
+		//	scriptの更新
+		for(auto& script : scripts_){
+			if(script) script->Update();
+		}
+
+		//	オブジェクトの更新
 		for (auto& obj : gameObjects_) {
 			if (obj) obj->Update();
 		}
 	};
+
+	virtual void Render() {}
 
 	//	インスタンスの破棄
 	void RemoveDestroyedObjects() {
@@ -40,4 +48,5 @@ public:
 
 protected:
 	std::vector<std::shared_ptr<GameObject>> gameObjects_;
+	std::vector<std::unique_ptr<SceneScript>> scripts_;
 };

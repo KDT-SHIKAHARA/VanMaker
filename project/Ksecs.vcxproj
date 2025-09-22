@@ -23,11 +23,15 @@
     <ClCompile Include="program\Drawable.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
     <ClCompile Include="program\Image.cpp" />
+    <ClCompile Include="program\InGame.cpp" />
     <ClCompile Include="program\InputManager.cpp" />
+    <ClCompile Include="program\LoadCsv.cpp" />
     <ClCompile Include="program\loader_Sound.cpp" />
     <ClCompile Include="program\loader_Texture.cpp" />
     <ClCompile Include="program\SceneManager.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
+    <ClCompile Include="program\text.cpp" />
+    <ClCompile Include="program\Title.cpp" />
     <ClCompile Include="program\transform.cpp" />
     <ClCompile Include="program\WinMain.cpp" />
   </ItemGroup>
@@ -38,16 +42,20 @@
     <ClInclude Include="program\CollisionRule.h" />
     <ClInclude Include="program\Component.h" />
     <ClInclude Include="program\comp_Collider.h" />
+    <ClInclude Include="program\debugDef.h" />
     <ClInclude Include="program\Drawable.h" />
     <ClInclude Include="program\comp_Rigidbody.h" />
     <ClInclude Include="program\data_Window.h" />
+    <ClInclude Include="program\factory_title.h" />
     <ClInclude Include="program\flag.h" />
     <ClInclude Include="program\GameManager.h" />
     <ClInclude Include="program\GameObject.h" />
     <ClInclude Include="program\GameObjectManager.h" />
     <ClInclude Include="program\GameObjectTag.h" />
     <ClInclude Include="program\Image.h" />
+    <ClInclude Include="program\InGame.h" />
     <ClInclude Include="program\InputManager.h" />
+    <ClInclude Include="program\LoadCsv.h" />
     <ClInclude Include="program\loader_Sound.h" />
     <ClInclude Include="program\loader_Texture.h" />
     <ClInclude Include="program\MonoBehaviour.h" />
@@ -55,11 +63,14 @@
     <ClInclude Include="program\Resource.h" />
     <ClInclude Include="program\Scene.h" />
     <ClInclude Include="program\SceneManager.h" />
+    <ClInclude Include="program\SceneSclipt.h" />
     <ClInclude Include="program\singleton.h" />
     <ClInclude Include="program\system_Collision.h" />
     <ClInclude Include="program\system_Renderer.h" />
     <ClInclude Include="program\system_rigidbody.h" />
+    <ClInclude Include="program\text.h" />
     <ClInclude Include="program\Time.h" />
+    <ClInclude Include="program\Title.h" />
     <ClInclude Include="program\transform.h" />
     <ClInclude Include="program\vector2d.h" />
   </ItemGroup>

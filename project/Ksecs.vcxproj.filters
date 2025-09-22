@@ -50,20 +50,8 @@
     <Filter Include="project\CORE\Scene">
       <UniqueIdentifier>{2330fa48-c2cb-4ac4-9f00-c54454964cf4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project\CORE\Utility">
-      <UniqueIdentifier>{ac564792-ebd0-4826-9703-d5d45b72d7af}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project\CORE\Data">
       <UniqueIdentifier>{182cc1ab-ab49-4fd5-ba01-0d5cef0ed7b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\CORE\Utility\color">
-      <UniqueIdentifier>{d8b00757-7508-40fa-a3ad-bfb96eb54e63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\CORE\Utility\fileUtility">
-      <UniqueIdentifier>{2de5b9ad-1138-404e-bbae-9e846e3c507f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\CORE\Utility\singleton">
-      <UniqueIdentifier>{ba2783ad-a935-4709-981c-b40310ac20e7}</UniqueIdentifier>
     </Filter>
     <Filter Include="project\ECS\Component\collider">
       <UniqueIdentifier>{aa4b1fdd-0558-4e5b-a934-31b68a5d7050}</UniqueIdentifier>
@@ -83,14 +71,8 @@
     <Filter Include="project\ECS\Transform">
       <UniqueIdentifier>{7b8d1754-e158-4b57-996e-b56b81f603d2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project\CORE\Utility\flag">
-      <UniqueIdentifier>{14c3200a-00e8-434e-8b01-268a2d80c132}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project\ECS\Tag">
       <UniqueIdentifier>{5d07660b-b926-41d5-b307-76a8627a83b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\CORE\Utility\vector2d">
-      <UniqueIdentifier>{3f49dd72-6890-4f02-8bd4-adea545d5d37}</UniqueIdentifier>
     </Filter>
     <Filter Include="project\CORE\Scene\base_scene">
       <UniqueIdentifier>{df733946-b869-490f-8e37-198fc3e94ed2}</UniqueIdentifier>
@@ -100,9 +82,6 @@
     </Filter>
     <Filter Include="project\ECS\System\collider">
       <UniqueIdentifier>{65d45ad0-7991-44cd-bc2c-bb192ca77a32}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\CORE\Utility\Hit">
-      <UniqueIdentifier>{03be8d2b-441f-4078-ac7a-9fc529d4a8d3}</UniqueIdentifier>
     </Filter>
     <Filter Include="project\ECS\System\rigidbody">
       <UniqueIdentifier>{08a7c5a4-4462-403d-a001-de420857edaf}</UniqueIdentifier>
@@ -130,6 +109,51 @@
     </Filter>
     <Filter Include="project\CORE\Resource\sound">
       <UniqueIdentifier>{26977716-78ca-4ace-8132-eab77f0457e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\Title">
+      <UniqueIdentifier>{4444b7a2-6327-47eb-a657-83c9f143dfca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\Title\scene">
+      <UniqueIdentifier>{6dcc1a3c-f528-40f7-b116-86e7ecaf0db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\Title\factory">
+      <UniqueIdentifier>{14570c4a-5eaa-44e9-be99-50bf7a415f34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility">
+      <UniqueIdentifier>{ac564792-ebd0-4826-9703-d5d45b72d7af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\color">
+      <UniqueIdentifier>{d8b00757-7508-40fa-a3ad-bfb96eb54e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\fileUtility">
+      <UniqueIdentifier>{2de5b9ad-1138-404e-bbae-9e846e3c507f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\singleton">
+      <UniqueIdentifier>{ba2783ad-a935-4709-981c-b40310ac20e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\flag">
+      <UniqueIdentifier>{14c3200a-00e8-434e-8b01-268a2d80c132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\vector2d">
+      <UniqueIdentifier>{3f49dd72-6890-4f02-8bd4-adea545d5d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\Hit">
+      <UniqueIdentifier>{03be8d2b-441f-4078-ac7a-9fc529d4a8d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\csv">
+      <UniqueIdentifier>{2766771f-215f-488d-bc27-f629d70d2898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Base\base_sceneScript">
+      <UniqueIdentifier>{c0344182-80a3-42a9-8dff-ba7c21550e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\InGame">
+      <UniqueIdentifier>{ebb853d3-fec2-4cda-89bd-2d3aec3167f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\ECS\Canvas\string">
+      <UniqueIdentifier>{987ccc58-d306-4b06-b5f1-488f6158d0a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\debug_def">
+      <UniqueIdentifier>{e87efb47-c971-425b-ae1c-7704f0c21ac9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +190,16 @@
     <ClCompile Include="program\loader_Sound.cpp">
       <Filter>project\CORE\Resource\sound</Filter>
     </ClCompile>
+    <ClCompile Include="program\LoadCsv.cpp">
+      <Filter>project\CORE\Utility\csv</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Title.cpp">
+      <Filter>project\Game\Title\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="program\InGame.cpp">
+      <Filter>project\Game\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="program\text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -257,6 +291,27 @@
     </ClInclude>
     <ClInclude Include="program\loader_Sound.h">
       <Filter>project\CORE\Resource\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Title.h">
+      <Filter>project\Game\Title\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="program\factory_title.h">
+      <Filter>project\Game\Title\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="program\LoadCsv.h">
+      <Filter>project\CORE\Utility\csv</Filter>
+    </ClInclude>
+    <ClInclude Include="program\SceneSclipt.h">
+      <Filter>project\ECS\Base\base_sceneScript</Filter>
+    </ClInclude>
+    <ClInclude Include="program\InGame.h">
+      <Filter>project\Game\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="program\text.h">
+      <Filter>project\ECS\Canvas\string</Filter>
+    </ClInclude>
+    <ClInclude Include="program\debugDef.h">
+      <Filter>project\CORE\Utility\debug_def</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -13,11 +13,12 @@
 /// </summary>
 class SceneManager : public Singleton<SceneManager> {
 	friend class Singleton<SceneManager>;
-	SceneManager() = default;
+	SceneManager();
 	virtual ~SceneManager() = default;
 
 public:
 	void Update();
+	void Render();
 
 	//	ƒV[ƒ““à‚Ì”jŠü‚³‚ê‚½GameObject‚ğíœ
 	void DestoryGameObjects() {
@@ -28,7 +29,7 @@ public:
 	void ChangeScene() {
 		auto scPtr = std::make_unique<SC>();
 		if (dynamic_cast<Scene*>(scPtr.get())) {
-			scene_ = scPtr;
+			scene_ = std::move(scPtr);
 		}
 	}
 
@@ -36,7 +37,7 @@ public:
 	void CreateOverlay() {
 		auto overPtr = std::make_unique<Over>();
 		if (dynamic_cast<OverlayScene*>(overPtr.get())) {
-			overlayScene_ = overPtr;
+			overlayScene_ = std::move(overPtr);
 		}
 	}
 
