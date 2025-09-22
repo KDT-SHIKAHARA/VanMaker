@@ -28,6 +28,7 @@
     <ClCompile Include="program\LoadCsv.cpp" />
     <ClCompile Include="program\loader_Sound.cpp" />
     <ClCompile Include="program\loader_Texture.cpp" />
+    <ClCompile Include="program\PlayerFactory.cpp" />
     <ClCompile Include="program\SceneManager.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
     <ClCompile Include="program\text.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="program\CollisionRule.h" />
     <ClInclude Include="program\Component.h" />
     <ClInclude Include="program\comp_Collider.h" />
+    <ClInclude Include="program\DataTable.h" />
     <ClInclude Include="program\debugDef.h" />
     <ClInclude Include="program\Drawable.h" />
     <ClInclude Include="program\comp_Rigidbody.h" />
@@ -56,10 +58,12 @@
     <ClInclude Include="program\InGame.h" />
     <ClInclude Include="program\InputManager.h" />
     <ClInclude Include="program\LoadCsv.h" />
+    <ClInclude Include="program\loader_player.h" />
     <ClInclude Include="program\loader_Sound.h" />
     <ClInclude Include="program\loader_Texture.h" />
     <ClInclude Include="program\MonoBehaviour.h" />
     <ClInclude Include="program\OverlayScene.h" />
+    <ClInclude Include="program\PlayerFactory.h" />
     <ClInclude Include="program\Resource.h" />
     <ClInclude Include="program\Scene.h" />
     <ClInclude Include="program\SceneManager.h" />

@@ -110,15 +110,6 @@
     <Filter Include="project\CORE\Resource\sound">
       <UniqueIdentifier>{26977716-78ca-4ace-8132-eab77f0457e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project\Game\Title">
-      <UniqueIdentifier>{4444b7a2-6327-47eb-a657-83c9f143dfca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\Game\Title\scene">
-      <UniqueIdentifier>{6dcc1a3c-f528-40f7-b116-86e7ecaf0db2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\Game\Title\factory">
-      <UniqueIdentifier>{14570c4a-5eaa-44e9-be99-50bf7a415f34}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project\CORE\Utility">
       <UniqueIdentifier>{ac564792-ebd0-4826-9703-d5d45b72d7af}</UniqueIdentifier>
     </Filter>
@@ -146,14 +137,44 @@
     <Filter Include="project\ECS\Base\base_sceneScript">
       <UniqueIdentifier>{c0344182-80a3-42a9-8dff-ba7c21550e32}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project\Game\InGame">
-      <UniqueIdentifier>{ebb853d3-fec2-4cda-89bd-2d3aec3167f8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project\ECS\Canvas\string">
       <UniqueIdentifier>{987ccc58-d306-4b06-b5f1-488f6158d0a4}</UniqueIdentifier>
     </Filter>
     <Filter Include="project\CORE\Utility\debug_def">
       <UniqueIdentifier>{e87efb47-c971-425b-ae1c-7704f0c21ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\scene">
+      <UniqueIdentifier>{d607bfae-2f4a-45e2-8c2d-d9a8b3cc8667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\scene\InGame">
+      <UniqueIdentifier>{ebb853d3-fec2-4cda-89bd-2d3aec3167f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\scene\Title">
+      <UniqueIdentifier>{4444b7a2-6327-47eb-a657-83c9f143dfca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\scene\Title\scene">
+      <UniqueIdentifier>{6dcc1a3c-f528-40f7-b116-86e7ecaf0db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\scene\Title\factory">
+      <UniqueIdentifier>{14570c4a-5eaa-44e9-be99-50bf7a415f34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity">
+      <UniqueIdentifier>{be819856-2064-4b7f-b5be-20d910a0fc49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player">
+      <UniqueIdentifier>{87631444-135a-4fb9-8dfe-d788fcdadce8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player\factoty">
+      <UniqueIdentifier>{56cc0f40-5d28-438f-88be-c64f1789dbf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player\compnent">
+      <UniqueIdentifier>{59e1ed97-cfd4-4cec-9545-15104ff78dc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player\loader">
+      <UniqueIdentifier>{b025fe8f-9962-4ff8-b032-033abbeeee42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\DataTable">
+      <UniqueIdentifier>{fa034760-4aa2-47c8-88d8-7c563cc70774}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -194,12 +215,17 @@
       <Filter>project\CORE\Utility\csv</Filter>
     </ClCompile>
     <ClCompile Include="program\Title.cpp">
-      <Filter>project\Game\Title\scene</Filter>
+      <Filter>project\Game\scene\Title\scene</Filter>
     </ClCompile>
     <ClCompile Include="program\InGame.cpp">
-      <Filter>project\Game\InGame</Filter>
+      <Filter>project\Game\scene\InGame</Filter>
     </ClCompile>
-    <ClCompile Include="program\text.cpp" />
+    <ClCompile Include="program\text.cpp">
+      <Filter>project\ECS\Canvas\string</Filter>
+    </ClCompile>
+    <ClCompile Include="program\PlayerFactory.cpp">
+      <Filter>project\Game\entity\Player\factoty</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -293,10 +319,10 @@
       <Filter>project\CORE\Resource\sound</Filter>
     </ClInclude>
     <ClInclude Include="program\Title.h">
-      <Filter>project\Game\Title\scene</Filter>
+      <Filter>project\Game\scene\Title\scene</Filter>
     </ClInclude>
     <ClInclude Include="program\factory_title.h">
-      <Filter>project\Game\Title\factory</Filter>
+      <Filter>project\Game\scene\Title\factory</Filter>
     </ClInclude>
     <ClInclude Include="program\LoadCsv.h">
       <Filter>project\CORE\Utility\csv</Filter>
@@ -305,13 +331,22 @@
       <Filter>project\ECS\Base\base_sceneScript</Filter>
     </ClInclude>
     <ClInclude Include="program\InGame.h">
-      <Filter>project\Game\InGame</Filter>
+      <Filter>project\Game\scene\InGame</Filter>
     </ClInclude>
     <ClInclude Include="program\text.h">
       <Filter>project\ECS\Canvas\string</Filter>
     </ClInclude>
     <ClInclude Include="program\debugDef.h">
       <Filter>project\CORE\Utility\debug_def</Filter>
+    </ClInclude>
+    <ClInclude Include="program\PlayerFactory.h">
+      <Filter>project\Game\entity\Player\factoty</Filter>
+    </ClInclude>
+    <ClInclude Include="program\loader_player.h">
+      <Filter>project\Game\entity\Player\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="program\DataTable.h">
+      <Filter>project\Game\DataTable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
