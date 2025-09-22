@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\comp_Rigidbody.cpp" />
+    <ClCompile Include="program\db_Game.cpp" />
     <ClCompile Include="program\Drawable.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
     <ClCompile Include="program\Image.cpp" />

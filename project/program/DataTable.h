@@ -23,15 +23,13 @@ public:
 	/// </summary>
 	/// <param name="path">CSVファイルのパスを表す文字列。</param>
 	void LoadFromCsv(const std::string& path) {
-		try
-		{
 			//	すべての行のデータを文字列として取得
 			auto datas_string = LoadCsv::Load(path);
 			
 			//	データが存在するだけ読み込む
-			while (const auto& data : datas_string) {
+			for ( auto& data : datas_string) {
 				//	格納する構造体
-				auto record = std::make_unique<T>();
+				std::unique_ptr<T> record = std::make_unique<T>();
 
 				//	読込
 				parseRecord(data, record.get());
@@ -39,13 +37,9 @@ public:
 				//	コレクションに追加
 				int id = record->id;
 				dataMap_[id] = std::move(record);
-			}
-		}
-		catch (const std::runtime_error&)
-		{
-			//	いつか書きます
-		}
-	}
+			}	//	while
+
+	} // void 
 
 	/// <summary>
 	/// 指定されたIDに対応するデータを検索し、見つかった場合はポインタを返します。
@@ -61,7 +55,9 @@ public:
 	}
 
 	//	型によって読み込む内容が違うので特殊化をする↓
-	void parseRecord(const std::vector<std::string>& cells, T* record);
+	void parseRecord(const std::vector<std::string>& cells, T* record) {
+		static_assert(sizeof(T) == -1, "parseRecord must be specialized for this type.");
+	}
 
 protected:
 	std::unordered_map<int, std::unique_ptr<T>> dataMap_;
@@ -77,5 +73,5 @@ inline void DataTable<PlayerData>::parseRecord(
 	record->filePath = cells[2];
 	record->weaponId = std::stoi(cells[3]);
 	record->hp = std::stoi(cells[4]);
-	record->expTableId = std::stoi(cells[4]);
+	record->expTableId = std::stoi(cells[5]);
 }

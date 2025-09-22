@@ -1,0 +1,3 @@
+﻿ID,名前,画像,初期装備,初期体力,必要経験値テーブル番号
+100001,黄色いやつ,data/texture/player/circle_y.png,0,100,0
+100002,緑のやつ,data/texture/player/circle_g.png,0,150,1
