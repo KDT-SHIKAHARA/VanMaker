@@ -7,9 +7,9 @@
 class Rigidbody : public Component {
 public:
 	Rigidbody(const Vector2Df& a_maxVelocity = { 500.0f,500.0f }, const Vector2Df& a_maxAcceleration = { 1000.0f,1000.0f },
-		float a_mass = 1.0f, float a_drag = 1.0f, float a_gravity = 9.8)
+		float a_mass = 1.0f, float a_drag = 0.0f, float a_gravity = 9.8)
 		:velocity_({ 0,0 }), acceleration_({ 0,0 }), inputVelocity_({0,0}), mass_(a_mass), drag_(a_drag), maxVelocity_(a_maxVelocity), maxAcceleration_(a_maxAcceleration), gravity_(a_gravity),
-		enableGravity_(Flag::Off), enableMovement_(Flag::On), canMoveX_(Flag::On), canMoveY_(Flag::On), isGraunded_(Flag::Off), canInputMove_(Flag::On)
+		enableGravity_(Flag::Off), enableMovement_(Flag::On), canMoveX_(Flag::On), canMoveY_(Flag::On), isGraunded_(Flag::On), canInputMove_(Flag::On)
 	{ }
 
 	//	^‘€ìŒn
@@ -25,6 +25,7 @@ public:
 	void AddAcceleration(const Vector2Df& a_acceleration) { acceleration_ += a_acceleration; } //	‰Á‘¬“x‚Ì’Ç‰Á
 	float GetMass()const { return mass_; } //	d‚³‚Ìæ“¾
 	void SetMass(const float a_mass) { mass_ = a_mass; } //	d‚³‚Ìİ’è
+
 
 	//	‰Šú‰»
 	void Initialize() override;

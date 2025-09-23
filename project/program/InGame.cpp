@@ -1,12 +1,17 @@
 #include "InGame.h"
 #include "debugDef.h"
-#include "db_Game.h"
 #include <cassert>
+
+
+#include"PlayerFactory.h"
 
 InGame::InGame()
 {
-	auto playerData = GameDataBase::Instance().GetPlayerData(100001);
-	assert(playerData);
+	//	ƒvƒŒƒCƒ„[¶¬
+	auto player = PlayerFactory::CreatePlayer(100001);
+	assert(player);
+	player->transform_.SetPosition({ 400.0f,300.0f });
+	AddGameObject(player);
 }
 
 void InGame::Initialize()

@@ -35,6 +35,6 @@ void Image::Draw()
 	auto size = size_ * scale_;
 
 	//	•`‰æ
-	DrawExtendGraphF(draw.x, draw.y, draw.x + size.x, draw.y + size.y, texture_->GetHandle(), TRUE);
+	DrawExtendGraphF(draw.x, draw.y, draw.x + size.x, draw.y + size.y, texture_->GetHandle(), isTrans_);
 
 } // draw

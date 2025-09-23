@@ -170,9 +170,6 @@
     <Filter Include="project\Game\entity\Player\compnent">
       <UniqueIdentifier>{59e1ed97-cfd4-4cec-9545-15104ff78dc9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project\Game\entity\Player\loader">
-      <UniqueIdentifier>{b025fe8f-9962-4ff8-b032-033abbeeee42}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project\Game\DataTable">
       <UniqueIdentifier>{fa034760-4aa2-47c8-88d8-7c563cc70774}</UniqueIdentifier>
     </Filter>
@@ -184,6 +181,15 @@
     </Filter>
     <Filter Include="project\Game\DataTable\DB">
       <UniqueIdentifier>{a4bd1435-6973-40cd-8fd8-c938ae7c69d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player\compnent\input">
+      <UniqueIdentifier>{c0875245-d6a0-4890-b899-e2dd8eb88806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player\compnent\state">
+      <UniqueIdentifier>{d68049f4-13b4-4c43-92e3-3233b3f758df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\rap_dxlib">
+      <UniqueIdentifier>{a76a0deb-f6f5-4f9a-bb72-7f849d171d4b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -235,7 +241,15 @@
     <ClCompile Include="program\PlayerFactory.cpp">
       <Filter>project\Game\entity\Player\factoty</Filter>
     </ClCompile>
-    <ClCompile Include="program\db_Game.cpp" />
+    <ClCompile Include="program\comp_input.cpp">
+      <Filter>project\Game\entity\Player\compnent\input</Filter>
+    </ClCompile>
+    <ClCompile Include="program\db_Game.cpp">
+      <Filter>project\Game\DataTable\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_state.cpp">
+      <Filter>project\Game\entity\Player\compnent\state</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -352,9 +366,6 @@
     <ClInclude Include="program\PlayerFactory.h">
       <Filter>project\Game\entity\Player\factoty</Filter>
     </ClInclude>
-    <ClInclude Include="program\loader_player.h">
-      <Filter>project\Game\entity\Player\loader</Filter>
-    </ClInclude>
     <ClInclude Include="program\GameData.h">
       <Filter>project\Game\DataTable\Data</Filter>
     </ClInclude>
@@ -363,6 +374,15 @@
     </ClInclude>
     <ClInclude Include="program\db_Game.h">
       <Filter>project\Game\DataTable\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_input.h">
+      <Filter>project\Game\entity\Player\compnent\input</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_state.h">
+      <Filter>project\Game\entity\Player\compnent\state</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Camera.h">
+      <Filter>project\CORE\Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

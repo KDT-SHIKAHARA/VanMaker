@@ -43,11 +43,8 @@ void Rigidbody::Update()
 	}
 
 	//  移動量の更新
-    velocity_ += acceleration_ * static_cast<float>(Time::deltaTime());
+    velocity_ += acceleration_;
 
-    //  速度上限
-	velocity_.x = std::clamp(velocity_.x, -maxVelocity_.x, maxVelocity_.x);
-	velocity_.y = std::clamp(velocity_.y, -maxVelocity_.y, maxVelocity_.y);
 
 
 
@@ -60,6 +57,11 @@ void Rigidbody::Move()
 {
 	if (!enableMovement_) return;
 
+	//  速度上限
+	velocity_.x = std::clamp(velocity_.x, -maxVelocity_.x, maxVelocity_.x);
+	velocity_.y = std::clamp(velocity_.y, -maxVelocity_.y, maxVelocity_.y);
+
+
 	//  実際の移動量
 	Vector2Df moveVelocity = velocity_;
 
@@ -67,15 +69,23 @@ void Rigidbody::Move()
 	if (canInputMove_) {
 		moveVelocity += inputVelocity_;
 	}
+
+
 	
 	//  X移動可能
 
 	//	Y移動可能
 
-	//	1フレ単位の移動量に変換
-	moveVelocity = moveVelocity * Time::deltaTime();
+		//	減衰
+	if (isGraunded_) {
+		velocity_ *= std::pow(drag_, static_cast<float>(Time::deltaTime()));
+	}
+
+	////	1フレ単位の移動量に変換
+	//moveVelocity = moveVelocity * Time::deltaTime();
 
 	//  移動量を位置に反映
-	GetGameObject()->transform_.AddPosition(moveVelocity);
+	GetGameObject()->transform_.AddPosition(moveVelocity * Time::deltaTime());
+
 
 }

@@ -9,7 +9,9 @@ struct PlayerData {
 	std::string filePath;	//	画像ファイルパス
 	int weaponId;	//	武器のid
 	int hp;			//	体力の最大値
+	float speed;	//	移動速度
 	int expTableId;		//	経験値テーブルのid
+	int layer;		//	描画レイヤー
 };
 
 

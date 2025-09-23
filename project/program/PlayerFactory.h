@@ -6,5 +6,5 @@
 
 class PlayerFactory {
 	public:
-	static std::shared_ptr<GameObject> CreatePlayer();
+	static std::shared_ptr<GameObject> CreatePlayer(int id);
 };

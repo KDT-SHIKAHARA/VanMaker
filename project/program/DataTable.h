@@ -23,11 +23,13 @@ public:
 	/// </summary>
 	/// <param name="path">CSVファイルのパスを表す文字列。</param>
 	void LoadFromCsv(const std::string& path) {
+		try
+		{
 			//	すべての行のデータを文字列として取得
 			auto datas_string = LoadCsv::Load(path);
-			
+
 			//	データが存在するだけ読み込む
-			for ( auto& data : datas_string) {
+			for (const auto& data : datas_string) {
 				//	格納する構造体
 				std::unique_ptr<T> record = std::make_unique<T>();
 
@@ -38,6 +40,12 @@ public:
 				int id = record->id;
 				dataMap_[id] = std::move(record);
 			}	//	while
+		}	//	try
+		catch (const std::runtime_error&)
+		{
+			//	いつか書きます。
+			throw;
+		}	// catch
 
 	} // void 
 
@@ -73,5 +81,7 @@ inline void DataTable<PlayerData>::parseRecord(
 	record->filePath = cells[2];
 	record->weaponId = std::stoi(cells[3]);
 	record->hp = std::stoi(cells[4]);
-	record->expTableId = std::stoi(cells[5]);
+	record->speed = std::stof(cells[5]);
+	record->expTableId  = std::stoi(cells[6]);
+	record->layer = std::stoi(cells[7]);
 }

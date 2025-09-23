@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
+    <ClCompile Include="program\comp_state.cpp" />
     <ClCompile Include="program\db_Game.cpp" />
     <ClCompile Include="program\Drawable.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
@@ -39,11 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\ActionMap.h" />
+    <ClInclude Include="program\Camera.h" />
     <ClInclude Include="program\CheckHit.h" />
     <ClInclude Include="program\Collision.h" />
     <ClInclude Include="program\CollisionRule.h" />
     <ClInclude Include="program\Component.h" />
     <ClInclude Include="program\comp_Collider.h" />
+    <ClInclude Include="program\comp_input.h" />
+    <ClInclude Include="program\comp_state.h" />
     <ClInclude Include="program\DataTable.h" />
     <ClInclude Include="program\debugDef.h" />
     <ClInclude Include="program\Drawable.h" />
@@ -61,7 +66,6 @@
     <ClInclude Include="program\InGame.h" />
     <ClInclude Include="program\InputManager.h" />
     <ClInclude Include="program\LoadCsv.h" />
-    <ClInclude Include="program\loader_player.h" />
     <ClInclude Include="program\loader_Sound.h" />
     <ClInclude Include="program\loader_Texture.h" />
     <ClInclude Include="program\MonoBehaviour.h" />
