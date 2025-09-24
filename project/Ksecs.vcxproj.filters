@@ -203,6 +203,12 @@
     <Filter Include="project\CORE\Utility\animation">
       <UniqueIdentifier>{f9df8de8-ddc1-4c84-b5c6-23d53d6e5fa0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\ECS\Canvas\animation">
+      <UniqueIdentifier>{c84998ab-cb37-4c5a-86f9-8ffa3fbc7be4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Enemy\Component">
+      <UniqueIdentifier>{33141426-d524-45a2-9e2b-02457e17f07d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -268,9 +274,12 @@
     <ClCompile Include="program\DxlibRap.cpp">
       <Filter>project\CORE\Utility\rap_dxlib</Filter>
     </ClCompile>
-    <ClCompile Include="program\EnemyFactory.cpp" />
     <ClCompile Include="program\Anim2D.cpp">
       <Filter>project\CORE\Utility\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_animation.cpp" />
+    <ClCompile Include="program\EnemyFactory.cpp">
+      <Filter>project\Game\entity\Enemy\Factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -415,11 +424,11 @@
     <ClInclude Include="program\EnemyFactory.h">
       <Filter>project\Game\entity\Enemy\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="program\comp_animation.h">
-      <Filter>project\Game\entity\utility</Filter>
-    </ClInclude>
     <ClInclude Include="program\Anim2D.h">
       <Filter>project\CORE\Utility\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_animation.h">
+      <Filter>project\ECS\Canvas\animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

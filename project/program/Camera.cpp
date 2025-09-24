@@ -9,7 +9,7 @@ Camera::Camera()
 	, follow_position_(position_)
 	,size_({ (float)WindowData::m_sceneW,(float)WindowData::m_sceneH })
 	, cameraMin_({ 0,0 }), cameraMax_(size_)
-	,mode_(Mode::Fixed)
+	,mode_(Mode::Follow)
 	,isLimit_(Flag::Off)
 {
 

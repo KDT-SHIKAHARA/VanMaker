@@ -16,8 +16,11 @@ int RapperDxlib::DrawExtendGraphFCamera(const Vector2Df& pos1, const Vector2Df& 
 
 int RapperDxlib::DrawRotaGraphFCamera(const Vector2Df& pos, const double& ExtRate, const double& Angle, int GrHandle, int TransFlag, int TurnFlag)
 {
-	auto cameraPos = Camera::Instance().GetPosition() + (Camera::Instance().GetSize() / 2);
-	auto drewPos = pos - cameraPos;
+    // カメラ中心座標
+    auto cameraPos = Camera::Instance().GetPosition();
+    // スクリーン中心補正
+    auto half = Camera::Instance().GetSize() / 2;
+    auto drewPos = pos - cameraPos + half;
 	DrawRotaGraphF(drewPos.x, drewPos.y, ExtRate, Angle, GrHandle, TransFlag, TurnFlag);
     return 0;
 }

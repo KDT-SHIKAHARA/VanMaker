@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="program\Anim2D.cpp" />
     <ClCompile Include="program\Camera.cpp" />
+    <ClCompile Include="program\comp_animation.cpp" />
     <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\comp_state.cpp" />
