@@ -235,8 +235,8 @@ template<typename T>
 Vector2D<T> SetTarget(const Vector2D<T>& Pos,const Vector2D<T>& TargetPos) {
 	float angle = atan2f((TargetPos.y - Pos.y), (TargetPos.x - Pos.x));
 	Vector2D<T> temp;
-	temp.x = cosf(angle * RadToDeg);
-	temp.y = sinf(angle * RadToDeg);
+	temp.x = cosf(angle);
+	temp.y = sinf(angle);
 	return temp;
 
 }

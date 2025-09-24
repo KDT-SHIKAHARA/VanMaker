@@ -3,6 +3,7 @@
 #include "comp_Collider.h"
 #include "db_Game.h"
 #include "comp_animation.h"
+#include "comp_EnemyFollowPlayer .h"
 
 #include<stdexcept>
 
@@ -18,8 +19,12 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id)
 
 	//	インスタンス生成
 	auto enemy = std::make_shared<GameObject>();
+	enemy->AddComponent<Rigidbody>();
+
 
 	auto anim = enemy->AddComponent<AnimationComp>(1);
 	anim->AddAnim("Idle", data->texturePath, data->animFirstFrame, data->animLastFrame);
+	enemy->AddComponent<EnemyFollowPlayer>(1);
+
 	return enemy;
 }

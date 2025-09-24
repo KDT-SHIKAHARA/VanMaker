@@ -281,6 +281,7 @@
     <ClCompile Include="program\EnemyFactory.cpp">
       <Filter>project\Game\entity\Enemy\Factory</Filter>
     </ClCompile>
+    <ClCompile Include="program\comp_EnemyFollowPlayer .cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -429,6 +430,9 @@
     </ClInclude>
     <ClInclude Include="program\comp_animation.h">
       <Filter>project\ECS\Canvas\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_EnemyFollowPlayer .h">
+      <Filter>project\Game\entity\Enemy\Component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

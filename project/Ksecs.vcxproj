@@ -22,6 +22,7 @@
     <ClCompile Include="program\Anim2D.cpp" />
     <ClCompile Include="program\Camera.cpp" />
     <ClCompile Include="program\comp_animation.cpp" />
+    <ClCompile Include="program\comp_EnemyFollowPlayer .cpp" />
     <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\comp_state.cpp" />
@@ -55,6 +56,7 @@
     <ClInclude Include="program\comp_animation.h" />
     <ClInclude Include="program\comp_CameraFollow.h" />
     <ClInclude Include="program\comp_Collider.h" />
+    <ClInclude Include="program\comp_EnemyFollowPlayer .h" />
     <ClInclude Include="program\comp_input.h" />
     <ClInclude Include="program\comp_state.h" />
     <ClInclude Include="program\DataTable.h" />
