@@ -250,6 +250,9 @@
     <ClCompile Include="program\comp_state.cpp">
       <Filter>project\Game\entity\Player\compnent\state</Filter>
     </ClCompile>
+    <ClCompile Include="program\Camera.cpp">
+      <Filter>project\CORE\Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -383,6 +386,9 @@
     </ClInclude>
     <ClInclude Include="program\Camera.h">
       <Filter>project\CORE\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="program\DxlibRap.h">
+      <Filter>project\CORE\Utility\rap_dxlib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

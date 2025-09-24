@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="program\Camera.cpp" />
     <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\comp_state.cpp" />
@@ -54,6 +55,7 @@
     <ClInclude Include="program\Drawable.h" />
     <ClInclude Include="program\comp_Rigidbody.h" />
     <ClInclude Include="program\data_Window.h" />
+    <ClInclude Include="program\DxlibRap.h" />
     <ClInclude Include="program\factory_title.h" />
     <ClInclude Include="program\flag.h" />
     <ClInclude Include="program\GameData.h" />
