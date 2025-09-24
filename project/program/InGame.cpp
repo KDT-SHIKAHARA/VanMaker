@@ -4,6 +4,7 @@
 
 
 #include"PlayerFactory.h"
+#include"EnemyFactory.h"
 
 InGame::InGame()
 {
@@ -12,6 +13,10 @@ InGame::InGame()
 	assert(player);
 	player->transform_.SetPosition({ 400.0f,300.0f });
 	AddGameObject(player);
+
+	auto enemy = EnemyFactory::CreateEnemy(2001);
+	enemy->transform_.SetPosition({ 700.f,400.0f });
+	AddGameObject(enemy);
 }
 
 void InGame::Initialize()

@@ -5,6 +5,7 @@
 #include "db_Game.h"
 #include "comp_state.h"
 #include "comp_input.h"
+#include "comp_CameraFollow.h"
 
 #include <stdexcept>
 
@@ -28,6 +29,7 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	player->AddComponent<Image>(playerData->layer, playerData->filePath, Image::Pivot::Center);
 	player->AddComponent<InputComponent>();
 	player->AddComponent<StateComponent>(playerData->speed);
+	player->AddComponent<CameraFollow>();
 
 	//	ƒ^ƒOÝ’è
 	player->tag_ = GameObjectTag::Player;

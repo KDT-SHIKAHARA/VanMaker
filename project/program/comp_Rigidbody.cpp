@@ -78,14 +78,13 @@ void Rigidbody::Move()
 
 		//	å∏êä
 	if (isGraunded_) {
-		velocity_ *= std::pow(drag_, static_cast<float>(Time::deltaTime()));
+		velocity_ *= drag_;
 	}
 
 	////	1ÉtÉåíPà ÇÃà⁄ìÆó Ç…ïœä∑
 	//moveVelocity = moveVelocity * Time::deltaTime();
 
 	//  à⁄ìÆó Çà íuÇ…îΩâf
-	GetGameObject()->transform_.AddPosition(moveVelocity * Time::deltaTime());
-
+	GetGameObject()->transform_.AddPosition(moveVelocity);
 
 }

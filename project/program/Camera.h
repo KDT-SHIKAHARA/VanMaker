@@ -17,6 +17,7 @@ public:
 	void Initialize(const Vector2Df& position, const Vector2Df& size);
 	//	更新
 	void Update();
+
 	//	位置設定
 	void SetPosition(const Vector2Df& position) { position_ = position; }
 	//	位置取得
@@ -37,6 +38,8 @@ public:
 	void SetMode(Mode mode) { mode_ = mode; }
 	//	モード取得
 	Mode GetMode()const { return mode_; }
+
+	void SetFollowPosition(const Vector2Df& position) { follow_position_ = position; }
 
 private:
 	Vector2Df position_;	//	位置

@@ -13,6 +13,11 @@ public:
 		return playerTable_.findById(id);
 	}
 
+	const EnemyData* GetEnemyData(int id)const {
+		return enemyTable_.findById(id);
+	}
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
+	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル
 };

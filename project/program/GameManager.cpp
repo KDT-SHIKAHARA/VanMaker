@@ -7,7 +7,7 @@
 #include "GameObjectManager.h"
 #include "system_Renderer.h"
 #include "SceneManager.h"
-
+#include "Camera.h"
 
 GameManager::GameManager()
 	:isRunning_(true),
@@ -49,6 +49,7 @@ void GameManager::Run()
 		InputManager::Instance().Update();		//	Input.update
 		RigidbodySystem::Instance().Update();	//	Rigid.update
 		SceneManager::Instance().Update();		//	Scene.update
+		Camera::Instance().Update();			//	Camera.update
 		CollisionSystem::Instance().Update();	//	Collision.update
 		RigidbodySystem::Instance().Move();		//	Rigid.move
 		RendererSystem::Instance().Update();	//	Render.update

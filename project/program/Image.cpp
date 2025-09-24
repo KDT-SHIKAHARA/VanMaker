@@ -1,6 +1,7 @@
 #include "Image.h"
 #include"GameObject.h"
 #include"loader_Texture.h"
+#include"DxlibRap.h"
 
 #include<DxLib.h>
 
@@ -35,6 +36,7 @@ void Image::Draw()
 	auto size = size_ * scale_;
 
 	//	•`‰æ
-	DrawExtendGraphF(draw.x, draw.y, draw.x + size.x, draw.y + size.y, texture_->GetHandle(), isTrans_);
+
+	RapperDxlib::DrawExtendGraphFCamera(draw ,draw + size, texture_->GetHandle(), isTrans_);
 
 } // draw

@@ -18,8 +18,9 @@ struct PlayerData {
 //	敵キャラのデータ構造
 struct EnemyData {
 	int id;	//	データID
-	std::string name;	//	名前
 	std::string texturePath;	//	画像ファイルパス
+	int animFirstFrame;	//	アニメーションの最初の番号
+	int animLastFrame;	//	アニメーションの最後の番号
 	int sizeTypeId;	//	サイズテーブル
 	int hp;	//	体力
 	int	attack;	//	攻撃力

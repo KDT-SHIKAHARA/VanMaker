@@ -10,7 +10,7 @@ private:
     int displayX_, displayY_; // 表示座標
 
     ULONGLONG startTime_;  // １秒間観測用のループの開始時間
-    ULONGLONG baseTime_;   // 終わらせる予定本来の終了時間 (Wait判定用)
+    double baseTime_;   // 終わらせる予定本来の終了時間 (Wait判定用)
 
 public:
     RemFPS(int fps = 60, int x = 0, int y = 0)

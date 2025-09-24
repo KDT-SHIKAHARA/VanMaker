@@ -191,6 +191,18 @@
     <Filter Include="project\CORE\Utility\rap_dxlib">
       <UniqueIdentifier>{a76a0deb-f6f5-4f9a-bb72-7f849d171d4b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\utility">
+      <UniqueIdentifier>{b009658e-5fbe-4ba7-9ac5-b2c0c6be4a45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Enemy">
+      <UniqueIdentifier>{dc5b603d-a48c-443b-946d-23164c4f9a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Enemy\Factory">
+      <UniqueIdentifier>{d6c69235-4fdb-4927-8687-6ae798306a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\Utility\animation">
+      <UniqueIdentifier>{f9df8de8-ddc1-4c84-b5c6-23d53d6e5fa0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -252,6 +264,13 @@
     </ClCompile>
     <ClCompile Include="program\Camera.cpp">
       <Filter>project\CORE\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="program\DxlibRap.cpp">
+      <Filter>project\CORE\Utility\rap_dxlib</Filter>
+    </ClCompile>
+    <ClCompile Include="program\EnemyFactory.cpp" />
+    <ClCompile Include="program\Anim2D.cpp">
+      <Filter>project\CORE\Utility\animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -389,6 +408,18 @@
     </ClInclude>
     <ClInclude Include="program\DxlibRap.h">
       <Filter>project\CORE\Utility\rap_dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_CameraFollow.h">
+      <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="program\EnemyFactory.h">
+      <Filter>project\Game\entity\Enemy\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_animation.h">
+      <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Anim2D.h">
+      <Filter>project\CORE\Utility\animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

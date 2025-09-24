@@ -42,8 +42,6 @@ void Camera::Update()
 			position_.x = std::clamp(position_.x, position_min.x, position_max.x);
 			position_.y = std::clamp(position_.y, position_min.y, position_max.y);
 
-
-
 		}
 
 		break;

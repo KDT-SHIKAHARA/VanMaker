@@ -85,3 +85,19 @@ inline void DataTable<PlayerData>::parseRecord(
 	record->expTableId  = std::stoi(cells[6]);
 	record->layer = std::stoi(cells[7]);
 }
+
+template<>
+inline void DataTable<EnemyData>::parseRecord(
+	const std::vector<std::string>& cells,
+	EnemyData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->texturePath = cells[1];
+	record->animFirstFrame = std::stoi(cells[2]);
+	record->animLastFrame = std::stoi(cells[3]);
+	record->sizeTypeId = std::stoi(cells[4]);
+	record->hp = std::stoi(cells[5]);
+	record->attack = std::stoi(cells[6]);
+	record->behaviorId = std::stoi(cells[7]);
+	record->dropExpId = std::stoi(cells[8]);
+}

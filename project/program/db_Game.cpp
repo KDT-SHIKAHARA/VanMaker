@@ -3,6 +3,7 @@
 
 GameDataBase::GameDataBase()
 {
-	std:: string path = "data/csv/player.csv";
-	playerTable_.LoadFromCsv(path);
+	playerTable_.LoadFromCsv("data/csv/player.csv");
+	enemyTable_.LoadFromCsv("data/csv/enemy.csv");
+
 }
