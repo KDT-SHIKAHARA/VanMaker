@@ -11,6 +11,8 @@ struct PlayerData {
 	float speed;	//	移動速度
 	int expTableId;		//	経験値テーブルのid
 	float max_invi;	//	無敵時間の設置
+	float size_w_;	//	サイズW
+	float size_h_;	//	サイズH
 };
 
 //	プレイヤーのアニメーション用のデータ
@@ -31,6 +33,13 @@ struct EnemyData {
 	int	attack;	//	攻撃力
 	int behaviorId;		//	挙動パターン
 	int dropExpId;	//	ドロップする経験値のテーブル
+};
+
+struct EnemySizeData {
+	int id;
+	int base_width;
+	int base_height;
+	float exrate;
 };
 
 // 武器のデータ構造

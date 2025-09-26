@@ -3,6 +3,7 @@
 enum class GameObjectTag {
 	None,
 	Player,
+	Enemy,
 };
 
 class Tag {
@@ -11,6 +12,7 @@ public:
 		static const std::unordered_map<GameObjectTag, std::string> typeMap{
 			{GameObjectTag::None,"None"},
 			{ GameObjectTag::Player,"Player"},
+			{ GameObjectTag::Enemy,"Enemy"},
 		};
 
 		return typeMap.at(type_);
@@ -20,6 +22,7 @@ public:
 		static const std::unordered_map<std::string, GameObjectTag> strMap{
 			{"None",GameObjectTag::None},
 			{"Player",GameObjectTag::Player},
+			{"Enemy",GameObjectTag::Enemy},
 		};
 		return strMap.at(str);
 	}

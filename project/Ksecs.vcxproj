@@ -54,9 +54,11 @@
     <ClInclude Include="program\CollisionRule.h" />
     <ClInclude Include="program\Component.h" />
     <ClInclude Include="program\comp_animation.h" />
+    <ClInclude Include="program\comp_Attack.h" />
     <ClInclude Include="program\comp_CameraFollow.h" />
     <ClInclude Include="program\comp_Collider.h" />
     <ClInclude Include="program\comp_DrawableHealth.h" />
+    <ClInclude Include="program\comp_DrawCollider.h" />
     <ClInclude Include="program\comp_EnemyFollowPlayer .h" />
     <ClInclude Include="program\comp_input.h" />
     <ClInclude Include="program\comp_state.h" />

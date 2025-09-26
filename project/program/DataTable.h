@@ -84,6 +84,8 @@ inline void DataTable<PlayerData>::parseRecord(
 	record->speed = std::stof(cells[4]);
 	record->expTableId  = std::stoi(cells[5]);
 	record->max_invi = std::stof(cells[6]);
+	record->size_w_ = std::stof(cells[7]);
+	record->size_h_ = std::stof(cells[8]);
 }
 
 
@@ -113,4 +115,15 @@ inline void DataTable<EnemyData>::parseRecord(
 	record->attack = std::stoi(cells[3]);
 	record->behaviorId = std::stoi(cells[4]);
 	record->dropExpId = std::stoi(cells[5]);
+}
+
+template<>
+inline void DataTable<EnemySizeData>::parseRecord(
+	const std::vector<std::string>& cells,
+	EnemySizeData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->base_width = std::stoi(cells[1]);
+	record->base_height = std::stoi(cells[2]);
+	record->exrate = std::stof(cells[3]);
 }

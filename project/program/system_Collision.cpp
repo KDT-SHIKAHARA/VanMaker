@@ -176,6 +176,7 @@ CollisionSystem::CollisionSystem()
 {
 	rules_ = std::make_unique<CollisionRule>();
 	//	当たり判定ルールの追加
+    rules_->AddRule(Tag::GetString(GameObjectTag::Player), Tag::GetString(GameObjectTag::Enemy));
 }
 
 /// <summary>
@@ -202,13 +203,13 @@ void CollisionSystem::Update()
         for (auto& obj1 : objList1) {
             //  存在判定
             if (!obj1) continue;    
-			auto col1 = obj1->GetComponent<Collider>();
+			auto col1 = obj1->GetComponentAsBase<Collider>();
             if (!col1) continue;
 
             for (auto& obj2 : objList2) {
                 //  存在判定
                 if (!obj2) continue;
-				auto col2 = obj2->GetComponent<Collider>();
+				auto col2 = obj2->GetComponentAsBase<Collider>();
 				if (!col2) continue;
 
                 // 同じオブジェクト同士の当たり判定はスキップ

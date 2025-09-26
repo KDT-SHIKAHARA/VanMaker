@@ -40,6 +40,9 @@ public:
 	template<typename T>
 	std::shared_ptr<T> GetComponent();
 	
+	template<typename BASE>
+	std::shared_ptr<BASE> GetComponentAsBase();
+
 	template<typename T>
 	bool HasComponent()const;
 
@@ -99,6 +102,18 @@ inline std::shared_ptr<T> GameObject::GetComponent()
 	//	‚È‚¯‚ê‚Înullptr‚ğ•Ô‚µ‚ÄAif•ª‚È‚Ç‚Åfalse‚É‚È‚é‚æ‚¤‚É‚·‚é
 	return nullptr;
 
+}
+
+template<typename BASE>
+inline std::shared_ptr<BASE> GameObject::GetComponentAsBase()
+{
+	for (auto& [type, comp] : components_) {
+		if (auto casted = std::dynamic_pointer_cast<BASE>(comp)) {
+			return casted;
+		}
+	}
+
+	return nullptr;
 }
 
 

@@ -21,8 +21,13 @@ public:
 		return animDataTable_.findById(id);
 	}
 
+	const EnemySizeData* GetEnemySizeData(int id)const {
+		return enemySizeTable_.findById(id);
+	}
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
 	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル
 	DataTable<AnimData> animDataTable_;	//	アニメーションテーブル
+	DataTable<EnemySizeData> enemySizeTable_;
 };

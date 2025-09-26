@@ -209,6 +209,9 @@
     <Filter Include="project\Game\entity\Enemy\Component">
       <UniqueIdentifier>{33141426-d524-45a2-9e2b-02457e17f07d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\ECS\Component\drawablecollier">
+      <UniqueIdentifier>{03fec2d6-f556-4b7d-ad7b-264164baa342}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -280,9 +283,11 @@
     <ClCompile Include="program\EnemyFactory.cpp">
       <Filter>project\Game\entity\Enemy\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="program\comp_EnemyFollowPlayer .cpp" />
     <ClCompile Include="program\comp_animation.cpp">
       <Filter>project\ECS\Canvas\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_EnemyFollowPlayer .cpp">
+      <Filter>project\Game\entity\Enemy\Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -444,6 +449,12 @@
     </ClInclude>
     <ClInclude Include="program\GetColor.h">
       <Filter>project\CORE\Utility\color</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_DrawCollider.h">
+      <Filter>project\ECS\Component\drawablecollier</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_Attack.h">
+      <Filter>project\Game\entity\utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

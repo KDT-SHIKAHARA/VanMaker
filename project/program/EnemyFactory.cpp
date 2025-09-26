@@ -5,6 +5,7 @@
 #include "comp_animation.h"
 #include "comp_EnemyFollowPlayer .h"
 #include "comp_Health.h"
+#include "comp_DrawCollider.h"
 
 #include<stdexcept>
 
@@ -18,15 +19,34 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id, int anim_id)
 	//	データ取得
 	auto data = GameDataBase::Instance().GetEnemyData(id);
 	auto anim_data = GameDataBase::Instance().GetAnimData(anim_id);
+	auto size_data = GameDataBase::Instance().GetEnemySizeData(data->sizeTypeId);
 
 	//	インスタンス生成
 	auto enemy = std::make_shared<GameObject>();
+
+	//	移動量
 	enemy->AddComponent<Rigidbody>();
 
+	//	当たり判定
+	enemy->AddComponent<RectCollider>(Vector2Df{(float)size_data->base_width,(float)size_data->base_height });
 
+	//	アニメーション
 	auto anim = enemy->AddComponent<AnimationComp>(anim_data->layer);
-	anim->AddAnim(anim_data->name, anim_data->filePath, anim_data->animFirstFrame, anim_data->animLastFrame);
+	anim->AddAnim(anim_data->name, anim_data->filePath, anim_data->animFirstFrame, anim_data->animLastFrame,0.2f,size_data->exrate);
+
+	//	プレイヤーに向けて移動
 	enemy->AddComponent<EnemyFollowPlayer>(1);
+
+
+	//	当たり判定の可視化
+	enemy->AddComponent<DrawRectColliderComp>();
+
+
+
+	//	体力
 	auto hp = enemy->AddComponent<Health>(1.0, data->hp);
+
+	//	タグ
+	enemy->tag_ = GameObjectTag::Enemy;
 	return enemy;
 }
