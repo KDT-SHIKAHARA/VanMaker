@@ -71,6 +71,7 @@ protected:
 	std::unordered_map<int, std::unique_ptr<T>> dataMap_;
 };
 
+//	プレイヤーのデータ
 template<>
 inline void DataTable<PlayerData>::parseRecord(
 	const std::vector<std::string>& cells,
@@ -78,26 +79,38 @@ inline void DataTable<PlayerData>::parseRecord(
 ) {
 	record->id = std::stoi(cells[0]);
 	record->name = cells[1];
-	record->filePath = cells[2];
-	record->weaponId = std::stoi(cells[3]);
-	record->hp = std::stoi(cells[4]);
-	record->speed = std::stof(cells[5]);
-	record->expTableId  = std::stoi(cells[6]);
-	record->layer = std::stoi(cells[7]);
+	record->weaponId = std::stoi(cells[2]);
+	record->hp = std::stoi(cells[3]);
+	record->speed = std::stof(cells[4]);
+	record->expTableId  = std::stoi(cells[5]);
+	record->max_invi = std::stof(cells[6]);
 }
 
+
+//	アニメーションのデータ　
+template<>
+inline void DataTable<AnimData>::parseRecord(
+	const std::vector<std::string>& cells,
+	AnimData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->name = cells[1];
+	record->filePath = cells[2];
+	record->animFirstFrame = std::stoi(cells[3]);
+	record->animLastFrame = std::stoi(cells[4]);
+	record->layer = std::stoi(cells[5]);
+}
+
+//	敵のデータ
 template<>
 inline void DataTable<EnemyData>::parseRecord(
 	const std::vector<std::string>& cells,
 	EnemyData* record
 ) {
 	record->id = std::stoi(cells[0]);
-	record->texturePath = cells[1];
-	record->animFirstFrame = std::stoi(cells[2]);
-	record->animLastFrame = std::stoi(cells[3]);
-	record->sizeTypeId = std::stoi(cells[4]);
-	record->hp = std::stoi(cells[5]);
-	record->attack = std::stoi(cells[6]);
-	record->behaviorId = std::stoi(cells[7]);
-	record->dropExpId = std::stoi(cells[8]);
+	record->sizeTypeId = std::stoi(cells[1]);
+	record->hp = std::stoi(cells[2]);
+	record->attack = std::stoi(cells[3]);
+	record->behaviorId = std::stoi(cells[4]);
+	record->dropExpId = std::stoi(cells[5]);
 }

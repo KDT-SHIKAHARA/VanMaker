@@ -277,11 +277,13 @@
     <ClCompile Include="program\Anim2D.cpp">
       <Filter>project\CORE\Utility\animation</Filter>
     </ClCompile>
-    <ClCompile Include="program\comp_animation.cpp" />
     <ClCompile Include="program\EnemyFactory.cpp">
       <Filter>project\Game\entity\Enemy\Factory</Filter>
     </ClCompile>
     <ClCompile Include="program\comp_EnemyFollowPlayer .cpp" />
+    <ClCompile Include="program\comp_animation.cpp">
+      <Filter>project\ECS\Canvas\animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -433,6 +435,15 @@
     </ClInclude>
     <ClInclude Include="program\comp_EnemyFollowPlayer .h">
       <Filter>project\Game\entity\Enemy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_Health.h">
+      <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_DrawableHealth.h">
+      <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="program\GetColor.h">
+      <Filter>project\CORE\Utility\color</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

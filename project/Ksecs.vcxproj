@@ -56,6 +56,7 @@
     <ClInclude Include="program\comp_animation.h" />
     <ClInclude Include="program\comp_CameraFollow.h" />
     <ClInclude Include="program\comp_Collider.h" />
+    <ClInclude Include="program\comp_DrawableHealth.h" />
     <ClInclude Include="program\comp_EnemyFollowPlayer .h" />
     <ClInclude Include="program\comp_input.h" />
     <ClInclude Include="program\comp_state.h" />
@@ -74,6 +75,8 @@
     <ClInclude Include="program\GameObject.h" />
     <ClInclude Include="program\GameObjectManager.h" />
     <ClInclude Include="program\GameObjectTag.h" />
+    <ClInclude Include="program\comp_Health.h" />
+    <ClInclude Include="program\GetColor.h" />
     <ClInclude Include="program\Image.h" />
     <ClInclude Include="program\InGame.h" />
     <ClInclude Include="program\InputManager.h" />

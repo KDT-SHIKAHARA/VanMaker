@@ -6,6 +6,8 @@
 #include "comp_state.h"
 #include "comp_input.h"
 #include "comp_CameraFollow.h"
+#include "comp_DrawableHealth.h"
+#include "comp_animation.h"
 
 #include <stdexcept>
 
@@ -13,10 +15,12 @@
 std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 {
 	//	データ取得
-	auto playerData = GameDataBase::Instance().GetPlayerData(id);
+	auto data = GameDataBase::Instance().GetPlayerData(id);
+	auto idle_anim = GameDataBase::Instance().GetAnimData(1001);
+	auto walk_anim = GameDataBase::Instance().GetAnimData(1002);
 
 	//	存在しない場合
-	if (!playerData) {
+	if (!data) {
 		throw std::invalid_argument("PlayerFactory::CreatePlayer: Invalid player ID");
 	}
 
@@ -26,10 +30,15 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	//	コンポーネント追加
 	auto rigid = player->AddComponent<Rigidbody>();
 	auto collider = player->AddComponent<CircleCollider>(50.f);
-	player->AddComponent<Image>(playerData->layer, playerData->filePath, Image::Pivot::Center);
 	player->AddComponent<InputComponent>();
-	player->AddComponent<StateComponent>(playerData->speed);
+	player->AddComponent<StateComponent>(data->speed);
 	player->AddComponent<CameraFollow>();
+	auto anim = player->AddComponent<AnimationComp>(walk_anim->layer);
+	anim->AddAnim(walk_anim->name, walk_anim->filePath, walk_anim->animFirstFrame, walk_anim->animLastFrame,0.15f);
+	anim->AddAnim(idle_anim->name, idle_anim->filePath, idle_anim->animFirstFrame, idle_anim->animLastFrame);
+	anim->SetExRate(1.2);
+	auto hp = player->AddComponent<DrawableHealth>(data->max_invi, data->hp, walk_anim->layer + 1, Vector2Df{ 70,10 });
+	hp->SetOffset(Vector2Df{0,40});
 
 	//	タグ設定
 	player->tag_ = GameObjectTag::Player;

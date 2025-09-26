@@ -14,6 +14,7 @@ void AnimationComp::Update()
 {
 	if (!currentAnimKey_.empty()) {
 		animations_[currentAnimKey_]->Update();
+		animations_[currentAnimKey_]->isFlip_.Set(trans_);
 	}
 }
 
@@ -27,6 +28,8 @@ void AnimationComp::Draw()
 
 void AnimationComp::SetAnimKey(const std::string& a_animKey)
 {
+	if (currentAnimKey_ == a_animKey) return;
+
 	//	キー検索して存在しないキーなら変更できないようにする
 	auto it = animations_.find(a_animKey);
 	if (it != animations_.end()) {

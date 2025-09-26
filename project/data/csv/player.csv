@@ -1,3 +1,2 @@
-﻿ID,名前,画像,初期装備,初期体力,移動速度/フレーム,必要経験値テーブル番号,描画レイヤー番号
-100001,sutorettiman,data/texture/player/circle_y.png,0,100,5,0,1
-100002,aoringo,data/texture/player/circle_g.png,0,150,4,1,1
+﻿ID,名前,初期装備,初期体力,移動速度/フレーム,必要経験値テーブル番号,描画レイヤー番号,無敵時間
+100001,cindy,0,100,5,0,1,1.2

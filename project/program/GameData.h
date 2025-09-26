@@ -6,21 +6,26 @@
 struct PlayerData {
 	int id;				//	キャラのid
 	std::string name;	//	名前
-	std::string filePath;	//	画像ファイルパス
 	int weaponId;	//	武器のid
 	int hp;			//	体力の最大値
 	float speed;	//	移動速度
 	int expTableId;		//	経験値テーブルのid
-	int layer;		//	描画レイヤー
+	float max_invi;	//	無敵時間の設置
 };
 
+//	プレイヤーのアニメーション用のデータ
+struct AnimData {
+	int id;				//	識別用id
+	std::string name;	//	アニメーションの名前
+	std::string filePath;	//	画像ファイルパス
+	int animFirstFrame;	//	アニメーションの最初の番号
+	int animLastFrame;	//	アニメーションの最後の番号
+	int layer;		//	描画レイヤー
+};
 
 //	敵キャラのデータ構造
 struct EnemyData {
 	int id;	//	データID
-	std::string texturePath;	//	画像ファイルパス
-	int animFirstFrame;	//	アニメーションの最初の番号
-	int animLastFrame;	//	アニメーションの最後の番号
 	int sizeTypeId;	//	サイズテーブル
 	int hp;	//	体力
 	int	attack;	//	攻撃力

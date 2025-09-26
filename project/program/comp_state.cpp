@@ -1,5 +1,6 @@
 #include "comp_state.h"
 #include "GameObject.h"
+#include "comp_animation.h"
 
 #include<stdexcept>
 
@@ -29,20 +30,38 @@ void StateComponent::Update()
 		state_ = State::Idle;
 	}
 
+
+	//	アニメーションの取得
+	auto anim = GetGameObject()->GetComponent<AnimationComp>();
+
+
 	//	状態によって
 	switch (state_)
 	{
 	case StateComponent::State::Idle:
-
+		anim->SetAnimKey("Idle");
 		break;
 	case StateComponent::State::Walk:
 	{
 		//	移動量を渡す
 		auto rigidbody = rigidbody_.lock();
 		if (!rigidbody)return;
-		auto move = (input->GetDirection() * moveSpeed_);
 
+		//	方向を取得
+		auto direct = input->GetDirection();
+		auto move = (direct * moveSpeed_);
+
+		//	移動
 		rigidbody->AddVelocity(move);
+
+
+
+		//	横方向の入力方向に応じて反転フラグを変更する。
+		if (direct.x > 0) { anim->trans_.Set(Flag::Off); }
+		if (direct.x < 0) { anim->trans_.Set(Flag::On);  }
+
+		anim->SetAnimKey("Walk");
+
 	}
 		break;
 	default:
