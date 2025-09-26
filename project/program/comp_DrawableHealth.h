@@ -27,19 +27,22 @@ public:
 		auto leftup = drawpos - (size_ / 2.f);
 
 		//	右下
-		auto rightdown = drawpos + (size_ / 2.f);
+		auto rightdown = leftup + size_;
+
+		//	全長の長さ * 体力の割合でバーの長さを設定
+		auto filledWidth = size_.x * Percent();
 
 		//	可変する右下座標　左座標＋サイズ
-		auto RdPer = leftup + size_;
-		RdPer.x *= Percent();
+		auto filled_rightdown = leftup + Vector2Df{ filledWidth,size_.y };
 
 		//	ベース
 		RapperDxlib::DrawBoxAACamera(leftup, rightdown, BLACK, TRUE);
 		//	色
-		RapperDxlib::DrawBoxAACamera(leftup, RdPer, RED, TRUE);
+		RapperDxlib::DrawBoxAACamera(leftup, filled_rightdown, RED, TRUE);
 		//	枠
 		RapperDxlib::DrawBoxAACamera(leftup, rightdown, BLACK, FALSE, 2.0f);
 
+		//DrawFormatString(0, 40, RED, "%d", current_hp_);
 	}
 
 	//	アクセサ　

@@ -31,6 +31,7 @@ struct EnemyData {
 	int sizeTypeId;	//	サイズテーブル
 	int hp;	//	体力
 	int	attack;	//	攻撃力
+	float coolTime_;	//	クールタイム
 	int behaviorId;		//	挙動パターン
 	int dropExpId;	//	ドロップする経験値のテーブル
 };

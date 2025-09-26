@@ -26,8 +26,9 @@ void GameManager::Initialize()
 	SetBackgroundColor(128, 128, 128);
 
 	//	Dxlib ‰Šú‰»
-	errno_t err = DxLib_Init();
-	assert(err != -1);
+	DxLib_Init();
+	//errno_t err = DxLib_Init();
+	//assert(err != -1);
 
 	//	Dxlib Windowì¬
 	SetDrawScreen(DX_SCREEN_BACK);
@@ -40,7 +41,7 @@ void GameManager::Run()
 {
 
 
-	while (!ProcessMessage() || isRunning_) {
+	while (!ProcessMessage() && isRunning_) {
 		clsDx();
 		ClearDrawScreen();
 

@@ -113,8 +113,9 @@ inline void DataTable<EnemyData>::parseRecord(
 	record->sizeTypeId = std::stoi(cells[1]);
 	record->hp = std::stoi(cells[2]);
 	record->attack = std::stoi(cells[3]);
-	record->behaviorId = std::stoi(cells[4]);
-	record->dropExpId = std::stoi(cells[5]);
+	record->coolTime_ = std::stof(cells[4]);
+	record->behaviorId = std::stoi(cells[5]);
+	record->dropExpId = std::stoi(cells[6]);
 }
 
 template<>

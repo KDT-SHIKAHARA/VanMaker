@@ -6,6 +6,7 @@
 #include "comp_EnemyFollowPlayer .h"
 #include "comp_Health.h"
 #include "comp_DrawCollider.h"
+#include "comp_Attack.h"
 
 #include<stdexcept>
 
@@ -28,7 +29,7 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id, int anim_id)
 	enemy->AddComponent<Rigidbody>();
 
 	//	当たり判定
-	enemy->AddComponent<RectCollider>(Vector2Df{(float)size_data->base_width,(float)size_data->base_height });
+	enemy->AddComponent<RectCollider>(Vector2Df{(float)size_data->base_width * size_data->exrate,(float)size_data->base_height * size_data->exrate });
 
 	//	アニメーション
 	auto anim = enemy->AddComponent<AnimationComp>(anim_data->layer);
@@ -38,13 +39,19 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id, int anim_id)
 	enemy->AddComponent<EnemyFollowPlayer>(1);
 
 
+
+#ifdef _DEBUG
 	//	当たり判定の可視化
 	enemy->AddComponent<DrawRectColliderComp>();
+#endif // _DEBUG
 
 
 
 	//	体力
-	auto hp = enemy->AddComponent<Health>(1.0, data->hp);
+	enemy->AddComponent<Health>(1.0, data->hp);
+	
+	//	攻撃
+	enemy->AddComponent<AttackComp>(data->attack, data->coolTime_);
 
 	//	タグ
 	enemy->tag_ = GameObjectTag::Enemy;

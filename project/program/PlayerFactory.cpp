@@ -9,6 +9,7 @@
 #include "comp_DrawableHealth.h"
 #include "comp_animation.h"
 #include "comp_DrawCollider.h"
+#include "comp_DamageReceiver.h"
 
 #include <stdexcept>
 
@@ -33,7 +34,12 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 
 	//	当たり判定
 	auto collider = player->AddComponent<RectCollider>(Vector2Df{ data->size_w_,data->size_h_ });
+
+	//	デバック中だけ
+#ifdef _DEBUG
 	player->AddComponent<DrawRectColliderComp>();
+#endif // _DEBUG
+
 
 	//	入力
 	player->AddComponent<InputComponent>();
@@ -53,6 +59,10 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	//	体力
 	auto hp = player->AddComponent<DrawableHealth>(data->max_invi, data->hp, walk_anim->layer + 1, Vector2Df{ 70,10 });
 	hp->SetOffset(Vector2Df{0,40});
+
+	//	被弾用
+	player->AddComponent<DamageReceiver>();
+
 
 	//	タグ設定
 	player->tag_ = GameObjectTag::Player;

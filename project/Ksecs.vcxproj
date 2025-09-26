@@ -57,6 +57,7 @@
     <ClInclude Include="program\comp_Attack.h" />
     <ClInclude Include="program\comp_CameraFollow.h" />
     <ClInclude Include="program\comp_Collider.h" />
+    <ClInclude Include="program\comp_DamageReceiver.h" />
     <ClInclude Include="program\comp_DrawableHealth.h" />
     <ClInclude Include="program\comp_DrawCollider.h" />
     <ClInclude Include="program\comp_EnemyFollowPlayer .h" />

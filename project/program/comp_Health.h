@@ -4,6 +4,9 @@
 #include"MonoBehaviour.h"
 #include"flag.h"
 #include"Time.h"
+#include"comp_Attack.h"
+#include"GameObject.h"
+#include"Collision.h"
 
 class Health : public MonoBehaviour {
 protected:
@@ -33,7 +36,7 @@ public:
 
 	//	体力の割合表示
 	float Percent()const {
-		return current_hp_ / max_hp_;
+		return (float)current_hp_ / (float)max_hp_;
 	}
 
 	//	無敵時間の減少
@@ -49,6 +52,8 @@ public:
 			alive_.Set(Flag::Off);
 		}
 	}
+
+
 
 
 	//	アクセサ

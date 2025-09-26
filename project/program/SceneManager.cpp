@@ -6,14 +6,12 @@
 
 SceneManager::SceneManager()
 {
-#ifdef _DEBUG
 	ChangeScene<InGame>();
-#endif // _DEBUG
-
 }
 
 void SceneManager::Update()
 {
+
 	if (!scene_) return;
 
 	//	‘¶İ”»’è

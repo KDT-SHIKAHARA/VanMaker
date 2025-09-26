@@ -4,6 +4,7 @@
 
 
 #include<vector>
+#include<DxLib.h>
 
 /// <summary>
 /// 描画可能なインスタンスの描画システム
@@ -26,7 +27,6 @@ public:
 
 	//	更新
 	void Update() {
-
 		//	インスタンスの破棄されているものをコレクションから削除
 		for (auto& layer : renderers_) {
 			layer.erase(std::remove_if(layer.begin(), layer.end(),

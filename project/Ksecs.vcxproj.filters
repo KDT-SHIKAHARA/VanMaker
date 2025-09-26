@@ -456,5 +456,8 @@
     <ClInclude Include="program\comp_Attack.h">
       <Filter>project\Game\entity\utility</Filter>
     </ClInclude>
+    <ClInclude Include="program\comp_DamageReceiver.h">
+      <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
