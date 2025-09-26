@@ -212,6 +212,15 @@
     <Filter Include="project\ECS\Component\drawablecollier">
       <UniqueIdentifier>{03fec2d6-f556-4b7d-ad7b-264164baa342}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\Weapon">
+      <UniqueIdentifier>{3319997c-530b-4ba3-8a9d-288456c425bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Weapon\base">
+      <UniqueIdentifier>{f0c433bf-03b8-459c-ba7e-3fc156ceebce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Weapon\compnent">
+      <UniqueIdentifier>{ab51c53f-04fe-4219-9837-79f9202dbe21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -289,6 +298,7 @@
     <ClCompile Include="program\comp_EnemyFollowPlayer .cpp">
       <Filter>project\Game\entity\Enemy\Component</Filter>
     </ClCompile>
+    <ClCompile Include="program\comp_Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -458,6 +468,12 @@
     </ClInclude>
     <ClInclude Include="program\comp_DamageReceiver.h">
       <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="program\WeaponBase.h">
+      <Filter>project\Game\entity\Weapon\base</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_Weapon.h">
+      <Filter>project\Game\entity\Weapon\compnent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -42,7 +42,6 @@ public:
 		//	枠
 		RapperDxlib::DrawBoxAACamera(leftup, rightdown, BLACK, FALSE, 2.0f);
 
-		//DrawFormatString(0, 40, RED, "%d", current_hp_);
 	}
 
 	//	アクセサ　

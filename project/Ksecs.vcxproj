@@ -26,6 +26,7 @@
     <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\comp_state.cpp" />
+    <ClCompile Include="program\comp_Weapon.cpp" />
     <ClCompile Include="program\db_Game.cpp" />
     <ClCompile Include="program\Drawable.cpp" />
     <ClCompile Include="program\DxlibRap.cpp" />
@@ -63,6 +64,7 @@
     <ClInclude Include="program\comp_EnemyFollowPlayer .h" />
     <ClInclude Include="program\comp_input.h" />
     <ClInclude Include="program\comp_state.h" />
+    <ClInclude Include="program\comp_Weapon.h" />
     <ClInclude Include="program\DataTable.h" />
     <ClInclude Include="program\debugDef.h" />
     <ClInclude Include="program\Drawable.h" />
@@ -102,6 +104,7 @@
     <ClInclude Include="program\Title.h" />
     <ClInclude Include="program\transform.h" />
     <ClInclude Include="program\vector2d.h" />
+    <ClInclude Include="program\WeaponBase.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
