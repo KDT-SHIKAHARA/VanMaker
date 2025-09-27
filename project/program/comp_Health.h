@@ -14,7 +14,7 @@ protected:
 public:
 
 	Health(const double& a_max_invi, int a_max_hp)
-		:max_invi_(a_max_invi), max_hp_(a_max_hp), current_hp_(a_max_hp), current_invi_(0)
+		:max_invi_(a_max_invi), max_hp_(a_max_hp), current_hp_(a_max_hp), current_invi_(0), alive_(Flag::On)
 	{
 	}
 

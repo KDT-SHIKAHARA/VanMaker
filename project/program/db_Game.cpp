@@ -9,5 +9,6 @@ GameDataBase::GameDataBase()
 	enemySizeTable_.LoadFromCsv("data/csv/enemy_size.csv");
 	weaponDataTable_.LoadFromCsv("data/csv/weapon.csv");
 	imageTable_.LoadFromCsv("data/csv/image_data.csv");
-
+	dropExpTable_.LoadFromCsv("data/csv/dropexp.csv");
+	expTable_.LoadFromCsv("data/csv/exp_table.csv");
 }

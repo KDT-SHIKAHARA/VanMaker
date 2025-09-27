@@ -14,7 +14,7 @@ struct DebugFlag
 	static constexpr bool EnemyDrawHpBar = true;
 
 	//	“–‚½‚è”»’è‚Ì‰ÂŽ‹‰»
-	static constexpr bool DrawCollider = false;
+	static constexpr bool DrawCollider = true;
 
 #else
 //	ƒtƒ‰ƒO‚Ì–³Œø‰»

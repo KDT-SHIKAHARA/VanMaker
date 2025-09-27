@@ -224,6 +224,15 @@
     <Filter Include="project\Game\entity\Weapon\DamageField">
       <UniqueIdentifier>{c6b0e406-8161-4cf2-966d-10b572bd9efc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\Experience">
+      <UniqueIdentifier>{6b559b52-fbdf-441a-8f0a-fb9a2fcc9907}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Experience\Component">
+      <UniqueIdentifier>{4a7f26c9-1d91-4583-89c0-85e971924026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Experience\Factory">
+      <UniqueIdentifier>{07959bd0-2bd1-49d1-b988-117f4e94204f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -311,6 +320,9 @@
       <Filter>project\Game\entity\Weapon\DamageField</Filter>
     </ClCompile>
     <ClCompile Include="program\comp_image.cpp" />
+    <ClCompile Include="program\DropExperienceComp.cpp">
+      <Filter>project\Game\entity\Experience\Factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -501,6 +513,9 @@
     </ClInclude>
     <ClInclude Include="program\comp_image.h">
       <Filter>project\ECS\Canvas\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="program\DropExperienceComp.h">
+      <Filter>project\Game\entity\Experience\Factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

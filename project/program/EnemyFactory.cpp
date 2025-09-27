@@ -11,7 +11,7 @@
 #include "comp_DamageReceiver.h"
 #include "Image.h"
 #include"DebugMacro.h"
-
+#include "DropExperienceComp.h"
 
 #include<stdexcept>
 
@@ -66,7 +66,8 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id, int anim_id)
 	//	被弾用
 	enemy->AddComponent<DamageReceiver>();
 
-	//	アニメーション
+	//	経験値
+	enemy->AddComponent<DropExperienceComp>(data->dropExpId);
 
 
 	//	タグ

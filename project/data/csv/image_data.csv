@@ -1,2 +1,5 @@
 ﻿id,画像ハンドル,表示倍率,レイヤー番号
 5001,data/texture/weapon/damage_circle.png,1.2,1
+5201,data/texture/exp/blue.png,1,3
+5202,data/texture/exp/green.png,1,3
+5203,data/texture/exp/red.png,1,3

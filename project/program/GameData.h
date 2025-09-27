@@ -1,6 +1,6 @@
 #pragma once
 #include<string>
-
+#include<unordered_map>
 
 //	プレイヤーのデータ構造
 struct PlayerData {
@@ -25,6 +25,7 @@ struct AnimData {
 	int layer;		//	描画レイヤー
 };
 
+//	画像デーブル
 struct ImageData {
 	int id;	//	id
 	std::string filePath;	//	フォルダのパス
@@ -43,6 +44,7 @@ struct EnemyData {
 	int dropExpId;	//	ドロップする経験値のテーブル
 };
 
+//	敵のサイズテーブル
 struct EnemySizeData {
 	int id;
 	int base_width;
@@ -64,6 +66,16 @@ struct WeaponData {
 	int textureID;	//	テクスチャのID
 };
 
+//	ドロップする経験値のテーブル
+struct DropExpData {
+	int id;
+	int texture_id;
+	int exp;
+	float width;	//	横サイズ
+	float height;	//	縦サイズ
+};
+
+
 //	敵キャラのサイズデータ構造
 struct EnemySizeType {
 	int id;	//	データID
@@ -72,8 +84,10 @@ struct EnemySizeType {
 
 //	経験値のテーブルデータ構造
 struct ExpTable {
-	int level;	//	レベル
-	int requiredExp;	//	必要経験値
+	int id;				//	id
+	int baseExp;		//	基本経験値
+	float growthFactor;	//	成長係数
+	std::unordered_map<int, int> overrides;	//	特定のレベルの上書き
 };
 
 

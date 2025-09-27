@@ -34,6 +34,7 @@
     <ClCompile Include="program\Drawable.cpp" />
     <ClCompile Include="program\DxlibRap.cpp" />
     <ClCompile Include="program\EnemyFactory.cpp" />
+    <ClCompile Include="program\DropExperienceComp.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
     <ClCompile Include="program\Image.cpp" />
     <ClCompile Include="program\InGame.cpp" />
@@ -79,6 +80,7 @@
     <ClInclude Include="program\data_Window.h" />
     <ClInclude Include="program\DxlibRap.h" />
     <ClInclude Include="program\EnemyFactory.h" />
+    <ClInclude Include="program\DropExperienceComp.h" />
     <ClInclude Include="program\factory_title.h" />
     <ClInclude Include="program\flag.h" />
     <ClInclude Include="program\GameData.h" />

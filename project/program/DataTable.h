@@ -54,7 +54,7 @@ public:
 	/// </summary>
 	/// <param name="id">検索するデータのID。</param>
 	/// <returns>見つかった場合はデータへのポインタ、見つからない場合はnullptr。</returns>
-	const T* findById(int id) const{
+	const T* findById(int id) const {
 		auto it = dataMap_.find(id);
 		if (it != dataMap_.end()) {
 			return  it->second.get();
@@ -82,7 +82,7 @@ inline void DataTable<PlayerData>::parseRecord(
 	record->weaponId = std::stoi(cells[2]);
 	record->hp = std::stoi(cells[3]);
 	record->speed = std::stof(cells[4]);
-	record->expTableId  = std::stoi(cells[5]);
+	record->expTableId = std::stoi(cells[5]);
 	record->max_invi = std::stof(cells[6]);
 	record->size_w_ = std::stof(cells[7]);
 	record->size_h_ = std::stof(cells[8]);
@@ -156,4 +156,46 @@ inline void DataTable<WeaponData>::parseRecord(
 	record->slip_ct = std::stof(cells[7]);
 	record->num = std::stoi(cells[8]);
 	record->textureID = std::stoi(cells[9]);
+}
+
+template<>
+inline void DataTable<DropExpData>::parseRecord(
+	const std::vector<std::string>& cells,
+	DropExpData* record
+) {
+	record->id = record->id = std::stoi(cells[0]);
+	record->texture_id = std::stoi(cells[1]);
+	record->exp = std::stoi(cells[2]);
+	record->width = std::stof(cells[3]);
+	record->height = std::stof(cells[4]);
+}
+
+template<>
+inline void DataTable<ExpTable>::parseRecord(
+	const std::vector<std::string>& cells,
+	ExpTable* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->baseExp = std::stoi(cells[1]);
+	record->growthFactor = std::stof(cells[2]);
+
+	std::stringstream ss(cells[3]);
+	std::string pair;
+	//	;の前で区切り
+	while (std::getline(ss, pair, ';')) {
+		//	文字の検索
+		auto colonPos = pair.find(':');
+
+		//	存在しているかどうかの判定
+		if (colonPos != std::string::npos) {
+			//	レベル（:の前までを指定して変換する）
+			int level = std::stoi(pair.substr(0, colonPos));
+			//	経験値（:のあとのすべて）
+			int exp = std::stoi(pair.substr(colonPos + 1));
+
+			//	コレクションに追加
+			record->overrides[level] = exp;
+		}
+
+	}
 }

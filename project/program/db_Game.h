@@ -33,6 +33,10 @@ public:
 		return imageTable_.findById(id);
 	}
 
+	const DropExpData* GetDropExpData(int id)const {
+		return dropExpTable_.findById(id);
+	}
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
 	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル
@@ -40,4 +44,6 @@ private:
 	DataTable<EnemySizeData> enemySizeTable_;	//	敵のサイズデータ
 	DataTable<WeaponData> weaponDataTable_;	//	武器データのテーブル
 	DataTable<ImageData> imageTable_;	//	画像のデータテーブル
+	DataTable<DropExpData> dropExpTable_;	//	ドロップする経験値のテーブル
+	DataTable<ExpTable> expTable_;	//	経験値のテーブル
 };

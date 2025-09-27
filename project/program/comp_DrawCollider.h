@@ -10,8 +10,8 @@
 
 class DrawRectColliderComp : public MonoBehaviour, public Drawable {
 public:
-	DrawRectColliderComp()
-		:Drawable(3){ }
+	DrawRectColliderComp(int layer = 3)
+		:Drawable(layer){ }
 
 	void Initialize()override {
 		collider_ = GetGameObject()->GetComponent<RectCollider>();
