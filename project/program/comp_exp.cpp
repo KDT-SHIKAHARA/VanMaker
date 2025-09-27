@@ -88,5 +88,4 @@ void ExpComp::OnCollisionEnter(const Collision& collision)
 
 	}
 
-
 }

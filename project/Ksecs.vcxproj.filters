@@ -236,6 +236,9 @@
     <Filter Include="project\Game\entity\Player\compnent\exp">
       <UniqueIdentifier>{362ff888-68b4-4b63-9b04-ddc037082038}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\WaveManager">
+      <UniqueIdentifier>{87f2929b-af34-40b2-8195-5b37b37d5c24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">

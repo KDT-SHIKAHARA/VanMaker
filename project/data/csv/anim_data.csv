@@ -1,4 +1,6 @@
 ﻿id,アニメーション名,ファイルのベースパス,アニメーションの最初の番号,アニメーションの最後の番号,レイヤー番号
 1001,Idle,data/texture/player/cindy/idle/Cindy_Idle_,1,3,2
 1002,Walk,data/texture/player/cindy/walk/Cindy_Walk_,1,3,2
-2001,Idle,data/texture/enemy/blue_slime/,0,3,2
+2201,Idle,data/texture/enemy/blue_slime/,0,3,2
+2202,Idle,data/texture/enemy/purple_slime/,0,3,2
+2203,Idle,data/texture/enemy/yellow_slime/,0,3,2

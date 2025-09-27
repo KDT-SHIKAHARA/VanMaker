@@ -20,11 +20,11 @@
 /// </summary>
 /// <param name="id">生成する敵オブジェクトの識別子。</param>
 /// <returns>生成された敵オブジェクトへのstd::shared_ptr。</returns>
-std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id, int anim_id)
+std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id)
 {
 	//	データ取得
 	auto data = GameDataBase::Instance().GetEnemyData(id);
-	auto anim_data = GameDataBase::Instance().GetAnimData(anim_id);
+	auto anim_data = GameDataBase::Instance().GetAnimData(data->textureID);
 	auto size_data = GameDataBase::Instance().GetEnemySizeData(data->sizeTypeId);
 
 	//	インスタンス生成

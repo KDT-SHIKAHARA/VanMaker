@@ -42,6 +42,7 @@ struct EnemyData {
 	float coolTime_;	//	クールタイム
 	int behaviorId;		//	挙動パターン
 	int dropExpId;	//	ドロップする経験値のテーブル
+	int textureID;	//	テクスチャID
 };
 
 //	敵のサイズテーブル
@@ -90,4 +91,22 @@ struct ExpTable {
 	std::unordered_map<int, int> overrides;	//	特定のレベルの上書き
 };
 
+
+//	ウェーブ情報
+struct WaveData {
+	//	敵の生成情報
+	struct WaveEntry {
+		int enemyID;	//	敵の種類
+		int createNum;	//	出現数
+		float interval;	//	生成間隔
+		float expMultiolier; //	経験値倍率
+		float strengthMultiolier; //	敵の強化倍率
+	};
+
+	int id;							//	id
+	float startTime;				//	開始時間
+	std::vector<WaveEntry> entries;	//	敵の生成情報
+
+
+};
 

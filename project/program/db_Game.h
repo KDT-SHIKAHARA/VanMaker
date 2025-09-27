@@ -41,6 +41,10 @@ public:
 		return expTable_.findById(id);
 	}
 
+	const WaveData* GetWaveData(int id)const {
+		return waveDataTable_.findById(id);
+	}
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
 	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル
@@ -50,4 +54,5 @@ private:
 	DataTable<ImageData> imageTable_;	//	画像のデータテーブル
 	DataTable<DropExpData> dropExpTable_;	//	ドロップする経験値のテーブル
 	DataTable<ExpTable> expTable_;	//	経験値のテーブル
+	DataTable<WaveData> waveDataTable_;	//	ウェーブの制御データ
 };

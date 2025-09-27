@@ -128,6 +128,7 @@ inline void DataTable<EnemyData>::parseRecord(
 	record->coolTime_ = std::stof(cells[4]);
 	record->behaviorId = std::stoi(cells[5]);
 	record->dropExpId = std::stoi(cells[6]);
+	record->textureID = std::stoi(cells[7]);
 }
 
 template<>
@@ -196,6 +197,52 @@ inline void DataTable<ExpTable>::parseRecord(
 			//	コレクションに追加
 			record->overrides[level] = exp;
 		}
+
+	}
+}
+
+
+template<>
+inline void DataTable<WaveData>::parseRecord(
+	const std::vector<std::string>& cells,
+	WaveData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->startTime = std::stof(cells[1]);
+
+	//	可変部分の読込（全体）
+	std::stringstream ss(cells[2]);
+	std::string line;
+
+	while (std::getline(ss, line, ';')){
+
+		//	; の前で
+		std::stringstream ss_buf(line);
+		std::string token;
+
+		WaveData::WaveEntry entry;
+
+		// enemyID
+		if (!std::getline(ss_buf, token, ':')) continue;
+		entry.enemyID = std::stoi(token);
+
+		// createNum
+		if (!std::getline(ss_buf, token, ':')) continue;
+		entry.createNum = std::stoi(token);
+
+		// interval
+		if (!std::getline(ss_buf, token, ':')) continue;
+		entry.interval = std::stof(token);
+
+		// expMultiplier
+		if (!std::getline(ss_buf, token, ':')) continue;
+		entry.expMultiolier = std::stof(token);
+
+		// strengthMultiplier
+		if (!std::getline(ss_buf, token, ':')) continue;
+		entry.strengthMultiolier = std::stof(token);
+
+		record->entries.push_back(entry);
 
 	}
 }
