@@ -17,7 +17,7 @@ public:
 	virtual ColliderType GetColliderType()const = 0;
 	virtual void Update() override {};
 public:
-	Flag isTrigger_ = false;	//	当たり判定を行うかどうかのフラグ
+	Flag isTrigger_ = true;	//	当たり判定を行うかどうかのフラグ
 	Flag isPushed_ = false;		//	押し戻し処理を行うかどうかのフラグ
 };
 

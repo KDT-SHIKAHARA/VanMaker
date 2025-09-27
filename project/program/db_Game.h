@@ -25,9 +25,19 @@ public:
 		return enemySizeTable_.findById(id);
 	}
 
+	const WeaponData* GetWeaponData(int id)const {
+		return weaponDataTable_.findById(id);
+	}
+
+	const ImageData* GetImageData(int id)const {
+		return imageTable_.findById(id);
+	}
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
 	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル
 	DataTable<AnimData> animDataTable_;	//	アニメーションテーブル
-	DataTable<EnemySizeData> enemySizeTable_;
+	DataTable<EnemySizeData> enemySizeTable_;	//	敵のサイズデータ
+	DataTable<WeaponData> weaponDataTable_;	//	武器データのテーブル
+	DataTable<ImageData> imageTable_;	//	画像のデータテーブル
 };

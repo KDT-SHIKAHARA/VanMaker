@@ -10,6 +10,8 @@
 #include "comp_animation.h"
 #include "comp_DrawCollider.h"
 #include "comp_DamageReceiver.h"
+#include "comp_Weapon.h"
+#include"DebugMacro.h"
 
 #include <stdexcept>
 
@@ -35,11 +37,9 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	//	当たり判定
 	auto collider = player->AddComponent<RectCollider>(Vector2Df{ data->size_w_,data->size_h_ });
 
-	//	デバック中だけ
-#ifdef _DEBUG
-	player->AddComponent<DrawRectColliderComp>();
-#endif // _DEBUG
-
+	if (DebugFlag::DrawCollider) {
+		player->AddComponent<DrawRectColliderComp>();
+	}
 
 	//	入力
 	player->AddComponent<InputComponent>();
@@ -63,6 +63,9 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	//	被弾用
 	player->AddComponent<DamageReceiver>();
 
+	//	攻撃管理クラスの生成
+	auto attack = player->AddComponent<WeaponComponent>();
+	attack->CreateWeapon(data->weaponId);
 
 	//	タグ設定
 	player->tag_ = GameObjectTag::Player;

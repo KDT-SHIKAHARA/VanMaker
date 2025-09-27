@@ -8,6 +8,10 @@
 
 InGame::InGame()
 {
+}
+
+void InGame::Initialize()
+{
 	//	ƒvƒŒƒCƒ„[¶¬
 	auto player = PlayerFactory::CreatePlayer(100001);
 	assert(player);
@@ -16,13 +20,10 @@ InGame::InGame()
 
 
 
-	auto enemy = EnemyFactory::CreateEnemy(2001,2001);
+	auto enemy = EnemyFactory::CreateEnemy(2001, 2001);
 	enemy->transform_.SetPosition({ 700.f,400.0f });
 	AddGameObject(enemy);
-}
 
-void InGame::Initialize()
-{
 }
 
 void InGame::Render()

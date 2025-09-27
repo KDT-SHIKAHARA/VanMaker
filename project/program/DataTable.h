@@ -103,6 +103,18 @@ inline void DataTable<AnimData>::parseRecord(
 	record->layer = std::stoi(cells[5]);
 }
 
+template<>
+inline void DataTable<ImageData>::parseRecord(
+	const std::vector<std::string>& cells,
+	ImageData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->filePath = cells[1];
+	record->exRate = std::stof(cells[2]);
+	record->layer = std::stoi(cells[3]);
+}
+
+
 //	“G‚Ìƒf[ƒ^
 template<>
 inline void DataTable<EnemyData>::parseRecord(
@@ -127,4 +139,21 @@ inline void DataTable<EnemySizeData>::parseRecord(
 	record->base_width = std::stoi(cells[1]);
 	record->base_height = std::stoi(cells[2]);
 	record->exrate = std::stof(cells[3]);
+}
+
+template<>
+inline void DataTable<WeaponData>::parseRecord(
+	const std::vector<std::string>& cells,
+	WeaponData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->name = cells[1];
+	record->width = std::stof(cells[2]);
+	record->height = std::stof(cells[3]);
+	record->radius = std::stof(cells[4]);
+	record->max_ct = std::stof(cells[5]);
+	record->attack = std::stoi(cells[6]);
+	record->slip_ct = std::stof(cells[7]);
+	record->num = std::stoi(cells[8]);
+	record->textureID = std::stoi(cells[9]);
 }

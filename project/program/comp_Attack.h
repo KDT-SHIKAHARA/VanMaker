@@ -25,7 +25,9 @@ protected:
 	double max_ct_;
 	double ct_;
 	int attack_;
-
+public:
+	//	—LŒø”»’è
+	Flag enable = Flag::On;
 };
 
 

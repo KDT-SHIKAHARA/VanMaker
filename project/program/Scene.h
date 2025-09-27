@@ -2,6 +2,7 @@
 #include"GameObject.h"
 #include"GameObjectManager.h"
 #include"SceneSclipt.h"
+#include"GameObjectRequestAdd.h"
 
 #include<vector>
 #include<memory>
@@ -16,6 +17,13 @@ public:
 		//	scriptの更新
 		for(auto& script : scripts_){
 			if(script) script->Update();
+		}
+
+		//	インスタンスの譲渡
+		if (!GameObjectQueue::Instance().empty()) {
+			for (auto& obj : GameObjectQueue::Instance().Flush()) {
+				AddGameObject(obj);
+			}
 		}
 
 		//	オブジェクトの更新

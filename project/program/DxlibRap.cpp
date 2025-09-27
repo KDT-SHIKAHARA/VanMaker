@@ -38,3 +38,16 @@ int RapperDxlib::DrawBoxAACamera(const Vector2Df& pos1, const Vector2Df& pos2, u
     //  描画
     return DrawBoxAA(draw1.x, draw1.y, draw2.x, draw2.y, Color, FillFlag, LineThickness);
 }
+
+int RapperDxlib::DrawCircleAACamera(const Vector2Df& pos, float radius, int posnum, unsigned int Color, int FillFlag, float LineThickness)
+{
+    //  カメラ座標
+    const auto& cameraPos = Camera::Instance().GetPosition();
+
+    //  スクリーンの座標に変換
+    auto half = Camera::Instance().GetSize() / 2.f;
+    auto draw = pos - cameraPos + half;
+
+    return DrawCircleAA(draw.x, draw.y, radius, posnum, Color, FillFlag, LineThickness);
+
+}

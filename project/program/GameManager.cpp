@@ -8,6 +8,7 @@
 #include "system_Renderer.h"
 #include "SceneManager.h"
 #include "Camera.h"
+#include "InGame.h"
 
 GameManager::GameManager()
 	:isRunning_(true),
@@ -26,14 +27,14 @@ void GameManager::Initialize()
 	SetBackgroundColor(128, 128, 128);
 
 	//	Dxlib ‰Šú‰»
-	DxLib_Init();
-	//errno_t err = DxLib_Init();
-	//assert(err != -1);
+	errno_t err = DxLib_Init();
+	assert(err != -1);
 
 	//	Dxlib Windowì¬
 	SetDrawScreen(DX_SCREEN_BACK);
 
-
+	SceneManager::Instance().ChangeScene<InGame>();
+	SceneManager::Instance().Initialize();
 
 }
 

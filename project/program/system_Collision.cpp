@@ -177,6 +177,7 @@ CollisionSystem::CollisionSystem()
 	rules_ = std::make_unique<CollisionRule>();
 	//	“–‚½‚è”»’èƒ‹[ƒ‹‚Ì’Ç‰Á
     rules_->AddRule(Tag::GetString(GameObjectTag::Player), Tag::GetString(GameObjectTag::Enemy));
+    rules_->AddRule(Tag::GetString(GameObjectTag::Weapon), Tag::GetString(GameObjectTag::Enemy));
 }
 
 /// <summary>

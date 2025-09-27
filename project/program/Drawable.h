@@ -19,5 +19,5 @@ public:
 protected:
 	int layer_;	//	描画レイヤー
 public:
-	Flag isVisible_; //	表示フラグ
+	Flag isVisible_ = Flag::On; //	表示フラグ
 };

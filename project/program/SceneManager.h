@@ -17,6 +17,7 @@ class SceneManager : public Singleton<SceneManager> {
 	virtual ~SceneManager() = default;
 
 public:
+	void Initialize();
 	void Update();
 	void Render();
 
@@ -41,6 +42,11 @@ public:
 		}
 	}
 
+	void AddGameObject(std::shared_ptr<GameObject> a_gameObject) {
+
+			scene_->AddGameObject(a_gameObject);
+
+	}
 
 private:
 	std::unique_ptr<Scene> scene_;

@@ -1,12 +1,22 @@
 #include "SceneManager.h"
 #include "InGame.h"
 
+
 //	基礎になるスクリーンがない場合は処理しない（更新、描画）
 
 
 SceneManager::SceneManager()
 {
+	
+}
+
+void SceneManager::Initialize()
+{
 	ChangeScene<InGame>();
+	if (scene_)
+	{
+		scene_->Initialize();
+	}
 }
 
 void SceneManager::Update()

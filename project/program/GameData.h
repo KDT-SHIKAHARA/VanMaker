@@ -25,6 +25,13 @@ struct AnimData {
 	int layer;		//	描画レイヤー
 };
 
+struct ImageData {
+	int id;	//	id
+	std::string filePath;	//	フォルダのパス
+	float exRate;	//	表示倍率
+	int layer;	//	レイヤー番号
+};
+
 //	敵キャラのデータ構造
 struct EnemyData {
 	int id;	//	データID
@@ -45,12 +52,16 @@ struct EnemySizeData {
 
 // 武器のデータ構造
 struct WeaponData {
-	int id;	//	データID
-	std::string name;	//	名前
-	std::string texturePath;	//	画像ファイルパス
-	int attack;	//	攻撃力
-	float attackInterval;	//	攻撃間隔
-	int behaviorId;	//	武器パターン
+	int id;		//	id
+	std::string name;	//	武器名
+	float width;	//	横サイズ
+	float height;	//	縦サイズ
+	float radius;	//	半径
+	float max_ct;	//	有効時間のクールタイム
+	int attack;		//	攻撃力
+	float slip_ct;	//	ダメージを与える間隔
+	int num;		//	攻撃の数
+	int textureID;	//	テクスチャのID
 };
 
 //	敵キャラのサイズデータ構造

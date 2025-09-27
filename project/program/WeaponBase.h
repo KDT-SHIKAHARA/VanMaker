@@ -3,17 +3,21 @@
 #include<vector>
 
 #include"flag.h"
+#include"GameData.h"
 
 class GameObject;
 //	インスタンス(GameObject)と参照の管理
 class WeaponBase {
 public:
 	//	初期化
-	WeaponBase(double a_max_ct)
-		:max_ct_(a_max_ct), current_ct_(0), enable_(Flag::On)
+	WeaponBase()
+		:max_ct_(0), current_ct_(0), enable_(Flag::On)
 	{ }
 
 	virtual ~WeaponBase() = default;
+
+	//	初期化
+	virtual void Initialize() = 0;
 
 	//	発火
 	virtual void Fire() = 0;

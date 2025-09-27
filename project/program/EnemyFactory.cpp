@@ -7,6 +7,11 @@
 #include "comp_Health.h"
 #include "comp_DrawCollider.h"
 #include "comp_Attack.h"
+#include "comp_DrawableHealth.h"
+#include "comp_DamageReceiver.h"
+#include "Image.h"
+#include"DebugMacro.h"
+
 
 #include<stdexcept>
 
@@ -40,18 +45,29 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id, int anim_id)
 
 
 
-#ifdef _DEBUG
-	//	当たり判定の可視化
-	enemy->AddComponent<DrawRectColliderComp>();
-#endif // _DEBUG
+	if (DebugFlag::DrawCollider) {
+		//	当たり判定の可視化
+		enemy->AddComponent<DrawRectColliderComp>();
+	}
 
+	if (DebugFlag::EnemyDrawHpBar) {
+		auto hp = enemy->AddComponent<DrawableHealth>(0, data->hp, anim_data->layer + 2, Vector2Df{ 70,10 });
+		hp->SetOffset(Vector2Df{ 0,40 });
 
-
-	//	体力
-	enemy->AddComponent<Health>(1.0, data->hp);
+	}
+	else {
+		//	体力
+		enemy->AddComponent<Health>(1.0, data->hp);
+	}
 	
 	//	攻撃
 	enemy->AddComponent<AttackComp>(data->attack, data->coolTime_);
+
+	//	被弾用
+	enemy->AddComponent<DamageReceiver>();
+
+	//	アニメーション
+
 
 	//	タグ
 	enemy->tag_ = GameObjectTag::Enemy;

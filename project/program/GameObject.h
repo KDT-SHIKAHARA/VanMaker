@@ -21,6 +21,8 @@ public:
 	~GameObject() = default;
 	
 	void Update() {
+		if (enable_ == Flag::Off) return;
+
 		// MonoBehaviourのUpdateを呼び出す
 		for(auto& mb : monoBehaviours_){
 			if(mb) mb->Update();
@@ -53,6 +55,7 @@ public:
 	Transform transform_;	//	座標、回転、スケール
 	GameObjectTag tag_ = GameObjectTag::None;	//	Gameobjectのタグ
 	Flag isDestory_ = false;	//	削除フラグ
+	Flag enable_ = Flag::On;	//	有効フラグ
 private:
 	Comp_map components_;	//	コンポーネントの格納マップ
 	Monobehaviours monoBehaviours_;	//	更新されるMonobehaviourの格納

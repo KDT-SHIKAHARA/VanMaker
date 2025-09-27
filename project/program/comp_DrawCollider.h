@@ -40,3 +40,32 @@ private:
 	std::weak_ptr<RectCollider> collider_;
 
 };
+
+
+class DrawCircleColliderComp : public MonoBehaviour, public Drawable {
+public:
+	DrawCircleColliderComp()
+		:Drawable(3){ }
+
+	void Initialize()override {
+		collider_ = GetGameObject()->GetComponent<CircleCollider>();
+	}
+
+	void Update()override {
+
+	}
+
+	void Draw()override {
+		const auto& pos = GetGameObject()->transform_.WorldPosition();
+		const auto& radius = collider_.lock()->GetRadius();
+
+		RapperDxlib::DrawCircleAACamera(pos, radius, 25, RED, FALSE, 2.0f);
+
+	};
+
+private:
+	std::weak_ptr<CircleCollider> collider_;
+
+};
+
+

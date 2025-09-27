@@ -1,12 +1,12 @@
 #include "comp_Weapon.h"
+#include"DamageField.h"
 
 /// <summary>
 /// 生成メソッドの初期化
 /// </summary>
 WeaponComponent::WeaponComponent()
 {
-	//	生成メソッドを初期化しようね
-
+	creates_[1001] = [] {return std::make_unique<DamageField>(); };
 }
 
 void WeaponComponent::Update()
@@ -43,8 +43,10 @@ void WeaponComponent::CreateWeapon(int a_id)
 		//	生成クラスを生成
 		auto weapon = it->second();
 
+		//
+		weapon->Initialize();
+
 		//	インスタンスをコレクションに追加
 		weapons_.push_back(std::move(weapon));
-
 	}
 }

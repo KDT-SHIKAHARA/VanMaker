@@ -221,6 +221,9 @@
     <Filter Include="project\Game\entity\Weapon\compnent">
       <UniqueIdentifier>{ab51c53f-04fe-4219-9837-79f9202dbe21}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\Weapon\DamageField">
+      <UniqueIdentifier>{c6b0e406-8161-4cf2-966d-10b572bd9efc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -298,7 +301,16 @@
     <ClCompile Include="program\comp_EnemyFollowPlayer .cpp">
       <Filter>project\Game\entity\Enemy\Component</Filter>
     </ClCompile>
-    <ClCompile Include="program\comp_Weapon.cpp" />
+    <ClCompile Include="program\comp_Weapon.cpp">
+      <Filter>project\Game\entity\Weapon\compnent</Filter>
+    </ClCompile>
+    <ClCompile Include="program\DamageField.cpp">
+      <Filter>project\Game\entity\Weapon\DamageField</Filter>
+    </ClCompile>
+    <ClCompile Include="program\DamageFieldBehavior.cpp">
+      <Filter>project\Game\entity\Weapon\DamageField</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -474,6 +486,21 @@
     </ClInclude>
     <ClInclude Include="program\comp_Weapon.h">
       <Filter>project\Game\entity\Weapon\compnent</Filter>
+    </ClInclude>
+    <ClInclude Include="program\DamageField.h">
+      <Filter>project\Game\entity\Weapon\DamageField</Filter>
+    </ClInclude>
+    <ClInclude Include="program\DamageFieldBehavior.h">
+      <Filter>project\Game\entity\Weapon\DamageField</Filter>
+    </ClInclude>
+    <ClInclude Include="program\GameObjectRequestAdd.h">
+      <Filter>project\ECS\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="program\DebugMacro.h">
+      <Filter>project\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_image.h">
+      <Filter>project\ECS\Canvas\Image</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
