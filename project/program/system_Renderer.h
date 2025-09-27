@@ -16,7 +16,7 @@ class RendererSystem : public Singleton<RendererSystem> {
 public:
 
 	//	追加
-	void RegisterRenderer(Drawable* renderer) {
+	void RegisterRenderer(std::shared_ptr<Drawable> renderer) {
 		if (!renderer) return;
 		int layer = renderer->GetLayer();
 		if (layer >= renderers_.size()) {
@@ -29,16 +29,26 @@ public:
 	void Update() {
 		//	インスタンスの破棄されているものをコレクションから削除
 		for (auto& layer : renderers_) {
-			layer.erase(std::remove_if(layer.begin(), layer.end(),
-				[](Drawable* renderer) { return renderer == nullptr || renderer->shared_from_this() == nullptr; }),
-				layer.end());
+			layer.erase(
+				std::remove_if(
+					layer.begin(),
+					layer.end(),
+					[](const std::weak_ptr<Drawable>& renderer) {
+						// lock() が失敗したら expired
+						return renderer.expired();
+					}
+				),
+				layer.end()
+			);
+
 		}
 
 		//	レイヤー番号の小さい順に描画
 		for (auto& layer : renderers_) {
 			for (auto& renderer : layer) {
-				if (renderer && renderer->isVisible_) {
-					renderer->Draw();
+				auto lender = renderer.lock();
+				if (lender && lender->isVisible_) {
+					lender->Draw();
 				}
 			}
 		}
@@ -51,5 +61,5 @@ public:
 
 private:
 	//	レイヤー番号＜インスタンスのコレクション＜参照用の生ポインタ＞＞
-	std::vector<std::vector<Drawable*>> renderers_;
+	std::vector<std::vector<std::weak_ptr<Drawable>>> renderers_;
 };

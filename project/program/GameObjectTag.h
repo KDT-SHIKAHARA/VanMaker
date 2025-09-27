@@ -5,6 +5,7 @@ enum class GameObjectTag {
 	Player,
 	Enemy,
 	Weapon,
+	Exp,
 };
 
 class Tag {
@@ -15,6 +16,8 @@ public:
 			{ GameObjectTag::Player,"Player"},
 			{ GameObjectTag::Enemy,"Enemy"},
 			{ GameObjectTag::Weapon,"Weapon"},
+			{ GameObjectTag::Exp,"Exp"},
+
 		};
 
 		return typeMap.at(type_);
@@ -26,6 +29,7 @@ public:
 			{"Player",GameObjectTag::Player},
 			{"Enemy",GameObjectTag::Enemy},
 			{"Weapon",GameObjectTag::Weapon},
+			{"Exp",GameObjectTag::Exp},
 		};
 		return strMap.at(str);
 	}

@@ -37,6 +37,10 @@ public:
 		return dropExpTable_.findById(id);
 	}
 
+	const ExpTable* GetExpTable(int id)const {
+		return expTable_.findById(id);
+	}
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
 	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル

@@ -11,6 +11,7 @@
 #include"Transform.h"
 #include"flag.h"
 #include"GameObjectTag.h"
+#include"Drawable.h"
 
 
 class GameObject : public std::enable_shared_from_this<GameObject> {
@@ -81,6 +82,11 @@ inline std::shared_ptr<T> GameObject::AddComponent(Args && ...args)
 	//	MonobehaviourならGameObjectでUpdateされるように登録
 	if (auto mb = dynamic_cast<MonoBehaviour*>(comp.get())) {
 		monoBehaviours_.push_back(mb);
+	}
+
+	//	システムに追加
+	if (auto drawable = dynamic_cast<Drawable*>(comp.get())) {
+		drawable->AddRegister();
 	}
 
 	//	指定した型のコンポーネントのshared_ptrを返す

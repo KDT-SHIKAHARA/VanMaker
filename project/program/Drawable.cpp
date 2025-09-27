@@ -4,5 +4,10 @@
 Drawable::Drawable(int layer)
 	:layer_(layer), isVisible_(Flag::On)
 {
-	RendererSystem::Instance().RegisterRenderer(this);
+
+}
+
+void Drawable::AddRegister()
+{
+	RendererSystem::Instance().RegisterRenderer(shared_from_this());
 }

@@ -12,6 +12,7 @@
 #include "comp_DamageReceiver.h"
 #include "comp_Weapon.h"
 #include"DebugMacro.h"
+#include"comp_exp.h"
 
 #include <stdexcept>
 
@@ -22,6 +23,7 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	auto data = GameDataBase::Instance().GetPlayerData(id);
 	auto idle_anim = GameDataBase::Instance().GetAnimData(1001);
 	auto walk_anim = GameDataBase::Instance().GetAnimData(1002);
+	auto exp_data = GameDataBase::Instance().GetExpTable(data->expTableId);
 
 	//	存在しない場合
 	if (!data) {
@@ -66,6 +68,9 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	//	攻撃管理クラスの生成
 	auto attack = player->AddComponent<WeaponComponent>();
 	attack->CreateWeapon(data->weaponId);
+
+	//	経験値
+	player->AddComponent<ExpComp>(data->expTableId);
 
 	//	タグ設定
 	player->tag_ = GameObjectTag::Player;

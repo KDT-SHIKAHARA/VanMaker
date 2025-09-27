@@ -8,6 +8,8 @@ public:
 	Drawable(int layer = 0);
 	virtual ~Drawable() = default;
 
+	void AddRegister();
+
 	//	•`‰æˆ—
 	virtual void Draw() = 0;
 

@@ -23,6 +23,7 @@
     <ClCompile Include="program\Camera.cpp" />
     <ClCompile Include="program\comp_animation.cpp" />
     <ClCompile Include="program\comp_EnemyFollowPlayer .cpp" />
+    <ClCompile Include="program\comp_exp.cpp" />
     <ClCompile Include="program\comp_image.cpp" />
     <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
@@ -66,6 +67,7 @@
     <ClInclude Include="program\comp_DrawableHealth.h" />
     <ClInclude Include="program\comp_DrawCollider.h" />
     <ClInclude Include="program\comp_EnemyFollowPlayer .h" />
+    <ClInclude Include="program\comp_exp.h" />
     <ClInclude Include="program\comp_image.h" />
     <ClInclude Include="program\comp_input.h" />
     <ClInclude Include="program\comp_state.h" />
@@ -78,6 +80,7 @@
     <ClInclude Include="program\Drawable.h" />
     <ClInclude Include="program\comp_Rigidbody.h" />
     <ClInclude Include="program\data_Window.h" />
+    <ClInclude Include="program\DropExpBehaviour.h" />
     <ClInclude Include="program\DxlibRap.h" />
     <ClInclude Include="program\EnemyFactory.h" />
     <ClInclude Include="program\DropExperienceComp.h" />

@@ -12,6 +12,7 @@ public:
 	DropExperienceComp(int id);
 	void Initialize()override;
 	void Update()override;
+
 protected:
 	std::weak_ptr<Health> hp_;
 	int id_;

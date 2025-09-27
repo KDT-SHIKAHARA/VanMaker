@@ -6,6 +6,7 @@
 #include "comp_DrawCollider.h"
 #include "DebugMacro.h"
 #include "comp_image.h"
+#include "DropExpBehaviour.h"
 
 //	インスタンスの生成をして追加する
 void DropExperienceComp::create()
@@ -32,10 +33,17 @@ void DropExperienceComp::create()
 	//	表示
 	obj->AddComponent<ImageComponent>(texture->filePath, texture->exRate, texture->layer);
 
+	obj->AddComponent<DropExpBehaviour>(data->exp);
+
+	//	タグ
+	obj->tag_ = GameObjectTag::Exp;
+
 	//	コレクションに追加
 	GameObjectQueue::Instance().Enqueue(obj);
 }
 
+
+//	初期化
 DropExperienceComp::DropExperienceComp(int id)
 	:id_(id)
 {
