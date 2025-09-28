@@ -41,6 +41,10 @@ public:
 		return expTable_.findById(id);
 	}
 
+	const WaveEnties* GetWaveEnties(int id)const {
+		return waveEntryTable_.findById(id);
+	}
+
 	const WaveData* GetWaveData(int id)const {
 		return waveDataTable_.findById(id);
 	}
@@ -54,5 +58,6 @@ private:
 	DataTable<ImageData> imageTable_;	//	画像のデータテーブル
 	DataTable<DropExpData> dropExpTable_;	//	ドロップする経験値のテーブル
 	DataTable<ExpTable> expTable_;	//	経験値のテーブル
-	DataTable<WaveData> waveDataTable_;	//	ウェーブの制御データ
+	DataTable<WaveEnties> waveEntryTable_;	//	ウェーブの制御データ
+	DataTable<WaveData> waveDataTable_;	//	ウェーブのIDデータ
 };

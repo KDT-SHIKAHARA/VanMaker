@@ -239,6 +239,9 @@
     <Filter Include="project\Game\WaveManager">
       <UniqueIdentifier>{87f2929b-af34-40b2-8195-5b37b37d5c24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\scene\InGame\script">
+      <UniqueIdentifier>{defe5e64-bb99-41fa-a143-8e4d02be215f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -334,6 +337,10 @@
     <ClCompile Include="program\comp_exp.cpp">
       <Filter>project\Game\entity\Player\compnent\exp</Filter>
     </ClCompile>
+    <ClCompile Include="program\WaveManager.cpp">
+      <Filter>project\Game\WaveManager</Filter>
+    </ClCompile>
+    <ClCompile Include="program\script_InGameWave.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -533,6 +540,12 @@
     </ClInclude>
     <ClInclude Include="program\DropExpBehaviour.h">
       <Filter>project\Game\entity\Experience\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="program\WaveManager.h">
+      <Filter>project\Game\WaveManager</Filter>
+    </ClInclude>
+    <ClInclude Include="program\script_InGameWave.h">
+      <Filter>project\Game\scene\InGame\script</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

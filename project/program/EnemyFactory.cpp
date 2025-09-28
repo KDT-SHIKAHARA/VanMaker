@@ -61,13 +61,15 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id)
 	}
 	
 	//	攻撃
-	enemy->AddComponent<AttackComp>(data->attack, data->coolTime_);
+	enemy->AddComponent<AttackComp>(data->attack, data->coolTime_,data->id);
 
 	//	被弾用
 	enemy->AddComponent<DamageReceiver>();
 
 	//	経験値
 	enemy->AddComponent<DropExperienceComp>(data->dropExpId);
+
+	//	出現パターンを後から追加して。
 
 
 	//	タグ

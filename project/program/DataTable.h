@@ -203,9 +203,9 @@ inline void DataTable<ExpTable>::parseRecord(
 
 
 template<>
-inline void DataTable<WaveData>::parseRecord(
+inline void DataTable<WaveEnties>::parseRecord(
 	const std::vector<std::string>& cells,
-	WaveData* record
+	WaveEnties* record
 ) {
 	record->id = std::stoi(cells[0]);
 	record->startTime = std::stof(cells[1]);
@@ -220,7 +220,7 @@ inline void DataTable<WaveData>::parseRecord(
 		std::stringstream ss_buf(line);
 		std::string token;
 
-		WaveData::WaveEntry entry;
+		WaveEnties::WaveEntry entry;
 
 		// enemyID
 		if (!std::getline(ss_buf, token, ':')) continue;
@@ -244,5 +244,19 @@ inline void DataTable<WaveData>::parseRecord(
 
 		record->entries.push_back(entry);
 
+	}
+}
+
+
+template<>
+inline void DataTable<WaveData>::parseRecord(
+	const std::vector<std::string>& cells,
+	WaveData* record
+) {
+	record->id = std::stoi(cells[0]);
+
+	for (size_t i = 1; i < cells.size(); ++i) {
+		int wid = std::stoi(cells[i]);
+		record->wave_id.push_back(wid);
 	}
 }

@@ -11,5 +11,6 @@ GameDataBase::GameDataBase()
 	imageTable_.LoadFromCsv("data/csv/image_data.csv");
 	dropExpTable_.LoadFromCsv("data/csv/dropexp.csv");
 	expTable_.LoadFromCsv("data/csv/exp_table.csv");
-	waveDataTable_.LoadFromCsv("data/csv/wave_entry.csv");
+	waveEntryTable_.LoadFromCsv("data/csv/wave_entry.csv");
+	waveDataTable_.LoadFromCsv("data/csv/wave_data.csv");
 }

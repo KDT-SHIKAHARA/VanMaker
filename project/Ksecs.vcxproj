@@ -45,10 +45,12 @@
     <ClCompile Include="program\loader_Texture.cpp" />
     <ClCompile Include="program\PlayerFactory.cpp" />
     <ClCompile Include="program\SceneManager.cpp" />
+    <ClCompile Include="program\script_InGameWave.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
     <ClCompile Include="program\text.cpp" />
     <ClCompile Include="program\Title.cpp" />
     <ClCompile Include="program\transform.cpp" />
+    <ClCompile Include="program\WaveManager.cpp" />
     <ClCompile Include="program\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +110,7 @@
     <ClInclude Include="program\Scene.h" />
     <ClInclude Include="program\SceneManager.h" />
     <ClInclude Include="program\SceneSclipt.h" />
+    <ClInclude Include="program\script_InGameWave.h" />
     <ClInclude Include="program\singleton.h" />
     <ClInclude Include="program\system_Collision.h" />
     <ClInclude Include="program\system_Renderer.h" />
@@ -117,6 +120,7 @@
     <ClInclude Include="program\Title.h" />
     <ClInclude Include="program\transform.h" />
     <ClInclude Include="program\vector2d.h" />
+    <ClInclude Include="program\WaveManager.h" />
     <ClInclude Include="program\WeaponBase.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

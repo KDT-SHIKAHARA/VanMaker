@@ -49,8 +49,8 @@ void GameManager::Run()
 		fps_.Update();							//	fps.update
 		TimeManager::Instance().Update();		//	Time.update
 		InputManager::Instance().Update();		//	Input.update
-		RigidbodySystem::Instance().Update();	//	Rigid.update
 		SceneManager::Instance().Update();		//	Scene.update
+		RigidbodySystem::Instance().Update();	//	Rigid.update
 		Camera::Instance().Update();			//	Camera.update
 		CollisionSystem::Instance().Update();	//	Collision.update
 		RigidbodySystem::Instance().Move();		//	Rigid.move

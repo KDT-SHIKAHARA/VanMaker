@@ -39,8 +39,10 @@ void DamageField::Update()
 void DamageField::create()
 {
 
+	auto id = 3001;
+
 	//	番号からデータ取得
-	auto data = GameDataBase::Instance().GetWeaponData(1001);
+	auto data = GameDataBase::Instance().GetWeaponData(id);
 	auto image_data = GameDataBase::Instance().GetImageData(data->textureID);
 
 	//	個数分メモリ領域を取得しておく
@@ -61,7 +63,7 @@ void DamageField::create()
 		obj->AddComponent<DamagerFieldBehaviour>();
 
 		//	攻撃
-		obj->AddComponent<AttackComp>(data->attack, data->slip_ct);
+		obj->AddComponent<AttackComp>(data->attack, data->slip_ct, id);
 
 		//	表示
 		obj->AddComponent<ImageComponent>(image_data->filePath, image_data->exRate, image_data->layer);

@@ -93,7 +93,7 @@ struct ExpTable {
 
 
 //	ウェーブ情報
-struct WaveData {
+struct WaveEnties {
 	//	敵の生成情報
 	struct WaveEntry {
 		int enemyID;	//	敵の種類
@@ -109,4 +109,10 @@ struct WaveData {
 
 
 };
+
+struct WaveData {
+	int id;
+	std::vector<int> wave_id;	//	所持しているウェーブのコレクション
+};
+
 
