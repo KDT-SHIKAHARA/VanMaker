@@ -4,7 +4,8 @@
 #include"flag.h"
 
 
-class Rigidbody : public Component {
+class Rigidbody : public Component, public std::enable_shared_from_this<Rigidbody>
+{
 public:
 	Rigidbody(const Vector2Df& a_maxVelocity = { 500.0f,500.0f }, const Vector2Df& a_maxAcceleration = { 1000.0f,1000.0f },
 		float a_mass = 1.0f, float a_drag = 0.0f, float a_gravity = 9.8)

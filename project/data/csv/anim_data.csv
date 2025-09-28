@@ -4,3 +4,4 @@
 2201,Idle,data/texture/enemy/blue_slime/,0,3,2
 2202,Idle,data/texture/enemy/purple_slime/,0,3,2
 2203,Idle,data/texture/enemy/yellow_slime/,0,3,2
+7201,DisappearEffect,data/texture/DisappearEffect/,0,7,3

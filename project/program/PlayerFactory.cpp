@@ -59,7 +59,7 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	anim->SetExRate(1.2);
 
 	//	‘Ì—Í
-	auto hp = player->AddComponent<DrawableHealth>(data->max_invi, data->hp, walk_anim->layer + 1, Vector2Df{ 70,10 });
+	auto hp = player->AddComponent<DrawableHealth>(data->max_invi, data->hp, walk_anim->layer + 1, Vector2Df{ 70,10 },Flag::Off);
 	hp->SetOffset(Vector2Df{0,40});
 
 	//	”í’e—p

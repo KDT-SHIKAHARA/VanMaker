@@ -43,6 +43,7 @@ struct EnemyData {
 	int behaviorId;		//	挙動パターン
 	int dropExpId;	//	ドロップする経験値のテーブル
 	int textureID;	//	テクスチャID
+	int dissAnimId;	//	消去エフェクトID
 };
 
 //	敵のサイズテーブル

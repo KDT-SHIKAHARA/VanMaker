@@ -13,8 +13,8 @@ protected:
 	void clamp() { current_hp_ = std::clamp(current_hp_, 0, max_hp_); }
 public:
 
-	Health(const double& a_max_invi, int a_max_hp)
-		:max_invi_(a_max_invi), max_hp_(a_max_hp), current_hp_(a_max_hp), current_invi_(0), alive_(Flag::On)
+	Health(const double& a_max_invi, int a_max_hp,Flag a_CanRemove = Flag::On)
+		:max_invi_(a_max_invi), max_hp_(a_max_hp), current_hp_(a_max_hp), current_invi_(0), alive_(Flag::On), CanRemove_(a_CanRemove)
 	{
 	}
 
@@ -50,6 +50,9 @@ public:
 		//	¶‘¶”»’è
 		if (current_hp_ <= 0) {
 			alive_.Set(Flag::Off);
+			if (CanRemove_) {
+				GetGameObject()->isDestory_.Set(Flag::On);
+			}
 		}
 	}
 
@@ -75,4 +78,5 @@ protected:
 public:
 	Flag alive_;			//	¶‘¶”»’è
 	Flag isInvincible_;		//	–³“G”»’è
+	Flag CanRemove_;		//	‘Ì—Í‚ª‚È‚­‚È‚Á‚½‚ÉÁ‹‚·‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
 };

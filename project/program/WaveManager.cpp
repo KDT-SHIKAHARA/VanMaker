@@ -16,6 +16,12 @@ void WaveManager::LoadWaveEntryData()
 {
 	//	今のウェーブデータ全体取得
 	auto data = GameDataBase::Instance().GetWaveEnties(wave_ids_[currentWaveNum_]);
+
+	//	中身が存在していたら
+	if (!wave_entrys_.empty()) {
+		wave_entrys_.clear();
+	}
+
 	//	敵の情報ごとに追加
 	for (const auto& Entry : data->entries) {
 		wave_entrys_.emplace_back(Entry.enemyID, Entry.createNum, Entry.interval, 0);
@@ -49,7 +55,7 @@ void  WaveManager::Update() {
 	//	時間を経過させる
 	startTime_ += dt;
 
-	//	データ取得
+	//	今のウェーブデータ取得
 	auto data = GameDataBase::Instance().GetWaveEnties(wave_ids_[currentWaveNum_]);
 
 
@@ -74,12 +80,20 @@ void  WaveManager::Update() {
 	}
 
 
-	//	サイズ未満なら
-	if (currentWaveNum_ < wave_ids_.size()) {
-		//	今の時間と次のインデックスの開始時間を見て
-		if (startTime_ >= data->startTime) {
+	//	最後のウェーブ未満の時
+	if (currentWaveNum_ + 1 < wave_ids_.size()) {
+		//	次のデータ取得
+		auto next_data = GameDataBase::Instance().GetWaveEnties(wave_ids_[currentWaveNum_ + 1]);
 
+		//	次の開始時間になっていたら
+		if (startTime_ >= next_data->startTime) {
+			//	ウェーブ番号を次へ
+			currentWaveNum_++;
+
+			//	ウェーブデータの読み込み
+			LoadWaveEntryData();
 		}
+
 	}
 
 

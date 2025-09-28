@@ -10,8 +10,8 @@
 /// </summary>
 class DrawableHealth : public Health, public Drawable {
 public:
-	DrawableHealth(const double& a_max_invi, int a_max_hp,int layer, const Vector2Df& a_size)
-		:Health(a_max_invi, a_max_hp), Drawable(layer), size_(a_size){ }
+	DrawableHealth(const double& a_max_invi, int a_max_hp,int layer, const Vector2Df& a_size,Flag a_isDestory = Flag::On)
+		:Health(a_max_invi, a_max_hp, a_isDestory), Drawable(layer), size_(a_size){ }
 	virtual ~DrawableHealth() = default;
 
 	void Draw()override {

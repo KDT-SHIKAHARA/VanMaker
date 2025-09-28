@@ -67,10 +67,10 @@ private:
 	float rotation_rad_ = 0.f;	//	表示の回転
 
 
-	Flag isPlaying_ = false;		//	再生フラグ
-	Flag isFinished_ = false;		//	一回きりの処理が終わったのか
 
 public:
+	Flag isPlaying_ = false;		//	再生フラグ
+	Flag isFinished_ = false;		//	一回きりの処理が終わったのか
 	Flag isFlip_ = false;		//	反転させるかどうか
 
 };

@@ -13,18 +13,27 @@ public:
 
 	void Update() {
 
-		//  中身が存在しないRigidbodyを削除
-		rigidbodies_.erase(std::remove_if(rigidbodies_.begin(), rigidbodies_.end(),[](Rigidbody* rb) 
-			{ return rb == nullptr || rb->GetGameObject() == nullptr; }), rigidbodies_.end());
+		rigidbodies_.erase(
+			std::remove_if(
+				rigidbodies_.begin(),
+				rigidbodies_.end(),
+				[](const std::weak_ptr<Rigidbody>& rb) {
+					return rb.expired();
+				}
+			),
+			rigidbodies_.end()
+		);
 
 		for(auto& rb : rigidbodies_){
-			rb->Update();
+			auto r = rb.lock();
+			r->Update();
 		}
 	}
 
 	void Move() {
 		for (auto& rb : rigidbodies_) {
-			rb->Move();
+			auto r = rb.lock();
+			r->Move();
 		}
 	}
 
@@ -32,10 +41,10 @@ public:
 	/// Rigidbody オブジェクトを登録します。
 	/// </summary>
 	/// <param name="a_rigidbody">登録する Rigidbody オブジェクトへのポインタ。</param>
-	void RegisterRigidbody(Rigidbody* a_rigidbody) {
+	void RegisterRigidbody(std::shared_ptr<Rigidbody> a_rigidbody) {
 		rigidbodies_.push_back(a_rigidbody);
 	}
 
 private:
-	std::vector<Rigidbody*> rigidbodies_;
+	std::vector<std::weak_ptr<Rigidbody>> rigidbodies_;
 };

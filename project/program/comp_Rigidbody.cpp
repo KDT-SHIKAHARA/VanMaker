@@ -25,7 +25,7 @@ void Rigidbody::AddForce(const Vector2Df& force)
 /// </summary>
 void Rigidbody::Initialize()
 {
-	RigidbodySystem::Instance().RegisterRigidbody(this);
+	RigidbodySystem::Instance().RegisterRigidbody(shared_from_this());
 }
 
 /// <summary>

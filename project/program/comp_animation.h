@@ -29,6 +29,11 @@ public:
 		}
 	}
 
+	//	Ä¶ó‘Ô‚Ì”»’è  true: I—¹ false: Ä¶’†
+	bool IsFinished() {
+		return animations_[currentAnimKey_]->isFinished_;
+	}
+
 	//	Ä¶
 
 	//	’â~

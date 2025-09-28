@@ -129,6 +129,7 @@ inline void DataTable<EnemyData>::parseRecord(
 	record->behaviorId = std::stoi(cells[5]);
 	record->dropExpId = std::stoi(cells[6]);
 	record->textureID = std::stoi(cells[7]);
+	record->dissAnimId = std::stoi(cells[8]);
 }
 
 template<>

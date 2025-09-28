@@ -12,8 +12,47 @@
 #include "Image.h"
 #include"DebugMacro.h"
 #include "DropExperienceComp.h"
+#include"Camera.h"
+#include"random.h"
+#include"comp_dissapperCreate.h"
 
 #include<stdexcept>
+
+Vector2Df EnemyFactory::GetSpawnPosition(int margin_length)
+{
+	//	4方向
+	int side = Random(0,3);
+	float x, y = 0;
+
+	const auto& camerapos = Camera::Instance().GetPosition();
+	const auto& camerasize = Camera::Instance().GetSize();
+
+
+	int left = camerapos.x - camerasize.x / 2.0f;
+	int right = camerapos.x + camerasize.x / 2.0f;
+	int top = camerapos.y - camerasize.y / 2.0f;
+	int bottom = camerapos.y + camerasize.y / 2.0f;
+	
+	switch (side) {
+	case 0: // 上
+		x = Random(left - margin_length, right + margin_length);
+		y = top - margin_length;
+		break;
+	case 1: // 下
+		x = Random(left - margin_length, right + margin_length);
+		y = bottom + margin_length;
+		break;
+	case 2: // 左
+		x = left - margin_length;
+		y = Random(top - margin_length, bottom + margin_length);
+		break;
+	case 3: // 右
+		x = right + margin_length;
+		y = Random(top - margin_length, bottom + margin_length);
+		break;
+	}
+	return { x, y };
+}
 
 /// <summary>
 /// 指定されたIDに基づいて敵オブジェクトを生成し、共有ポインタとして返します。
@@ -70,7 +109,9 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id)
 	enemy->AddComponent<DropExperienceComp>(data->dropExpId);
 
 	//	出現パターンを後から追加して。
+	enemy->transform_.SetPosition(GetSpawnPosition(50.f));
 
+	enemy->AddComponent<DissapperCreate>(data->dissAnimId);
 
 	//	タグ
 	enemy->tag_ = GameObjectTag::Enemy;

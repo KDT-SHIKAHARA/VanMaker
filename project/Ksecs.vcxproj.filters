@@ -242,6 +242,15 @@
     <Filter Include="project\Game\scene\InGame\script">
       <UniqueIdentifier>{defe5e64-bb99-41fa-a143-8e4d02be215f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\CORE\Utility\random">
+      <UniqueIdentifier>{8dcced11-268c-4763-b211-1ed16195ea15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\effect">
+      <UniqueIdentifier>{bfa58d1c-5a7b-4821-b9d6-ff6ab732c12c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\effect\dissappear">
+      <UniqueIdentifier>{db6fddb6-383b-4fcc-b4da-be347fff4ef3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -546,6 +555,15 @@
     </ClInclude>
     <ClInclude Include="program\script_InGameWave.h">
       <Filter>project\Game\scene\InGame\script</Filter>
+    </ClInclude>
+    <ClInclude Include="program\random.h">
+      <Filter>project\CORE\Utility\random</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_dissappearEffect.h">
+      <Filter>project\Game\effect\dissappear</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_dissapperCreate.h">
+      <Filter>project\Game\entity\utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
