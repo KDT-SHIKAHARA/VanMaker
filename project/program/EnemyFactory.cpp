@@ -21,7 +21,7 @@
 Vector2Df EnemyFactory::GetSpawnPosition(int margin_length)
 {
 	//	4ï˚å¸
-	int side = Random(0,3);
+	int side = Random::RandomInt(0,3);
 	float x, y = 0;
 
 	const auto& camerapos = Camera::Instance().GetPosition();
@@ -35,20 +35,20 @@ Vector2Df EnemyFactory::GetSpawnPosition(int margin_length)
 	
 	switch (side) {
 	case 0: // è„
-		x = Random(left - margin_length, right + margin_length);
+		x = Random::RandomInt(left - margin_length, right + margin_length);
 		y = top - margin_length;
 		break;
 	case 1: // â∫
-		x = Random(left - margin_length, right + margin_length);
+		x = Random::RandomInt(left - margin_length, right + margin_length);
 		y = bottom + margin_length;
 		break;
 	case 2: // ç∂
 		x = left - margin_length;
-		y = Random(top - margin_length, bottom + margin_length);
+		y = Random::RandomInt(top - margin_length, bottom + margin_length);
 		break;
 	case 3: // âE
 		x = right + margin_length;
-		y = Random(top - margin_length, bottom + margin_length);
+		y = Random::RandomInt(top - margin_length, bottom + margin_length);
 		break;
 	}
 	return { x, y };

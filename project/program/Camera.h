@@ -2,7 +2,11 @@
 #include"singleton.h"
 #include"vector2d.h"
 #include"flag.h"
+#include"GameObjectTag.h"
+#include<memory>
+#include<vector>
 
+class GameObject;
 class Camera : public Singleton<Camera> {
 	friend class Singleton<Camera>;
 	Camera();
@@ -40,6 +44,21 @@ public:
 	Mode GetMode()const { return mode_; }
 
 	void SetFollowPosition(const Vector2Df& position) { follow_position_ = position; }
+
+	//	渡された座標の点が画面内かを判定する
+	bool Contains(const Vector2Df& pos){
+		float left = position_.x - size_.x / 2;
+		float right = position_.x + size_.x / 2;
+		float top = position_.y - size_.y / 2;
+		float bottom = position_.y + size_.y / 2;
+
+
+		return pos.x >= left && pos.x <= right &&
+			pos.y >= top && pos.y <= bottom;
+	}
+	
+	//	指定したタグを持つGameObjectのコレクションから画面内のインスタンスを取得する
+	std::vector<std::shared_ptr<GameObject>> GetObjectsInCameraWithTag(GameObjectTag a_tag,int count);
 
 private:
 	Vector2Df position_;	//	位置

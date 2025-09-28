@@ -251,6 +251,9 @@
     <Filter Include="project\Game\effect\dissappear">
       <UniqueIdentifier>{db6fddb6-383b-4fcc-b4da-be347fff4ef3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\Weapon\Thunderbolt">
+      <UniqueIdentifier>{73be82be-1d89-45e9-ace5-8fec4999d4b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -349,7 +352,15 @@
     <ClCompile Include="program\WaveManager.cpp">
       <Filter>project\Game\WaveManager</Filter>
     </ClCompile>
-    <ClCompile Include="program\script_InGameWave.cpp" />
+    <ClCompile Include="program\weapon_Thunderbolt.cpp">
+      <Filter>project\Game\entity\Weapon\Thunderbolt</Filter>
+    </ClCompile>
+    <ClCompile Include="program\script_InGameWave.cpp">
+      <Filter>project\Game\scene\InGame\script</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Behaviour_Thunderbolt.cpp">
+      <Filter>project\Game\entity\Weapon\Thunderbolt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -564,6 +575,12 @@
     </ClInclude>
     <ClInclude Include="program\comp_dissapperCreate.h">
       <Filter>project\Game\entity\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="program\weapon_Thunderbolt.h">
+      <Filter>project\Game\entity\Weapon\Thunderbolt</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Behaviour_Thunderbolt.h">
+      <Filter>project\Game\entity\Weapon\Thunderbolt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

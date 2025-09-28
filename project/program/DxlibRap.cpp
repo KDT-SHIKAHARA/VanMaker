@@ -1,5 +1,6 @@
 #include "DxlibRap.h"
 #include "Camera.h"
+#include "random.h"
 
 int RapperDxlib::DrawExtendGraphFCamera(const Vector2Df& pos1, const Vector2Df& pos2, int GrHandle, int TransFlag)
 {
@@ -50,4 +51,56 @@ int RapperDxlib::DrawCircleAACamera(const Vector2Df& pos, float radius, int posn
 
     return DrawCircleAA(draw.x, draw.y, radius, posnum, Color, FillFlag, LineThickness);
 
+}
+
+int RapperDxlib::DrawlineAACamera(const Vector2Df& pos1, const Vector2Df& pos2, unsigned int Color, float Thickness)
+{
+    //  カメラ座標
+    const auto& cameraPos = Camera::Instance().GetPosition();
+
+    //  スクリーンの座標に変換
+    auto half = Camera::Instance().GetSize() / 2.f;
+    auto draw1 = pos1 - cameraPos + half;
+    auto draw2 = pos2 - cameraPos + half;
+
+    //  描画
+    return DrawLineAA(draw1.x, draw1.y, draw2.x, draw2.y, Color, Thickness);
+}
+
+/// <summary>
+/// 雷のようにジグザグに線を描く
+/// </summary>
+/// <param name="start"> 始点 </param>
+/// <param name="end">  終点  </param>
+/// <param name="segments"> 分割数 </param>
+/// <param name="jaggedness"> ジグザクの強さ </param>
+/// <param name="color"> 色 </param>
+/// <param name="thickness"> 線の太さ </param>
+void RapperDxlib::DrawLightning(const Vector2Df& start, const Vector2Df& end, int segments, float jaggedness, int color, float thickness)
+{
+    std::vector<Vector2Df> points;
+    points.push_back(start);
+
+    for (int i = 1; i < segments; i++) {
+        float t = static_cast<float>(i) / segments;
+
+        // 補間で直線上の座標を求める
+        Vector2Df p = {
+            start.x + (end.x - start.x) * t,
+            start.y + (end.y - start.y) * t
+        };
+
+        // X座標をランダムにずらす（稲妻のギザギザ感）
+        float offset = Random::RandomFloat(-jaggedness, jaggedness);
+        p.x += offset;
+
+        points.push_back(p);
+    }
+
+    points.push_back(end);
+
+    // 線を繋いで描画
+    for (size_t i = 0; i < points.size() - 1; i++) {
+        RapperDxlib::DrawlineAACamera(points[i], points[i + 1], color, thickness);
+    }
 }

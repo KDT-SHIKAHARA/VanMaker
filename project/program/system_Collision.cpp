@@ -206,12 +206,16 @@ void CollisionSystem::Update()
         for (auto& obj1 : objList1) {
             //  ‘¶Ý”»’è
             if (!obj1) continue;    
+            if(!obj1->enable_)continue;
+
 			auto col1 = obj1->GetComponentAsBase<Collider>();
             if (!col1) continue;
 
             for (auto& obj2 : objList2) {
                 //  ‘¶Ý”»’è
                 if (!obj2) continue;
+                if (!obj2->enable_)continue;
+
 				auto col2 = obj2->GetComponentAsBase<Collider>();
 				if (!col2) continue;
 

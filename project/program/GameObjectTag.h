@@ -1,4 +1,7 @@
 #pragma once
+#include<string>
+#include<unordered_map>
+
 
 enum class GameObjectTag {
 	None,

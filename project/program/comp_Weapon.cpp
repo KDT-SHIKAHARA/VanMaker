@@ -1,5 +1,6 @@
 #include "comp_Weapon.h"
 #include"DamageField.h"
+#include"weapon_Thunderbolt.h"
 
 /// <summary>
 /// 生成メソッドの初期化
@@ -7,24 +8,25 @@
 WeaponComponent::WeaponComponent()
 {
 	creates_[3001] = [] {return std::make_unique<DamageField>(); };
+	creates_[3002] = [] {return std::make_unique<Thunderbolt>(); };
 }
 
 void WeaponComponent::Update()
 {
-	//	クールタイムを見て発火する
-	for (auto& weapon : weapons_) {
+	////	クールタイムを見て発火する
+	//for (auto& weapon : weapons_) {
 
-		//	インスタンスが存在するとき
-		if (weapon) {
+	//	//	インスタンスが存在するとき
+	//	if (weapon) {
 
-			//	発射可能状態なら
-			if (weapon->IsReady()) {
+	//		//	発射可能状態なら
+	//		if (weapon->IsReady()) {
 
-				//	発火する
-				weapon->Fire();
-			}
-		}
-	}
+	//			//	発火する
+	//			weapon->Fire();
+	//		}
+	//	}
+	//}
 
 	//	更新処理
 	for (auto& weapon : weapons_) {

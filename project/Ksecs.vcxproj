@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\Anim2D.cpp" />
+    <ClCompile Include="program\Behaviour_Thunderbolt.cpp" />
     <ClCompile Include="program\Camera.cpp" />
     <ClCompile Include="program\comp_animation.cpp" />
     <ClCompile Include="program\comp_EnemyFollowPlayer .cpp" />
@@ -51,11 +52,13 @@
     <ClCompile Include="program\Title.cpp" />
     <ClCompile Include="program\transform.cpp" />
     <ClCompile Include="program\WaveManager.cpp" />
+    <ClCompile Include="program\weapon_Thunderbolt.cpp" />
     <ClCompile Include="program\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\ActionMap.h" />
     <ClInclude Include="program\Anim2D.h" />
+    <ClInclude Include="program\Behaviour_Thunderbolt.h" />
     <ClInclude Include="program\Camera.h" />
     <ClInclude Include="program\CheckHit.h" />
     <ClInclude Include="program\Collision.h" />
@@ -125,6 +128,7 @@
     <ClInclude Include="program\vector2d.h" />
     <ClInclude Include="program\WaveManager.h" />
     <ClInclude Include="program\WeaponBase.h" />
+    <ClInclude Include="program\weapon_Thunderbolt.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
