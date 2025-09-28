@@ -1,4 +1,5 @@
 #pragma once
+#include<string>
 
 /// <summary>
 /// レベルアップで強化するクラスのインターフェース
@@ -8,6 +9,5 @@ public:
 	virtual ~LevelUpHandler() = default;
 
 	//	レベルアップ処理
-	virtual void HandleLevelUp() = 0;
-
+	virtual std::string HandleLevelUp() = 0;
 };

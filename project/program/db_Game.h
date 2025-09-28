@@ -55,6 +55,11 @@ public:
 		return weaponLevelTable_.findById(id);
 	}
 
+	const WeaponIDList* GetWeaponIDTable(int id) {
+		return weaponIDTable_.findById(id);
+	}
+
+
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
 	DataTable<EnemyData> enemyTable_;	//	敵のデータテーブル
@@ -67,4 +72,5 @@ private:
 	DataTable<WaveEnties> waveEntryTable_;	//	ウェーブの制御データ
 	DataTable<WaveData> waveDataTable_;	//	ウェーブのIDデータ
 	DataTable<WeaponLevelData> weaponLevelTable_;	//	武器のレベルごとのデータ
+	DataTable<WeaponIDList> weaponIDTable_;	//	使用可能な武器のID
 };

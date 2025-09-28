@@ -66,9 +66,8 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	player->AddComponent<DamageReceiver>();
 
 	//	攻撃管理クラスの生成
-	auto attack = player->AddComponent<WeaponComponent>();
+	auto attack = player->AddComponent<WeaponComponent>(data->use_weaponListId);
 	attack->CreateWeapon(data->weaponId);
-
 
 	//	経験値
 	player->AddComponent<ExpComp>(data->expTableId);

@@ -26,14 +26,14 @@ std::shared_ptr<Resource> SoundLoader::createSound(const std::string& filePath)
 std::shared_ptr<Resource> SoundLoader::LoadSound(const std::string& filePath)
 {
 	//	ŒŸõ
-   auto it = sounds_.find(filePath);
-   //	‘¶İ‚µ‚Ä‚¢‚½‚ç
-   if (it != sounds_.end()) {
-	   return it->second;
-   };
+	auto it = sounds_.find(filePath);
+	//	‘¶İ‚µ‚Ä‚¢‚½‚ç
+	if (it != sounds_.end()) {
+		return it->second;
+	};
 
-   //	‘¶İ‚µ‚Ä‚¢‚È‚©‚Á‚½‚çV‹Kì¬‚µ‚Ä“o˜^
-   auto sound = createSound(filePath);
-   sounds_.insert({ filePath,sound });
-   return sound;
+	//	‘¶İ‚µ‚Ä‚¢‚È‚©‚Á‚½‚çV‹Kì¬‚µ‚Ä“o˜^
+	auto sound = createSound(filePath);
+	sounds_.insert({ filePath,sound });
+	return sound;
 }

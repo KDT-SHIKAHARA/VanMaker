@@ -46,7 +46,7 @@ void DamageField::create()
 	auto image_data = GameDataBase::Instance().GetImageData(data->textureID);
 	auto level_data = GameDataBase::Instance().GetWeaponLevelData(id, level_);
 
-
+	name_ = data->name;
 
 	//	Å‘åƒŒƒxƒ‹
 	max_level_ = data->max_level;

@@ -7,6 +7,8 @@
 #include"DropExpBehaviour.h"
 #include"GetColor.h"
 #include"AutoLevelUpHandler.h"
+#include"EventStructs.h"
+#include"system_EventBus.h"
 
 //	レベルアップの処理
 void ExpComp::levelUp()
@@ -28,8 +30,12 @@ void ExpComp::levelUp()
 	}
 
 	//	武器の強化処理
-	levelUpHandler_->HandleLevelUp();
+	auto message = levelUpHandler_->HandleLevelUp();
 
+	//	音を鳴らす
+	EventBus::Instance().Publish(LevelUpEvent{});
+	EventBus::Instance().Publish(MessageRenderEvent{
+		message,Vector2Df{200,200},2.0f,RED });
 }
 
 ExpComp::ExpComp(int a_tableID, int layer)

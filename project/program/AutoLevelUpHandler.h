@@ -13,13 +13,17 @@ class GameObject;
 class AutoLevelUpHandler : public LevelUpHandler {
 
 	//	武器のランダム強化
-	void  randomUpgradeExistingWeapon();
+	std::string  randomUpgradeExistingWeapon();
+
+	//	ランダムで新しい武器の取得
+	std::string addNewWeapon();
+
 public:
 	//	ポインタの取得
 	AutoLevelUpHandler(std::shared_ptr<GameObject> a_obj);
 
 	//	自動的に強化する
-	void HandleLevelUp()override;
+	std::string HandleLevelUp()override;
 private:
 	//	強化する対象のオブジェクト
 	std::weak_ptr<GameObject> obj_;

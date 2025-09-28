@@ -21,6 +21,9 @@ void Thunderbolt::create()
 	auto data = GameDataBase::Instance().GetWeaponData(id);
 	auto level_data = GameDataBase::Instance().GetWeaponLevelData(id, level_);
 
+	//	–¼‘O‚ÌÝ’è
+	name_ = data->name;
+
 	//	Å‘åƒŒƒxƒ‹‚ÌÝ’è
 	max_level_ = data->max_level;
 

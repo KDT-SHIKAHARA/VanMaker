@@ -28,5 +28,7 @@ void ThunderboltBehaviour::Draw()
 {
 	float worldTopY = Camera::Instance().GetPosition().y - Camera::Instance().GetSize().y / 2.0f;
 	auto pos =  Vector2Df{ targetPos_.x,worldTopY };
-	RapperDxlib::DrawLightning(pos, targetPos_,7,10.f, LIGHTYELLOW,2.0f);
+	for (int i = 0; i < 3; i++) {
+		RapperDxlib::DrawLightning(pos, targetPos_, 7, 10.f, LIGHTYELLOW, 2.0f);
+	}
 }

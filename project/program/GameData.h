@@ -13,6 +13,7 @@ struct PlayerData {
 	float max_invi;	//	無敵時間の設置
 	float size_w_;	//	サイズW
 	float size_h_;	//	サイズH
+	int use_weaponListId; //	使用可能な武器リストのID
 };
 
 //	プレイヤーのアニメーション用のデータ
@@ -123,4 +124,8 @@ struct WaveData {
 	std::vector<int> wave_id;	//	所持しているウェーブのコレクション
 };
 
+struct WeaponIDList {
+	int id;
+	std::vector<int> weaponIDs;
+};
 

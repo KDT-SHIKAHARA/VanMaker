@@ -16,14 +16,12 @@ public:
 	}
 
 	int Attack() {
-		//if (ct_ > 0) return 0;
-		//ct_ = max_ct_;
 		return attack_;
 	}
 
 	//	アクセサ
 	int GetID()const { return id_; }
-	int GetCT()const { return ct_; }
+	double GetCT()const { return ct_; }
 
 protected:
 	double max_ct_;

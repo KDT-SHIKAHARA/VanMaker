@@ -38,6 +38,7 @@
     <ClCompile Include="program\DxlibRap.cpp" />
     <ClCompile Include="program\EnemyFactory.cpp" />
     <ClCompile Include="program\DropExperienceComp.cpp" />
+    <ClCompile Include="program\EventInitializer.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
     <ClCompile Include="program\Image.cpp" />
     <ClCompile Include="program\InGame.cpp" />
@@ -50,6 +51,7 @@
     <ClCompile Include="program\script_InGameWave.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
     <ClCompile Include="program\text.cpp" />
+    <ClCompile Include="program\TimedText.cpp" />
     <ClCompile Include="program\Title.cpp" />
     <ClCompile Include="program\transform.cpp" />
     <ClCompile Include="program\WaveManager.cpp" />
@@ -94,6 +96,8 @@
     <ClInclude Include="program\DxlibRap.h" />
     <ClInclude Include="program\EnemyFactory.h" />
     <ClInclude Include="program\DropExperienceComp.h" />
+    <ClInclude Include="program\EventInitializer.h" />
+    <ClInclude Include="program\EventStructs.h" />
     <ClInclude Include="program\factory_title.h" />
     <ClInclude Include="program\flag.h" />
     <ClInclude Include="program\GameData.h" />
@@ -122,10 +126,12 @@
     <ClInclude Include="program\script_InGameWave.h" />
     <ClInclude Include="program\singleton.h" />
     <ClInclude Include="program\system_Collision.h" />
+    <ClInclude Include="program\system_EventBus.h" />
     <ClInclude Include="program\system_Renderer.h" />
     <ClInclude Include="program\system_rigidbody.h" />
     <ClInclude Include="program\text.h" />
     <ClInclude Include="program\Time.h" />
+    <ClInclude Include="program\TimedText.h" />
     <ClInclude Include="program\Title.h" />
     <ClInclude Include="program\transform.h" />
     <ClInclude Include="program\vector2d.h" />

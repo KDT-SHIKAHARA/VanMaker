@@ -9,12 +9,20 @@
 #include "SceneManager.h"
 #include "Camera.h"
 #include "InGame.h"
+#include "EventInitializer.h"
+#include "loader_Sound.h"
 
 GameManager::GameManager()
 	:isRunning_(true),
 	 fps_(60,0,0)
 {
 
+}
+
+
+void GameManager::LoadSoundHandle()
+{
+	SoundLoader::Instance().LoadSound("data/sound/level/levelUp.MP3");
 }
 
 void GameManager::Initialize()
@@ -36,6 +44,11 @@ void GameManager::Initialize()
 	SceneManager::Instance().ChangeScene<InGame>();
 	SceneManager::Instance().Initialize();
 
+	//	event‚Ì‰Šú‰»
+	EventInitializer::InitializeEvents();
+
+	//	ƒTƒEƒ“ƒh‚Ì“Ç‚İ‚İ
+	LoadSoundHandle();
 }
 
 void GameManager::Run()

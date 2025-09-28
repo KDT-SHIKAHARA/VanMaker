@@ -8,9 +8,14 @@ class GameManager : public Singleton<GameManager> {
 	friend class Singleton<GameManager>;
 	GameManager();
 	virtual ~GameManager() = default;
+	
+
 	//	データリソースの読み込み
 
 	//	テクスチャリソースの読み込み
+
+	//	サウンドリソースの読込
+	void LoadSoundHandle();
 public:
 	/// <summary>
 	/// ウィンドウの作成と初期化

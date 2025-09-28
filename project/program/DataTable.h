@@ -86,6 +86,7 @@ inline void DataTable<PlayerData>::parseRecord(
 	record->max_invi = std::stof(cells[6]);
 	record->size_w_ = std::stof(cells[7]);
 	record->size_h_ = std::stof(cells[8]);
+	record->use_weaponListId = std::stoi(cells[9]);
 }
 
 
@@ -279,3 +280,20 @@ inline void DataTable<WeaponLevelData>::parseRecord(
 	record->cooltime = std::stof(cells[3]);
 	record->create_num = std::stoi(cells[4]);
 }
+
+
+template<>
+inline void DataTable<WeaponIDList>::parseRecord(
+	const std::vector<std::string>& cells,
+	WeaponIDList* record
+) {
+	record->id = std::stoi(cells[0]);
+
+	// 2—ñ–ÚˆÈ~‚ÉƒJƒ“ƒ}‹æØ‚è‚Å•¡”‚Ì•ŠíID‚ª“ü‚Á‚Ä‚¢‚é‘z’è
+	for (size_t i = 1; i < cells.size(); ++i) {
+		if (!cells[i].empty()) {
+			record->weaponIDs.push_back(std::stoi(cells[i]));
+		}
+	}
+}
+

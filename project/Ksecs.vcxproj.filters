@@ -260,6 +260,9 @@
     <Filter Include="project\Game\level\base">
       <UniqueIdentifier>{66837d2f-d00c-4bfd-adc2-edd89dfefb01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\CORE\EventBus">
+      <UniqueIdentifier>{478e1629-3b8d-49cb-936e-c8220d6106a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -369,6 +372,12 @@
     </ClCompile>
     <ClCompile Include="program\AutoLevelUpHandler.cpp">
       <Filter>project\Game\level</Filter>
+    </ClCompile>
+    <ClCompile Include="program\EventInitializer.cpp">
+      <Filter>project\CORE\EventBus</Filter>
+    </ClCompile>
+    <ClCompile Include="program\TimedText.cpp">
+      <Filter>project\ECS\Canvas\string</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -596,6 +605,18 @@
     </ClInclude>
     <ClInclude Include="program\AutoLevelUpHandler.h">
       <Filter>project\Game\level</Filter>
+    </ClInclude>
+    <ClInclude Include="program\EventStructs.h">
+      <Filter>project\CORE\EventBus</Filter>
+    </ClInclude>
+    <ClInclude Include="program\system_EventBus.h">
+      <Filter>project\CORE\EventBus</Filter>
+    </ClInclude>
+    <ClInclude Include="program\EventInitializer.h">
+      <Filter>project\CORE\EventBus</Filter>
+    </ClInclude>
+    <ClInclude Include="program\TimedText.h">
+      <Filter>project\ECS\Canvas\string</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

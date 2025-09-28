@@ -1,6 +1,7 @@
 #pragma once
 #include<memory>
 #include<vector>
+#include<string>
 
 #include"flag.h"
 #include"GameData.h"
@@ -71,6 +72,9 @@ public:
 		}
 	}
 
+	//	名前の取得
+	std::string GetName()const { return name_; }
+
 protected:
 	//	生成したインスタンスの参照
 	std::vector<std::weak_ptr<GameObject>> attackObject_;
@@ -80,6 +84,9 @@ protected:
 
 	//	切り替え用の経過時間
 	double current_ct_;
+
+	//	武器名
+	std::string name_;
 
 	//	レベル
 	int level_;
