@@ -13,4 +13,5 @@ GameDataBase::GameDataBase()
 	expTable_.LoadFromCsv("data/csv/exp_table.csv");
 	waveEntryTable_.LoadFromCsv("data/csv/wave_entry.csv");
 	waveDataTable_.LoadFromCsv("data/csv/wave_data.csv");
+	weaponLevelTable_.LoadFromCsv("data/csv/weapon/level/weapon_level_data.csv");
 }

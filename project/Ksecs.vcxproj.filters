@@ -254,6 +254,12 @@
     <Filter Include="project\Game\entity\Weapon\Thunderbolt">
       <UniqueIdentifier>{73be82be-1d89-45e9-ace5-8fec4999d4b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\level">
+      <UniqueIdentifier>{93e0c225-3d17-4889-a257-5bd9f80a820f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\level\base">
+      <UniqueIdentifier>{66837d2f-d00c-4bfd-adc2-edd89dfefb01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -360,6 +366,9 @@
     </ClCompile>
     <ClCompile Include="program\Behaviour_Thunderbolt.cpp">
       <Filter>project\Game\entity\Weapon\Thunderbolt</Filter>
+    </ClCompile>
+    <ClCompile Include="program\AutoLevelUpHandler.cpp">
+      <Filter>project\Game\level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -581,6 +590,12 @@
     </ClInclude>
     <ClInclude Include="program\Behaviour_Thunderbolt.h">
       <Filter>project\Game\entity\Weapon\Thunderbolt</Filter>
+    </ClInclude>
+    <ClInclude Include="program\base_levelUpHandler.h">
+      <Filter>project\Game\level\base</Filter>
+    </ClInclude>
+    <ClInclude Include="program\AutoLevelUpHandler.h">
+      <Filter>project\Game\level</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

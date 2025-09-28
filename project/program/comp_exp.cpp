@@ -6,7 +6,9 @@
 #include"GameObject.h"
 #include"DropExpBehaviour.h"
 #include"GetColor.h"
+#include"AutoLevelUpHandler.h"
 
+//	レベルアップの処理
 void ExpComp::levelUp()
 {
 	//	レベルの上昇処理
@@ -25,6 +27,9 @@ void ExpComp::levelUp()
 		nextExp_ = static_cast<int>(data->baseExp * std::pow(data->growthFactor, currentLevel_ - 1));
 	}
 
+	//	武器の強化処理
+	levelUpHandler_->HandleLevelUp();
+
 }
 
 ExpComp::ExpComp(int a_tableID, int layer)
@@ -33,6 +38,15 @@ ExpComp::ExpComp(int a_tableID, int layer)
 {
 	auto data = GameDataBase::Instance().GetExpTable(tableID);
 	nextExp_ = data->baseExp;
+
+
+}
+
+void ExpComp::Initialize()
+{
+	//	今は自動的に強化するようにします。
+	//	変えたいときはここの生成するインスタンスを変えてください。
+	levelUpHandler_ = std::make_unique<AutoLevelUpHandler>(GetGameObject());
 }
 
 void ExpComp::Update()

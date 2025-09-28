@@ -148,16 +148,22 @@ inline void DataTable<WeaponData>::parseRecord(
 	const std::vector<std::string>& cells,
 	WeaponData* record
 ) {
-	record->id = std::stoi(cells[0]);
-	record->name = cells[1];
-	record->width = std::stof(cells[2]);
-	record->height = std::stof(cells[3]);
-	record->radius = std::stof(cells[4]);
-	record->max_ct = std::stof(cells[5]);
-	record->attack = std::stoi(cells[6]);
-	record->slip_ct = std::stof(cells[7]);
-	record->num = std::stoi(cells[8]);
-	record->textureID = std::stoi(cells[9]);
+	int num = 0;
+	record->id = std::stoi(cells[num]);
+	num++;
+	record->name = cells[num];
+	num++;
+	record->width = std::stof(cells[num]);
+	num++;
+	record->height = std::stof(cells[num]);
+	num++;
+	record->radius = std::stof(cells[num]);
+	num++;
+	record->slip_ct = std::stof(cells[num]);
+	num++;
+	record->textureID = std::stoi(cells[num]);
+	num++;
+	record->max_level = std::stoi(cells[num]);
 }
 
 template<>
@@ -260,4 +266,16 @@ inline void DataTable<WaveData>::parseRecord(
 		int wid = std::stoi(cells[i]);
 		record->wave_id.push_back(wid);
 	}
+}
+
+template<>
+inline void DataTable<WeaponLevelData>::parseRecord(
+	const std::vector<std::string>& cells,
+	WeaponLevelData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->attack = std::stoi(cells[1]);
+	record->speed = std::stof(cells[2]);
+	record->cooltime = std::stof(cells[3]);
+	record->create_num = std::stoi(cells[4]);
 }

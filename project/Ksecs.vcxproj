@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\Anim2D.cpp" />
+    <ClCompile Include="program\AutoLevelUpHandler.cpp" />
     <ClCompile Include="program\Behaviour_Thunderbolt.cpp" />
     <ClCompile Include="program\Camera.cpp" />
     <ClCompile Include="program\comp_animation.cpp" />
@@ -58,6 +59,8 @@
   <ItemGroup>
     <ClInclude Include="program\ActionMap.h" />
     <ClInclude Include="program\Anim2D.h" />
+    <ClInclude Include="program\AutoLevelUpHandler.h" />
+    <ClInclude Include="program\base_levelUpHandler.h" />
     <ClInclude Include="program\Behaviour_Thunderbolt.h" />
     <ClInclude Include="program\Camera.h" />
     <ClInclude Include="program\CheckHit.h" />

@@ -61,11 +61,18 @@ struct WeaponData {
 	float width;	//	横サイズ
 	float height;	//	縦サイズ
 	float radius;	//	半径
-	float max_ct;	//	有効時間のクールタイム
-	int attack;		//	攻撃力
 	float slip_ct;	//	ダメージを与える間隔
-	int num;		//	攻撃の数
 	int textureID;	//	テクスチャのID
+	int max_level;	//	最大レベル
+};
+
+//	武器ごとのレベルデータ
+struct WeaponLevelData {
+	int id;
+	int attack;
+	float speed;
+	float cooltime;
+	int create_num;
 };
 
 //	ドロップする経験値のテーブル

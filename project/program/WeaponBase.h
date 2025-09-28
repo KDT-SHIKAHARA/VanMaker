@@ -11,7 +11,7 @@ class WeaponBase {
 public:
 	//	初期化
 	WeaponBase()
-		:max_ct_(0), current_ct_(0), enable_(Flag::On)
+		:max_ct_(0), current_ct_(0), enable_(Flag::On), level_(1), max_level_(1)
 	{ }
 
 	virtual ~WeaponBase() = default;
@@ -31,6 +31,46 @@ public:
 		return current_ct_ <= 0;
 	}
 
+
+	//	アクセサ
+	int GetLevel()const { return level_; }
+	void SetLevel(int a_level) { 
+
+		//	0以下なら
+		if (a_level <= 0) {
+			//	数値を更新しない
+			return;
+		}
+		//	最大レベルを越していたら
+		else if (a_level >= max_level_) {
+			//	最大レベルで止める
+			level_ = max_level_;
+			return;
+		}
+		//	正常値ならそのまま代入
+		level_ = a_level; 
+	}
+
+	/// <summary>
+	/// レベルが最大かどうか
+	/// </summary>
+	/// <returns>true: 最大 false: 最大じゃない </returns>
+	bool IsLevelMax()const
+	{
+		return level_ >= max_level_;
+	}
+
+	/// <summary>
+	/// レベルの数値を次に進める
+	/// </summary>
+	void AdvanceLevel() {
+		//	最大レベルより小さいとき
+		if (max_level_ > level_) {
+			//	レベルを次に進める
+			level_++;
+		}
+	}
+
 protected:
 	//	生成したインスタンスの参照
 	std::vector<std::weak_ptr<GameObject>> attackObject_;
@@ -40,6 +80,10 @@ protected:
 
 	//	切り替え用の経過時間
 	double current_ct_;
+
+	//	レベル
+	int level_;
+	int max_level_;
 public:
 
 	//	有効判定

@@ -12,15 +12,23 @@
 
 void Thunderbolt::create()
 {
+
+	////	仮のレベルアップ
+	//AdvanceLevel();
+
 	//	データ読み込み
-	auto id = 3002;
+	auto id = 302000;
 	auto data = GameDataBase::Instance().GetWeaponData(id);
+	auto level_data = GameDataBase::Instance().GetWeaponLevelData(id, level_);
+
+	//	最大レベルの設定
+	max_level_ = data->max_level;
 
 	//	クールタイムの設定
-	max_ct_ = data->max_ct;
+	max_ct_ = level_data->cooltime;
 	
 	//	データの取得
-	auto targetPos = Camera::Instance().GetObjectsInCameraWithTag(GameObjectTag::Enemy, data->num);
+	auto targetPos = Camera::Instance().GetObjectsInCameraWithTag(GameObjectTag::Enemy, level_data->create_num);
 
 	//	本数分生成する
 	for (size_t i = 0; i < targetPos.size(); i++) {
@@ -38,7 +46,7 @@ void Thunderbolt::create()
 		}
 
 		//	攻撃
-		obj->AddComponent<AttackComp>(data->attack, data->slip_ct, id);
+		obj->AddComponent<AttackComp>(level_data->attack, data->slip_ct, id);
 
 		//	挙動
 		obj->AddComponent<ThunderboltBehaviour>(
@@ -70,6 +78,7 @@ void Thunderbolt::Fire()
 
 void Thunderbolt::Update()
 {
+
 	//	時間の経過
 	//	クールタイムがある時
 	if (current_ct_ > 0) {

@@ -1,6 +1,7 @@
 #pragma once
 #include"MonoBehaviour.h"
 #include"Drawable.h"
+#include"base_levelUpHandler.h"
 
 /// <summary>
 /// 経験値バーの表示とレベルの管理と今の取得経験値、次のレベル
@@ -21,12 +22,13 @@ public:
 	}
 
 	//	衝突したときに経験値を取得する
-
+	void Initialize()override;
 	void Update()override;
 	void Draw()override;
 	void OnCollisionEnter(const Collision& collision)override;
 
 protected:
+	std::unique_ptr<LevelUpHandler> levelUpHandler_;
 	//	今のレベル
 	int currentLevel_;
 	//	今の経験値

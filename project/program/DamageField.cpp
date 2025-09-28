@@ -39,14 +39,20 @@ void DamageField::Update()
 void DamageField::create()
 {
 
-	auto id = 3001;
+	auto id = 301000;
 
 	//	番号からデータ取得
 	auto data = GameDataBase::Instance().GetWeaponData(id);
 	auto image_data = GameDataBase::Instance().GetImageData(data->textureID);
+	auto level_data = GameDataBase::Instance().GetWeaponLevelData(id, level_);
+
+
+
+	//	最大レベル
+	max_level_ = data->max_level;
 
 	//	個数分メモリ領域を取得しておく
-	for (size_t i = 0; i < data->num; i++) {
+	for (size_t i = 0; i < level_data->create_num; i++) {
 		//	インスタンスの生成
 		auto obj = std::make_shared<GameObject>();
 
@@ -63,7 +69,7 @@ void DamageField::create()
 		obj->AddComponent<DamagerFieldBehaviour>();
 
 		//	攻撃
-		obj->AddComponent<AttackComp>(data->attack, data->slip_ct, id);
+		obj->AddComponent<AttackComp>(level_data->attack, data->slip_ct, id);
 
 		//	表示
 		obj->AddComponent<ImageComponent>(image_data->filePath, image_data->exRate, image_data->layer);

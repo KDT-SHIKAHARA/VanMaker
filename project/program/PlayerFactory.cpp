@@ -69,6 +69,7 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	auto attack = player->AddComponent<WeaponComponent>();
 	attack->CreateWeapon(data->weaponId);
 
+
 	//	ŒoŒ±’l
 	player->AddComponent<ExpComp>(data->expTableId);
 

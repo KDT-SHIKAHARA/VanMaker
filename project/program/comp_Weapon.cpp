@@ -7,8 +7,8 @@
 /// </summary>
 WeaponComponent::WeaponComponent()
 {
-	creates_[3001] = [] {return std::make_unique<DamageField>(); };
-	creates_[3002] = [] {return std::make_unique<Thunderbolt>(); };
+	creates_[301000] = [] {return std::make_unique<DamageField>(); };
+	creates_[302000] = [] {return std::make_unique<Thunderbolt>(); };
 }
 
 void WeaponComponent::Update()
