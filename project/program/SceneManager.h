@@ -1,11 +1,11 @@
 #pragma once
 #include<memory>
+#include<functional>
 
 #include"singleton.h"
 #include"Scene.h"
 #include"OverlayScene.h"
-
-
+#include"TransitionOverlay.h"
 
 /// <summary>
 /// 画面インスタンスの管理
@@ -28,10 +28,13 @@ public:
 
 	template<typename SC>
 	void ChangeScene() {
-		auto scPtr = std::make_unique<SC>();
-		if (dynamic_cast<Scene*>(scPtr.get())) {
-			scene_ = std::move(scPtr);
-		}
+		pendingChange_ = [this]() {
+			auto scPtr = std::make_unique<SC>();
+			if (dynamic_cast<Scene*>(scPtr.get())) {
+				scene_ = std::move(scPtr);
+				scene_->Initialize();
+			}
+		};
 	}
 
 	template<typename Over>
@@ -40,6 +43,21 @@ public:
 		if (dynamic_cast<OverlayScene*>(overPtr.get())) {
 			overlayScene_ = std::move(overPtr);
 		}
+	}
+
+	//	オーバレイ付きの画面切り替え　
+	template<typename SC>
+	void ChangeSceneWithTransition() {
+		auto changeAction = [this]() {
+			auto scPtr = std::make_unique<SC>();
+			if (dynamic_cast<Scene*>(scPtr.get())) {
+				scene_ = std::move(scPtr);
+				scene_->Initialize();
+			}
+		};
+
+		// トランジションオーバーレイを生成
+		overlayScene_ = std::make_unique<TransitionOverlay>(changeAction);
 	}
 
 	void AddGameObject(std::shared_ptr<GameObject> a_gameObject) {
@@ -51,4 +69,5 @@ public:
 private:
 	std::unique_ptr<Scene> scene_;
 	std::unique_ptr<OverlayScene> overlayScene_;
+	std::function<void()> pendingChange_;
 };

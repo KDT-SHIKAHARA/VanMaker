@@ -15,7 +15,13 @@ public:
 		Center
 	};
 
-	ImageComponent(const std::string& filePath, float a_exRate,int a_layer, ImageComponent::Pivot a_pivot = ImageComponent::Pivot::Center);
+	//	
+	enum class RenderSpace {
+		World,
+		Screen
+	};
+
+	ImageComponent(const std::string& filePath, float a_exRate,int a_layer, ImageComponent::Pivot a_pivot = ImageComponent::Pivot::Center, RenderSpace a_renderSpace = RenderSpace::World);
 	void Update()override;
 	void Draw()override;
 
@@ -23,6 +29,10 @@ public:
 	//	アクセサ
 	void SetAngle(float a_anble) { angle_ = a_anble; }
 	void AddAngle(float a_anble) { angle_ += a_anble; }
+
+	RenderSpace GetRenderSpace()const {
+		return renderSpace_;
+	}
 	
 protected:
 
@@ -48,6 +58,7 @@ public:
 	//	透過フラグ
 	Flag isTrans_;
 
+	RenderSpace  renderSpace_;
 };
 
 

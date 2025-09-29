@@ -6,6 +6,7 @@
 #include"PlayerFactory.h"
 #include"EnemyFactory.h"
 #include"WaveManager.h"
+#include"data_Window.h"
 
 #include"script_InGameWave.h"
 
@@ -19,7 +20,7 @@ void InGame::Initialize()
 	//	ÉvÉåÉCÉÑÅ[ê∂ê¨
 	auto player = PlayerFactory::CreatePlayer(100001);
 	assert(player);
-	player->transform_.SetPosition({ 400.0f,300.0f });
+	player->transform_.SetPosition({(float)WindowData::m_sceneW,(float)WindowData::m_sceneH});
 	AddGameObject(player);
 
 	//	Ç∆ÇËÇ†Ç¶Ç∏âºÇ≈ì«Ç›çûÇÒÇ≈Ç›Ç‹Ç∑

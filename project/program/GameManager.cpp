@@ -11,6 +11,7 @@
 #include "InGame.h"
 #include "EventInitializer.h"
 #include "loader_Sound.h"
+#include "Title.h"
 
 GameManager::GameManager()
 	:isRunning_(true),
@@ -41,7 +42,7 @@ void GameManager::Initialize()
 	//	Dxlib Windowì¬
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	SceneManager::Instance().ChangeScene<InGame>();
+	SceneManager::Instance().ChangeScene<Title>();
 	SceneManager::Instance().Initialize();
 
 	//	event‚Ì‰Šú‰»

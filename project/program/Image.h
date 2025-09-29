@@ -35,4 +35,5 @@ protected:
 	Pivot pivot_;	//	Šî€“_
 public:
 	Flag isTrans_ = Flag::On;	//	“§‰ßƒtƒ‰ƒO
+
 };

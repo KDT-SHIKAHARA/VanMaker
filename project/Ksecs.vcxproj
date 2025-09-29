@@ -54,6 +54,7 @@
     <ClCompile Include="program\TimedText.cpp" />
     <ClCompile Include="program\Title.cpp" />
     <ClCompile Include="program\transform.cpp" />
+    <ClCompile Include="program\TransitionOverlay.cpp" />
     <ClCompile Include="program\WaveManager.cpp" />
     <ClCompile Include="program\weapon_Thunderbolt.cpp" />
     <ClCompile Include="program\WinMain.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="program\EventInitializer.h" />
     <ClInclude Include="program\EventStructs.h" />
     <ClInclude Include="program\factory_title.h" />
+    <ClInclude Include="program\filePath.h" />
     <ClInclude Include="program\flag.h" />
     <ClInclude Include="program\GameData.h" />
     <ClInclude Include="program\db_Game.h" />
@@ -134,6 +136,8 @@
     <ClInclude Include="program\TimedText.h" />
     <ClInclude Include="program\Title.h" />
     <ClInclude Include="program\transform.h" />
+    <ClInclude Include="program\TransitionOverlay.h" />
+    <ClInclude Include="program\UIClickableComponent.h" />
     <ClInclude Include="program\vector2d.h" />
     <ClInclude Include="program\WaveManager.h" />
     <ClInclude Include="program\WeaponBase.h" />

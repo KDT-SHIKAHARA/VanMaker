@@ -12,7 +12,6 @@ SceneManager::SceneManager()
 
 void SceneManager::Initialize()
 {
-	ChangeScene<InGame>();
 	if (scene_)
 	{
 		scene_->Initialize();
@@ -22,7 +21,15 @@ void SceneManager::Initialize()
 void SceneManager::Update()
 {
 
+	//	Ø‚è‘Ö‚¦
+	if (pendingChange_) {
+		pendingChange_();   // ƒtƒŒ[ƒ€‚ÌÅ‰‚ÉÀs
+		pendingChange_ = nullptr;
+	}
+
 	if (!scene_) return;
+
+
 
 	//	‘¶İ”»’è
 	if (overlayScene_) {

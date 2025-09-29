@@ -1,5 +1,6 @@
 #pragma once
 #include"Scene.h"
+#include"GameObject.h"
 
 #include<memory>
 
@@ -8,6 +9,6 @@ public:
 	Title();
 	virtual ~Title() = default;
 	virtual void Initialize() override;
-	virtual void Update() override;
-
+private:
+	void createStartButton();
 };
