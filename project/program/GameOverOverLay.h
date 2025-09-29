@@ -31,4 +31,6 @@ private:
     Vector2Df textPos_;
     float stopY_ = WindowData::m_sceneH / 3.0f;
 
+    std::weak_ptr<GameObject> bg_;
+
 };

@@ -51,6 +51,7 @@
     <ClCompile Include="program\loader_Sound.cpp" />
     <ClCompile Include="program\loader_Texture.cpp" />
     <ClCompile Include="program\PlayerFactory.cpp" />
+    <ClCompile Include="program\Rect.cpp" />
     <ClCompile Include="program\SceneManager.cpp" />
     <ClCompile Include="program\script_InGameWave.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="program\OverlayScene.h" />
     <ClInclude Include="program\PlayerFactory.h" />
     <ClInclude Include="program\random.h" />
+    <ClInclude Include="program\Rect.h" />
     <ClInclude Include="program\Resource.h" />
     <ClInclude Include="program\Scene.h" />
     <ClInclude Include="program\SceneManager.h" />

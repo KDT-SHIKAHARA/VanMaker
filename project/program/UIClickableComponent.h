@@ -13,12 +13,13 @@
 class UIClickComponent : public MonoBehaviour,public Drawable {
 public:
 	using CallBack = std::function<void()>;
-	
-	UIClickComponent(const Vector2Df& a_size)
+	using HoverCallBack = std::function<void(bool)>;
+
+	UIClickComponent(const Vector2Df& a_size,int layer = 11)
 		:size_(a_size){ }
 
 	void SetOnClick(CallBack cb) { onClick_ = std::move(cb); }
-	void SetOnHover(CallBack cb) { onHover_ = std::move(cb); }
+	void SetOnHover(HoverCallBack cb) { onHover_ = std::move(cb); }
 
 
 	void Update()override {
@@ -34,10 +35,9 @@ public:
 		bool hover = (mouse.x >= pos.x - halfW && mouse.x <= pos.x + halfW &&
 			mouse.y >= pos.y - halfH && mouse.y <= pos.y + halfH);
 
-		//	重なっているときでまだ処理を行っていないとき
-		if (hover && !isHover_) {
-			//	メソッド呼び出し
-			if (onHover_) onHover_();
+		//	状態が変化したときのみ
+		if (hover != isHover_) { 
+			if (onHover_) onHover_(hover);
 		}
 
 		//	フラグの更新
@@ -69,5 +69,5 @@ protected:
 	Vector2Df size_;	//	サイズ
 	bool isHover_ = false;		//	マウス座標が上に載っているかどうか
 	CallBack onClick_;	//	クリック処理
-	CallBack onHover_;	//	重なっているときの処理（色替えウィンドウなど）
+	HoverCallBack  onHover_;	//	重なっているときの処理（色替えウィンドウなど）
 };

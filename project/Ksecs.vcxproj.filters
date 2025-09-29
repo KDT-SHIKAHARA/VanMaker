@@ -409,7 +409,12 @@
     <ClCompile Include="program\comp_TriggerGameOver.cpp">
       <Filter>project\Game\entity\Player\compnent\gameover</Filter>
     </ClCompile>
-    <ClCompile Include="program\InfiniteBackground.cpp" />
+    <ClCompile Include="program\InfiniteBackground.cpp">
+      <Filter>project\Game\scene\InGame\bg</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Rect.cpp">
+      <Filter>project\ECS\Canvas\Rect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -669,6 +674,9 @@
     </ClInclude>
     <ClInclude Include="program\InfiniteBackground.h">
       <Filter>project\Game\scene\InGame\bg</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Rect.h">
+      <Filter>project\ECS\Canvas\Rect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
