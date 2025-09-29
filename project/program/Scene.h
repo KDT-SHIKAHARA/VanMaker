@@ -12,6 +12,7 @@ public:
 	Scene() = default;
 	~Scene() = default;
 	virtual void Initialize() {};
+	virtual void End() {};
 	
 	virtual void Update() {
 		//	script‚ÌXV

@@ -10,6 +10,8 @@
 #include"InfiniteBackground.h"
 #include"db_Game.h"
 #include"filePath.h"
+#include"system_EventBus.h"
+#include"BGMSystem.h"
 
 InGame::InGame()
 {
@@ -44,12 +46,22 @@ void InGame::Initialize()
 	WaveManager::Instance().LoadData(wave_number);
 	WaveManager::Instance().Initialize();
 
+	//	‰¹‚ð–Â‚ç‚·
+	EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::stage_bgm,-1,2 });
+	BGMSystem::Instance().SetVolume(2, 250);
+
 
 }
 
 void InGame::Render()
 {
 	DEBUG_LOG("InGame");
+}
+
+void InGame::End()
+{
+	EventBus::Instance().Publish(StopBGMEvent{ 2 });
+
 }
 
 

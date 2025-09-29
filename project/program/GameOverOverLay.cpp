@@ -61,7 +61,7 @@ void GameOverOverlay::CreateButtons()
     //  Ø‚è‘Ö‚¦ˆ—
     titleClick->SetOnClick([this]() {
         SceneManager::Instance().ChangeScene<Title>();
-        this->isFinish = true;
+        this->RequestFinish();
         });
     //  ƒtƒ‰ƒO‚ðˆê’UÜ‚é
     titleBtn->enable_.Set(Flag::Off);
@@ -169,8 +169,16 @@ void GameOverOverlay::Update()
         break;
     }
 
-    auto rect = bg_.lock()->GetComponent<Rect>();
-    rect->SetAlpha(this->fadeAlpha_);
+    if (auto bgShared = bg_.lock()) {
+        if (auto rect = bgShared->GetComponent<Rect>()) {
+            rect->SetAlpha(fadeAlpha_);
+        }
+    }
+
+    // ÅŒã‚É finish ”»’è‚ð”½‰f
+    if (finishRequested_) {
+        this->isFinish = true;
+    }
 
 } // update
 

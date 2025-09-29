@@ -26,3 +26,15 @@ struct MessageRenderEvent {
 //	Œ‚”j”
 struct KillCount {
 };
+
+//	‰¹‚ÌÄ¶
+struct PlayBGMEvent {
+	std::string filepath;
+	int loopCount = -1; // -1‚Å–³ŒÀ
+	int handleId = -1;  // “¯Ä¶¯•Ê—pID
+};
+
+//	’â~—p
+struct StopBGMEvent {
+	int handleId = -1; // ’â~‚·‚éBGM‚ÌID
+};

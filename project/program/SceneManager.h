@@ -28,11 +28,15 @@ public:
 
 	template<typename SC>
 	void ChangeScene() {
+		if (scene_) {
+			scene_->End();
+		}
 		pendingChange_ = [this]() {
+	
 			auto scPtr = std::make_unique<SC>();
 			if (dynamic_cast<Scene*>(scPtr.get())) {
+				scPtr->Initialize();
 				scene_ = std::move(scPtr);
-				scene_->Initialize();
 			}
 		};
 	}
@@ -49,16 +53,24 @@ public:
 	//	オーバレイ付きの画面切り替え　
 	template<typename SC>
 	void ChangeSceneWithTransition() {
-		auto changeAction = [this]() {
-			auto scPtr = std::make_unique<SC>();
-			if (dynamic_cast<Scene*>(scPtr.get())) {
-				scene_ = std::move(scPtr);
-				scene_->Initialize();
-			}
+		if (scene_) {
+			scene_->End();
+		}
+
+		// ここでは「トランジションが完了した時に pendingChange_ に予約するラムダ」を渡す
+		auto scheduleChange = [this]() {
+			// pendingChange_ に実際の切替処理をセットするだけ（実行は次フレーム末尾）
+			pendingChange_ = [this]() {
+				auto scPtr = std::make_unique<SC>();
+				if (dynamic_cast<Scene*>(scPtr.get())) {
+					scene_ = std::move(scPtr);
+					scene_->Initialize();
+				}
+			};
 		};
 
-		// トランジションオーバーレイを生成
-		overlayScene_ = std::make_unique<TransitionOverlay>(changeAction);
+		// TransitionOverlay に scheduleChange を渡す（TransitionOverlay は完了時にこのコールバックを呼ぶ）
+		overlayScene_ = std::make_unique<TransitionOverlay>(scheduleChange);
 		overlayScene_->Initialize();
 	}
 

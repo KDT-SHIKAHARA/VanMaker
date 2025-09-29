@@ -71,6 +71,7 @@
     <ClInclude Include="program\base_levelUpHandler.h" />
     <ClInclude Include="program\Behaviour_GameOverAnim.h" />
     <ClInclude Include="program\Behaviour_Thunderbolt.h" />
+    <ClInclude Include="program\BGMSystem.h" />
     <ClInclude Include="program\Camera.h" />
     <ClInclude Include="program\CheckHit.h" />
     <ClInclude Include="program\Collision.h" />
@@ -89,6 +90,7 @@
     <ClInclude Include="program\comp_exp.h" />
     <ClInclude Include="program\comp_image.h" />
     <ClInclude Include="program\comp_input.h" />
+    <ClInclude Include="program\comp_SineWave.h" />
     <ClInclude Include="program\comp_state.h" />
     <ClInclude Include="program\comp_TriggerGameOver.h" />
     <ClInclude Include="program\comp_Weapon.h" />
@@ -126,6 +128,7 @@
     <ClInclude Include="program\LoadCsv.h" />
     <ClInclude Include="program\loader_Sound.h" />
     <ClInclude Include="program\loader_Texture.h" />
+    <ClInclude Include="program\MathUtils.h" />
     <ClInclude Include="program\MonoBehaviour.h" />
     <ClInclude Include="program\OverlayScene.h" />
     <ClInclude Include="program\PlayerFactory.h" />

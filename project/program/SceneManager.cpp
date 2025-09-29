@@ -21,24 +21,25 @@ void SceneManager::Initialize()
 void SceneManager::Update()
 {
 
-	//	切り替え
+	if (scene_) {
+		//	存在判定
+		if (overlayScene_) {
+			overlayScene_->Update();
+			//	終了フラグで削除
+			if (overlayScene_->isFinish) overlayScene_.reset();
+		}
+		else {
+			scene_->Update();
+		}
+	}
+
+
+
+	//	更新後に切り替え
 	if (pendingChange_) {
-		pendingChange_();   // フレームの最初に実行
+		pendingChange_();
 		pendingChange_ = nullptr;
 	}
-
-	if (!scene_) return;
-
-
-
-	//	存在判定
-	if (overlayScene_) {
-		overlayScene_->Update();
-		//	終了フラグで削除
-		if (overlayScene_->isFinish) overlayScene_.reset();
-		return;
-	}
-	scene_->Update();
 }
 
 void SceneManager::Render()

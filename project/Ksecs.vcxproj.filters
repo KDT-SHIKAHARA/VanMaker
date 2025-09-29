@@ -281,6 +281,12 @@
     <Filter Include="project\Game\scene\InGame\bg">
       <UniqueIdentifier>{cc0869d0-8158-4275-aa25-562fea8b3f01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\CORE\Utility\math">
+      <UniqueIdentifier>{4e7f5403-d502-48d8-b690-955794378e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\CORE\sound">
+      <UniqueIdentifier>{e260d349-08d6-487d-835a-06158cf0def0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -677,6 +683,15 @@
     </ClInclude>
     <ClInclude Include="program\Rect.h">
       <Filter>project\ECS\Canvas\Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="program\MathUtils.h">
+      <Filter>project\CORE\Utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_SineWave.h">
+      <Filter>project\CORE\Utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="program\BGMSystem.h">
+      <Filter>project\CORE\sound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@
 #include "EventInitializer.h"
 #include "loader_Sound.h"
 #include "Title.h"
+#include "BGMSystem.h"
 
 GameManager::GameManager()
 	:isRunning_(true),
@@ -50,6 +51,8 @@ void GameManager::Initialize()
 
 	//	ƒTƒEƒ“ƒh‚Ì“Ç‚İ‚İ
 	LoadSoundHandle();
+
+	BGMSystem::Instance();
 }
 
 void GameManager::Run()

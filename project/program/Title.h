@@ -7,8 +7,10 @@
 class Title : public Scene {
 public:
 	Title();
-	virtual ~Title() = default;
+	virtual ~Title();
 	virtual void Initialize() override;
+	void End()override;
 private:
 	void createStartButton();
+	void createTitleLogo();
 };
