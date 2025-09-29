@@ -44,6 +44,10 @@ void EventInitializer::ScreenTextMessage()
 		[](const MessageRenderEvent& e) {
 			if (e.messages.empty()) return;
 
+			auto obj = std::make_shared<GameObject>();
+			obj->AddComponent<Text>(e.messages, e.color,true,e.size);
+			GameObjectQueue::Instance().Enqueue(obj);
+
 		}
 	);
 

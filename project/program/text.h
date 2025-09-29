@@ -8,7 +8,7 @@
 
 class Text : public Component, public Drawable {
 public:
-	Text(const std::string& text, int color, bool center = true, int size = 16);
+	Text(const std::string& text, int color, bool center = true, int size = 16,int layer = 5);
 
 	virtual void Update() override {};
 	virtual void Draw()override;

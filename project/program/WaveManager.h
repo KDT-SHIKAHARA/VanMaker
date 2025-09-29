@@ -1,7 +1,11 @@
 #pragma once
 #include"singleton.h"
 #include<vector>
+#include<string>
+#include<memory>
 
+
+class GameObject;
 //	ウェーブの切り替えと敵の生成の管理をする
 class WaveManager : public Singleton<WaveManager> {
 	friend class Singleton<WaveManager>;
@@ -18,6 +22,9 @@ class WaveManager : public Singleton<WaveManager> {
 	//	ウェーブの情報の読み込み
 	void LoadWaveEntryData();
 
+	//	タイマーの生成
+	void createTimer();
+
 public:
 	void LoadData(int a_waveDataID);
 
@@ -28,9 +35,16 @@ public:
 	//	更新
 	void Update();
 
+	//	時間を取得
 	float GetTime()const { return startTime_; }
 
+	//	時間を分：秒で文字列として取得
+	std::string GetElapsedTimeFormatted()const;
+
 private:
+	//	タイマーの参照
+	std::weak_ptr<GameObject> timer_;
+
 	//	所持しているウェーブIDのコレクション
 	std::vector<int> wave_ids_;
 

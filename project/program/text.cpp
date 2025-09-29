@@ -4,8 +4,8 @@
 
 #include<DxLib.h>
 
-Text::Text(const std::string& text, int color, bool center, int size)
-	:text_(text), color_(color), center_(center), size_(size)
+Text::Text(const std::string& text, int color, bool center, int size, int layer)
+	:Drawable(layer),text_(text), color_(color), center_(center), size_(size)
 {
 	fontHandle_ = CreateFontToHandle(nullptr, size_, -1, DX_FONTTYPE_ANTIALIASING);
 }

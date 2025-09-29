@@ -3,6 +3,11 @@
 #include "Time.h"
 #include"EnemyFactory.h"
 #include"GameObjectRequestAdd.h"
+#include"GameObject.h"
+#include"data_Window.h"
+
+#include"text.h"
+#include"GetColor.h"
 
 //	フォルダからウェーブ番号
 WaveManager::WaveManager()
@@ -26,6 +31,22 @@ void WaveManager::LoadWaveEntryData()
 	for (const auto& Entry : data->entries) {
 		wave_entrys_.emplace_back(Entry.enemyID, Entry.createNum, Entry.interval, 0);
 	}
+}
+
+void WaveManager::createTimer()
+{
+	//	インスタンス生成
+	auto obj = std::make_shared<GameObject>();
+
+	//	文字列クラスの作成
+	obj->AddComponent<Text>(GetElapsedTimeFormatted(),WHITE,true,35);
+
+	//	座標設定
+	obj->transform_.SetWorldPosition(Vector2Df{(float)WindowData::m_sceneW / 2,100.f });
+
+	timer_ = obj;
+
+	GameObjectQueue::Instance().Enqueue(obj);
 }
 
 //	このステージのウェーブ番号を取得
@@ -53,6 +74,10 @@ void WaveManager::Initialize()
 	currentWaveNum_ = 0;
 	startTime_ = 0;
 	LoadWaveEntryData();
+
+	//	タイマー作成
+	createTimer();
+
 }
 
 void  WaveManager::Update() {
@@ -61,6 +86,8 @@ void  WaveManager::Update() {
 
 	//	時間を経過させる
 	startTime_ += dt;
+
+	timer_.lock()->GetComponent<Text>()->SetText(GetElapsedTimeFormatted());
 
 	//	今のウェーブデータ取得
 	auto data = GameDataBase::Instance().GetWaveEnties(wave_ids_[currentWaveNum_]);
@@ -105,3 +132,22 @@ void  WaveManager::Update() {
 
 
 }
+
+/// <summary>
+/// 時間を分：秒で取得する
+/// </summary>
+/// <returns></returns>
+std::string WaveManager::GetElapsedTimeFormatted() const
+{
+	int totalSec = static_cast<int>(startTime_);
+	int minutes = totalSec / 60;
+	int seconds = totalSec % 60;
+
+	char buf[16];
+	snprintf(buf, sizeof(buf), "%02d:%02d", minutes, seconds);
+	return std::string(buf);
+}
+
+
+
+
