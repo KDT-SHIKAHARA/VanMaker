@@ -104,3 +104,11 @@ void RapperDxlib::DrawLightning(const Vector2Df& start, const Vector2Df& end, in
         RapperDxlib::DrawlineAACamera(points[i], points[i + 1], color, thickness);
     }
 }
+
+
+void RapperDxlib::DrawCenterString(const Vector2Df& pos, const std::string& string, unsigned int Color)
+{
+    int str = strlen(string.c_str());
+    int size = GetDrawStringWidth(string.c_str(),str);
+    DrawStringF(pos.x - size / 2, pos.y - GetFontSize() / 2, string.c_str(), Color);
+}

@@ -7,6 +7,8 @@ class EventInitializer {
 	//	•¶š—ñ‚Ì•\¦Œn
 	static void ScreenTextMessage();
 
+
+
 public:
 	//	event‚Ì‰Šú‰»
 	static void InitializeEvents();

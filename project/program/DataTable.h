@@ -297,3 +297,16 @@ inline void DataTable<WeaponIDList>::parseRecord(
 	}
 }
 
+
+template<>
+inline void DataTable<StageData>::parseRecord(
+	const std::vector<std::string>& cells,
+	StageData* record
+) {
+	record->id = std::stoi(cells[0]);
+	record->waveID = std::stoi(cells[1]);
+	record->bg_id = std::stoi(cells[2]);
+}
+
+
+

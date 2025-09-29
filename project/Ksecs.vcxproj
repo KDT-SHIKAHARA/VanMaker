@@ -44,6 +44,7 @@
     <ClCompile Include="program\GameManager.cpp" />
     <ClCompile Include="program\GameOverOverLay.cpp" />
     <ClCompile Include="program\Image.cpp" />
+    <ClCompile Include="program\InfiniteBackground.cpp" />
     <ClCompile Include="program\InGame.cpp" />
     <ClCompile Include="program\InputManager.cpp" />
     <ClCompile Include="program\LoadCsv.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="program\GameOverOverLay.h" />
     <ClInclude Include="program\GetColor.h" />
     <ClInclude Include="program\Image.h" />
+    <ClInclude Include="program\InfiniteBackground.h" />
     <ClInclude Include="program\InGame.h" />
     <ClInclude Include="program\InputManager.h" />
     <ClInclude Include="program\LoadCsv.h" />

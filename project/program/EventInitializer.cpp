@@ -6,6 +6,7 @@
 #include "GameObjectRequestAdd.h"
 #include"TimedText.h"
 #include"GameObject.h"
+#include "text.h"
 
 void EventInitializer::LevelUp()
 {
@@ -22,9 +23,9 @@ void EventInitializer::LevelUp()
 
 void EventInitializer::ScreenTextMessage()
 {
-	//	インスタンスの生成
-	EventBus::Instance().Subscribe<MessageRenderEvent>(
-		[](const MessageRenderEvent& e)
+	//	時間制限付きの表示
+	EventBus::Instance().Subscribe<TimedMessageRenderEvent>(
+		[](const TimedMessageRenderEvent& e)
 		{
 			if (e.messages.empty()) return;
 
@@ -39,6 +40,14 @@ void EventInitializer::ScreenTextMessage()
 		}
 	);
 
+	EventBus::Instance().Subscribe<MessageRenderEvent>(
+		[](const MessageRenderEvent& e) {
+			if (e.messages.empty()) return;
+
+		}
+	);
+
+	//	時間制限なしの表示
 
 }
 

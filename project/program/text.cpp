@@ -1,12 +1,13 @@
 #include "text.h"
 #include "vector2d.h"
+#include "GameObject.h"
 
 #include<DxLib.h>
 
-Text::Text(int a_layer, const std::string& a_text, int a_fontSize, Pivot a_pivot)
-	:Drawable(a_layer), Component(), text_(a_text), fontSize_(a_fontSize), pivot_(a_pivot)
+Text::Text(const std::string& text, int color, bool center, int size)
+	:text_(text), color_(color), center_(center), size_(size)
 {
-	fontHandle_ = CreateFontToHandle(nullptr, fontSize_, -1, DX_FONTTYPE_ANTIALIASING);
+	fontHandle_ = CreateFontToHandle(nullptr, size_, -1, DX_FONTTYPE_ANTIALIASING);
 }
 
 void Text::Draw()
@@ -18,7 +19,19 @@ void Text::Draw()
 	auto offset = Vector2Df{ 0.0f,0.0f };
 
 	//	中心基準なら
-	if(pivot_ == Pivot::Center){
-		int w, h;
-	}
+    // 描画座標
+    auto pos = GetGameObject()->transform_.WorldPosition();
+
+    // 描画オフセット（中心基準対応）
+    if (center_) {
+        int w, h = 0;
+        // 文字列の幅と高さを取得
+        GetDrawStringSizeToHandle(&w, &h, nullptr, text_.c_str(), -1, fontHandle_);
+
+        pos.x -= w / 2.0f;
+        pos.y -= h / 2.0f;
+    }
+
+    // 描画
+    DrawStringToHandle(static_cast<int>(pos.x), static_cast<int>(pos.y), text_.c_str(), color_, fontHandle_);
 }

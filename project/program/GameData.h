@@ -129,3 +129,9 @@ struct WeaponIDList {
 	std::vector<int> weaponIDs;
 };
 
+struct StageData {
+	int id;
+	int waveID;
+	int bg_id;
+};
+

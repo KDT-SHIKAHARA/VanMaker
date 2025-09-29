@@ -59,6 +59,10 @@ public:
 		return weaponIDTable_.findById(id);
 	}
 
+	const StageData* GetStageData(int id) {
+		return stageDataTable_.findById(id);
+	}
+
 
 private:
 	DataTable<PlayerData> playerTable_;	//	プレイヤーデータテーブル
@@ -73,4 +77,5 @@ private:
 	DataTable<WaveData> waveDataTable_;	//	ウェーブのIDデータ
 	DataTable<WeaponLevelData> weaponLevelTable_;	//	武器のレベルごとのデータ
 	DataTable<WeaponIDList> weaponIDTable_;	//	使用可能な武器のID
+	DataTable<StageData> stageDataTable_;	//	ステージデータ
 };

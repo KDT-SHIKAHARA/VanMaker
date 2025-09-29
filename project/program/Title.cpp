@@ -25,8 +25,15 @@ void Title::Initialize()
 void Title::createStartButton()
 {
 	//	タイトルの決定ボタンを生成
+	auto window_size = Vector2Df{ (float)WindowData::m_sceneW,(float)WindowData::m_sceneH };
+
 	auto startButton = std::make_shared<GameObject>();
-	auto UIClick = startButton->AddComponent<UIClickComponent>(Vector2Df{ (float)WindowData::m_sceneW,(float)WindowData::m_sceneH });
+	auto UIClick = startButton->AddComponent<UIClickComponent>(window_size);
+
+	auto window_size_half = window_size / 2.f;
+
+	startButton->transform_.SetPosition(window_size_half);
+
 	UIClick->SetOnClick([]() {
 			SceneManager::Instance().ChangeSceneWithTransition<InGame>();
 		}

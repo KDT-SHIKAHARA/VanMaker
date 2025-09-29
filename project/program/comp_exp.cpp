@@ -34,7 +34,7 @@ void ExpComp::levelUp()
 
 	//	‰¹‚ð–Â‚ç‚·
 	EventBus::Instance().Publish(LevelUpEvent{});
-	EventBus::Instance().Publish(MessageRenderEvent{
+	EventBus::Instance().Publish(TimedMessageRenderEvent{
 		message,Vector2Df{200,200},2.0f,RED });
 }
 

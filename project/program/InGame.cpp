@@ -2,26 +2,42 @@
 #include "debugDef.h"
 #include <cassert>
 
-
 #include"PlayerFactory.h"
 #include"EnemyFactory.h"
 #include"WaveManager.h"
 #include"data_Window.h"
-
 #include"script_InGameWave.h"
+#include"InfiniteBackground.h"
+#include"db_Game.h"
+#include"filePath.h"
 
 InGame::InGame()
 {
 	scripts_.push_back(std::make_unique<InGameWaveScript>());
+
+	//	後でステージIDを受け取ってください。
+	stageID_ = 801001;
 }
 
 void InGame::Initialize()
 {
+	//	ステージのデータ読み込み
+	auto stageID = GameDataBase::Instance().GetStageData(stageID_);
+
+
+	//	背景の生成
+	auto bghandle = GameDataBase::Instance().GetImageData(stageID->bg_id);
+	auto bg = std::make_shared<GameObject>();
+	bg->AddComponent<InfiniteBackground>(bghandle->filePath);
+	AddGameObject(bg);
+
 	//	プレイヤー生成
 	auto player = PlayerFactory::CreatePlayer(100001);
 	assert(player);
 	player->transform_.SetPosition({(float)WindowData::m_sceneW,(float)WindowData::m_sceneH});
 	AddGameObject(player);
+
+
 
 	//	とりあえず仮で読み込んでみます
 	int wave_number = 4001;

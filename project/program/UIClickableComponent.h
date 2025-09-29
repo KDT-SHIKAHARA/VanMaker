@@ -27,9 +27,12 @@ public:
 		//	ゲームオブジェクトの座標取得
 		const auto& pos = GetGameObject()->transform_.WorldPosition();
 
-		//	重なっているかどうかの判定
-		bool hover = (mouse.x >= pos.x && mouse.x <= pos.x + size_.x &&
-			mouse.y >= pos.y && mouse.y <= pos.y + size_.y);
+		// 中心基準での判定
+		float halfW = size_.x * 0.5f;
+		float halfH = size_.y * 0.5f;
+
+		bool hover = (mouse.x >= pos.x - halfW && mouse.x <= pos.x + halfW &&
+			mouse.y >= pos.y - halfH && mouse.y <= pos.y + halfH);
 
 		//	重なっているときでまだ処理を行っていないとき
 		if (hover && !isHover_) {
@@ -55,7 +58,7 @@ public:
 		const auto& pos = GetGameObject()->transform_.WorldPosition();
 
 		//	後で変更しやすいように
-		auto draw1 = pos;
+		auto draw1 = pos - size_ / 2;
 
 		auto draw2 = draw1 + size_;
 

@@ -89,15 +89,10 @@ std::shared_ptr<GameObject> EnemyFactory::CreateEnemy(int id)
 		enemy->AddComponent<DrawRectColliderComp>();
 	}
 
-	if (DebugFlag::EnemyDrawHpBar) {
-		auto hp = enemy->AddComponent<DrawableHealth>(0, data->hp, anim_data->layer + 2, Vector2Df{ 70,10 });
-		hp->SetOffset(Vector2Df{ 0,40 });
+	
+	auto hp = enemy->AddComponent<DrawableHealth>(0, data->hp, anim_data->layer + 2, Vector2Df{ 70,10 });
+	hp->SetOffset(Vector2Df{ 0,40 });
 
-	}
-	else {
-		//	‘Ì—Í
-		enemy->AddComponent<Health>(1.0, data->hp);
-	}
 	
 	//	UŒ‚
 	enemy->AddComponent<AttackComp>(data->attack, data->coolTime_,data->id);

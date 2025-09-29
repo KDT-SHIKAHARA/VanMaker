@@ -28,7 +28,7 @@ public:
 	//	更新
 	void Update();
 
-	
+	float GetTime()const { return startTime_; }
 
 private:
 	//	所持しているウェーブIDのコレクション

@@ -3,13 +3,18 @@
 #include"UIClickableComponent.h"
 #include"InGame.h"
 #include"Title.h"
+#include"data_Window.h"
+#include"DxlibRap.h"
+#include"GetColor.h"
 
 void GameOverOverlay::CreateButtons()
 {
     //  リスタートボタン
     auto restartBtn = std::make_shared<GameObject>();
     //  当たり判定
-    auto restartClick = restartBtn->AddComponent<UIClickComponent>(Vector2Df{ 500, 60 });
+    auto restartClick = restartBtn->AddComponent<UIClickComponent>(Vector2Df{ 200, 60 });
+
+
     //  切り替え処理
     restartClick->SetOnClick([this]() {
         SceneManager::Instance().ChangeScene<InGame>();
@@ -19,6 +24,8 @@ void GameOverOverlay::CreateButtons()
     restartBtn->enable_.Set(Flag::Off);
     gameObjects_.push_back(restartBtn);
     //  描画と座標を設定
+    auto restartPos = Vector2Df{ (float)WindowData::m_sceneW / 2,(float)WindowData::m_sceneH / 4 * 3 };
+    restartBtn->transform_.SetPosition(restartPos);
 
 
     
@@ -36,7 +43,8 @@ void GameOverOverlay::CreateButtons()
     gameObjects_.push_back(titleBtn);
 
     //  描画と座標を設定
-
+    auto titlePos = Vector2Df{ (float)WindowData::m_sceneW / 2,(float)WindowData::m_sceneH / 4 * 2 };
+    titleBtn->transform_.SetPosition(titlePos);
 
 }
 
@@ -94,9 +102,15 @@ void GameOverOverlay::Render()
     SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
     if (state_ != State::FadeIn) {
+        //
+        SetFontSize(48);
+
+
         // GAME OVER 文字表示
-        DrawString(static_cast<int>(textPos_.x), static_cast<int>(textPos_.y),
-            "GAME OVER", GetColor(255, 0, 0));
+        RapperDxlib::DrawCenterString(textPos_, "GAME OVER", RED);
+
+        SetFontSize(16);
+
     }
 }
 

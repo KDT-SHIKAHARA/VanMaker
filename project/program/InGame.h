@@ -7,5 +7,6 @@ public:
 	virtual ~InGame() = default;
 	virtual void Initialize() override;
 	void Render() override;
-
+private:
+	int stageID_;
 };

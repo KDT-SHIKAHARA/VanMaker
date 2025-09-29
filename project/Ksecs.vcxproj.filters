@@ -278,6 +278,9 @@
     <Filter Include="project\Game\entity\Player\compnent\gameover">
       <UniqueIdentifier>{134eab14-188f-4918-b75a-be9bc0246ae9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\scene\InGame\bg">
+      <UniqueIdentifier>{cc0869d0-8158-4275-aa25-562fea8b3f01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -406,6 +409,7 @@
     <ClCompile Include="program\comp_TriggerGameOver.cpp">
       <Filter>project\Game\entity\Player\compnent\gameover</Filter>
     </ClCompile>
+    <ClCompile Include="program\InfiniteBackground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -662,6 +666,9 @@
     </ClInclude>
     <ClInclude Include="program\Behaviour_GameOverAnim.h">
       <Filter>project\Game\entity\Player\compnent\gameover</Filter>
+    </ClInclude>
+    <ClInclude Include="program\InfiniteBackground.h">
+      <Filter>project\Game\scene\InGame\bg</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
