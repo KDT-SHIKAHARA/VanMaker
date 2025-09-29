@@ -18,6 +18,6 @@ private:
     enum class Phase { FadeOut, FadeIn };
     Phase phase_ = Phase::FadeOut;
     int alpha_ = 0;
-    int fadeSpeed_ = 20; // 1フレームごとの増減量
+    int fadeSpeed_ = 10; // 1フレームごとの増減量
     std::function<void()> onMidpointChange_;
 };

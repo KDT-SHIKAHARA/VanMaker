@@ -13,6 +13,7 @@
 #include "comp_Weapon.h"
 #include"DebugMacro.h"
 #include"comp_exp.h"
+#include"comp_TriggerGameOver.h"
 
 #include <stdexcept>
 
@@ -40,7 +41,7 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 	auto collider = player->AddComponent<RectCollider>(Vector2Df{ data->size_w_,data->size_h_ });
 
 	if (DebugFlag::DrawCollider) {
-		player->AddComponent<DrawRectColliderComp>();
+		player->AddComponent<DrawRectColliderComp>(walk_anim->layer + 1);
 	}
 
 	//	入力
@@ -71,6 +72,9 @@ std::shared_ptr<GameObject> PlayerFactory::CreatePlayer(int id)
 
 	//	経験値
 	player->AddComponent<ExpComp>(data->expTableId);
+
+	//	ゲームオーバー用
+	player->AddComponent<TriggerGameOver>();
 
 	//	タグ設定
 	player->tag_ = GameObjectTag::Player;

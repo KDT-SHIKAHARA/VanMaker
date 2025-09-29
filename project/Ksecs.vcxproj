@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="program\Anim2D.cpp" />
     <ClCompile Include="program\AutoLevelUpHandler.cpp" />
+    <ClCompile Include="program\Behaviour_GameOverAnim.cpp" />
     <ClCompile Include="program\Behaviour_Thunderbolt.cpp" />
     <ClCompile Include="program\Camera.cpp" />
     <ClCompile Include="program\comp_animation.cpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="program\comp_input.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\comp_state.cpp" />
+    <ClCompile Include="program\comp_TriggerGameOver.cpp" />
     <ClCompile Include="program\comp_Weapon.cpp" />
     <ClCompile Include="program\DamageField.cpp" />
     <ClCompile Include="program\DamageFieldBehavior.cpp" />
@@ -40,6 +42,7 @@
     <ClCompile Include="program\DropExperienceComp.cpp" />
     <ClCompile Include="program\EventInitializer.cpp" />
     <ClCompile Include="program\GameManager.cpp" />
+    <ClCompile Include="program\GameOverOverLay.cpp" />
     <ClCompile Include="program\Image.cpp" />
     <ClCompile Include="program\InGame.cpp" />
     <ClCompile Include="program\InputManager.cpp" />
@@ -64,6 +67,7 @@
     <ClInclude Include="program\Anim2D.h" />
     <ClInclude Include="program\AutoLevelUpHandler.h" />
     <ClInclude Include="program\base_levelUpHandler.h" />
+    <ClInclude Include="program\Behaviour_GameOverAnim.h" />
     <ClInclude Include="program\Behaviour_Thunderbolt.h" />
     <ClInclude Include="program\Camera.h" />
     <ClInclude Include="program\CheckHit.h" />
@@ -84,6 +88,7 @@
     <ClInclude Include="program\comp_image.h" />
     <ClInclude Include="program\comp_input.h" />
     <ClInclude Include="program\comp_state.h" />
+    <ClInclude Include="program\comp_TriggerGameOver.h" />
     <ClInclude Include="program\comp_Weapon.h" />
     <ClInclude Include="program\DamageField.h" />
     <ClInclude Include="program\DamageFieldBehavior.h" />
@@ -110,6 +115,7 @@
     <ClInclude Include="program\GameObjectRequestAdd.h" />
     <ClInclude Include="program\GameObjectTag.h" />
     <ClInclude Include="program\comp_Health.h" />
+    <ClInclude Include="program\GameOverOverLay.h" />
     <ClInclude Include="program\GetColor.h" />
     <ClInclude Include="program\Image.h" />
     <ClInclude Include="program\InGame.h" />

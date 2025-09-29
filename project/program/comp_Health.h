@@ -34,6 +34,11 @@ public:
 		return current_hp_ == max_hp_;
 	}
 
+	//	Ž€‚ñ‚Å‚¢‚é‚©‚Ç‚¤‚©
+	bool IsDead()const {
+		return current_hp_ <= 0;
+	}
+
 	//	‘Ì—Í‚ÌŠ„‡•\Ž¦
 	float Percent()const {
 		return (float)current_hp_ / (float)max_hp_;

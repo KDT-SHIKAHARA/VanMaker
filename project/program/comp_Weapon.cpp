@@ -1,6 +1,7 @@
 #include "comp_Weapon.h"
 #include"DamageField.h"
 #include"weapon_Thunderbolt.h"
+#include"GameObject.h"
 
 /// <summary>
 /// 生成メソッドの初期化
@@ -14,6 +15,9 @@ WeaponComponent::WeaponComponent(int a_use_weapon_list_id)
 
 void WeaponComponent::Update()
 {
+
+	if (GetGameObject()->isDead_) return;
+
 	////	クールタイムを見て発火する
 	//for (auto& weapon : weapons_) {
 

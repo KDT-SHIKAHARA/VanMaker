@@ -48,6 +48,13 @@ void WaveManager::LoadData(int a_waveDataID)
 	LoadWaveEntryData();
 }
 
+void WaveManager::Initialize()
+{
+	currentWaveNum_ = 0;
+	startTime_ = 0;
+	LoadWaveEntryData();
+}
+
 void  WaveManager::Update() {
 	//	ŽžŠÔ‚ÌŽæ“¾
 	const auto& dt = Time::deltaTime();

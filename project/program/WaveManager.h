@@ -21,6 +21,11 @@ class WaveManager : public Singleton<WaveManager> {
 public:
 	void LoadData(int a_waveDataID);
 
+
+	//	‰Šú‰»
+	void Initialize();
+
+	//	XV
 	void Update();
 
 	

@@ -57,6 +57,9 @@ void ExpComp::Initialize()
 
 void ExpComp::Update()
 {
+
+	if (GetGameObject()->isDead_) return;
+
 	//	レベルが上がっているかどうかの判定
 	while (currentExp_ >= nextExp_){
 		//	レベルアップ

@@ -272,6 +272,12 @@
     <Filter Include="project\Game\scene\transitionOverlay">
       <UniqueIdentifier>{96fd0d00-97e1-4566-9758-f9cdd18e76b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\scene\GameOverOverlay">
+      <UniqueIdentifier>{b9909563-0f41-4c1a-8e0b-cc7fc1141951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project\Game\entity\Player\compnent\gameover">
+      <UniqueIdentifier>{134eab14-188f-4918-b75a-be9bc0246ae9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -390,6 +396,15 @@
     </ClCompile>
     <ClCompile Include="program\TransitionOverlay.cpp">
       <Filter>project\Game\scene\transitionOverlay</Filter>
+    </ClCompile>
+    <ClCompile Include="program\GameOverOverLay.cpp">
+      <Filter>project\Game\scene\GameOverOverlay</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Behaviour_GameOverAnim.cpp">
+      <Filter>project\Game\entity\Player\compnent\gameover</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_TriggerGameOver.cpp">
+      <Filter>project\Game\entity\Player\compnent\gameover</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -638,6 +653,15 @@
     </ClInclude>
     <ClInclude Include="program\TransitionOverlay.h">
       <Filter>project\Game\scene\transitionOverlay</Filter>
+    </ClInclude>
+    <ClInclude Include="program\GameOverOverLay.h">
+      <Filter>project\Game\scene\GameOverOverlay</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_TriggerGameOver.h">
+      <Filter>project\Game\entity\Player\compnent\gameover</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Behaviour_GameOverAnim.h">
+      <Filter>project\Game\entity\Player\compnent\gameover</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

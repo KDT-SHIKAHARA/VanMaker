@@ -3,10 +3,14 @@
 #include"InputManager.h"
 #include"vector2d.h"
 #include"GameObject.h"
+#include"Drawable.h"
+#include"DxlibRap.h"
+#include"GetColor.h"
+#include"DebugMacro.h"
 
 #include<functional>
 
-class UIClickComponent : public MonoBehaviour {
+class UIClickComponent : public MonoBehaviour,public Drawable {
 public:
 	using CallBack = std::function<void()>;
 	
@@ -41,6 +45,21 @@ public:
 			if (onClick_) onClick_();
 		}
 
+	}
+
+	void Draw()override {
+
+		if (!DebugFlag::DrawCollider) return;
+		
+		//	ç¿ïW
+		const auto& pos = GetGameObject()->transform_.WorldPosition();
+
+		//	å„Ç≈ïœçXÇµÇ‚Ç∑Ç¢ÇÊÇ§Ç…
+		auto draw1 = pos;
+
+		auto draw2 = draw1 + size_;
+
+		DrawBox(draw1.x, draw1.y, draw2.x, draw2.y, RED, FALSE);
 	}
 
 protected:

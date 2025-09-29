@@ -57,6 +57,7 @@ public:
 	GameObjectTag tag_ = GameObjectTag::None;	//	Gameobjectのタグ
 	Flag isDestory_ = false;	//	削除フラグ
 	Flag enable_ = Flag::On;	//	有効フラグ
+	Flag isDead_ = Flag::Off;	//	生存フラグ
 private:
 	Comp_map components_;	//	コンポーネントの格納マップ
 	Monobehaviours monoBehaviours_;	//	更新されるMonobehaviourの格納
@@ -86,6 +87,7 @@ inline std::shared_ptr<T> GameObject::AddComponent(Args && ...args)
 
 	//	システムに追加
 	if (auto drawable = dynamic_cast<Drawable*>(comp.get())) {
+		drawable->SetObj(shared_from_this());
 		drawable->AddRegister();
 	}
 

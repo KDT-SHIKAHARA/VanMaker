@@ -1,5 +1,6 @@
 #include "comp_input.h"
 #include "InputManager.h"
+#include"GameObject.h"
 
 #include<DxLib.h>
 #include<stdexcept>
@@ -7,6 +8,8 @@
 
 void InputComponent::Update()
 {
+	if (GetGameObject()->isDead_) return;
+
 	//	ƒNƒŠƒA
 	direction_.Clear();
 	isMove_ = Flag::Off;

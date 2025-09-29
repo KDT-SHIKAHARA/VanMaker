@@ -26,6 +26,8 @@ void InGame::Initialize()
 	//	Ç∆ÇËÇ†Ç¶Ç∏âºÇ≈ì«Ç›çûÇÒÇ≈Ç›Ç‹Ç∑
 	int wave_number = 4001;
 	WaveManager::Instance().LoadData(wave_number);
+	WaveManager::Instance().Initialize();
+
 
 }
 

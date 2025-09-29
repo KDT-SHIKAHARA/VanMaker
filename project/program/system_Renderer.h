@@ -1,7 +1,7 @@
 #pragma once
 #include"singleton.h"
 #include"Drawable.h"
-
+#include"GameObject.h"
 
 #include<vector>
 #include<DxLib.h>
@@ -47,6 +47,8 @@ public:
 		for (auto& layer : renderers_) {
 			for (auto& renderer : layer) {
 				auto lender = renderer.lock();
+				if (!lender->GetObj()->enable_) continue;
+
 				if (lender && lender->isVisible_) {
 					lender->Draw();
 				}
