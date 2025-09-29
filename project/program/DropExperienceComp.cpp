@@ -8,6 +8,10 @@
 #include "comp_image.h"
 #include "DropExpBehaviour.h"
 
+//	イベント
+#include"system_EventBus.h"
+
+
 //	インスタンスの生成をして追加する
 void DropExperienceComp::create()
 {
@@ -40,6 +44,7 @@ void DropExperienceComp::create()
 
 	//	コレクションに追加
 	GameObjectQueue::Instance().Enqueue(obj);
+
 }
 
 
@@ -69,6 +74,9 @@ void DropExperienceComp::Update()
 			create();
 			//	生成済みにする
 			dropped_ = true;
+			//	ドロップ時に撃破数を増やす
+			EventBus::Instance().Publish(KillCount{});
+
 		}
 	}
 }

@@ -7,7 +7,8 @@ class EventInitializer {
 	//	•¶š—ñ‚Ì•\¦Œn
 	static void ScreenTextMessage();
 
-
+	//	Œ‚”j”
+	static void KillCountUp();
 
 public:
 	//	event‚Ì‰Šú‰»

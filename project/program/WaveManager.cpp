@@ -49,6 +49,17 @@ void WaveManager::createTimer()
 	GameObjectQueue::Instance().Enqueue(obj);
 }
 
+void WaveManager::createKillCount()
+{
+	//	インスタンス生成
+	auto obj = std::make_shared<GameObject>();
+	obj->AddComponent<Text>(GetKillCountFormatString(), WHITE, true, 20);
+	obj->transform_.SetWorldPosition(Vector2Df{ (float)WindowData::m_sceneW-200,100.f });
+	drawKill_ = obj;
+	GameObjectQueue::Instance().Enqueue(obj);
+
+}
+
 //	このステージのウェーブ番号を取得
 void WaveManager::LoadData(int a_waveDataID)
 {
@@ -73,11 +84,16 @@ void WaveManager::Initialize()
 {
 	currentWaveNum_ = 0;
 	startTime_ = 0;
+	killCount_ = 0;
+
+	//	テーブルデータ取得
 	LoadWaveEntryData();
 
 	//	タイマー作成
 	createTimer();
 
+	//	キル数
+	createKillCount();
 }
 
 void  WaveManager::Update() {
@@ -87,7 +103,12 @@ void  WaveManager::Update() {
 	//	時間を経過させる
 	startTime_ += dt;
 
+	//	表示用の時間を更新
 	timer_.lock()->GetComponent<Text>()->SetText(GetElapsedTimeFormatted());
+
+	//	キル数の表示更新
+	drawKill_.lock()->GetComponent<Text>()->SetText(GetKillCountFormatString());
+
 
 	//	今のウェーブデータ取得
 	auto data = GameDataBase::Instance().GetWaveEnties(wave_ids_[currentWaveNum_]);
@@ -146,6 +167,12 @@ std::string WaveManager::GetElapsedTimeFormatted() const
 	char buf[16];
 	snprintf(buf, sizeof(buf), "%02d:%02d", minutes, seconds);
 	return std::string(buf);
+}
+
+std::string WaveManager::GetKillCountFormatString() const
+{
+	std::string text = "撃破数:" + std::to_string(killCount_);
+	return text;
 }
 
 

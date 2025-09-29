@@ -7,6 +7,7 @@
 #include"TimedText.h"
 #include"GameObject.h"
 #include "text.h"
+#include "WaveManager.h"
 
 void EventInitializer::LevelUp()
 {
@@ -40,6 +41,7 @@ void EventInitializer::ScreenTextMessage()
 		}
 	);
 
+	//	時間制限なしの表示
 	EventBus::Instance().Subscribe<MessageRenderEvent>(
 		[](const MessageRenderEvent& e) {
 			if (e.messages.empty()) return;
@@ -51,12 +53,24 @@ void EventInitializer::ScreenTextMessage()
 		}
 	);
 
-	//	時間制限なしの表示
+	
 
+}
+
+//	キル数の加算イベント
+void EventInitializer::KillCountUp()
+{
+	EventBus::Instance().Subscribe<KillCount>(
+		[](const KillCount& e) {
+			//	キル数の加算
+			WaveManager::Instance().AddKillCount();
+		}
+	);
 }
 
 void EventInitializer::InitializeEvents()
 {
 	LevelUp();	//	レベルアップ音
 	ScreenTextMessage();	//	文字列の表示
+	KillCountUp();
 }

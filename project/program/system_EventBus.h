@@ -6,6 +6,7 @@
 #include <algorithm>
 
 #include"singleton.h"
+#include"EventStructs.h"
 
 class EventBus : public Singleton<EventBus> {
     friend class Singleton<EventBus>;

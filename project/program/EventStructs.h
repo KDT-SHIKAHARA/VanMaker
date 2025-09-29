@@ -22,3 +22,7 @@ struct MessageRenderEvent {
 	unsigned int color;	//	色
 	int size;	//	文字のサイズ
 };
+
+//	撃破数
+struct KillCount {
+};
