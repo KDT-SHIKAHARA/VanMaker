@@ -13,4 +13,5 @@ public:
 private:
 	void createStartButton();
 	void createTitleLogo();
+	void createGuide();
 };

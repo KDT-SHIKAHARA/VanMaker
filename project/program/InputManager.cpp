@@ -4,7 +4,6 @@
 InputManager::InputManager() {
 	m_action[Action::Select][Device::Pad] = {PAD_INPUT_1};
 	m_action[Action::Select][Device::Keyboard] = { KEY_INPUT_SPACE };
-	m_action[Action::Select][Device::Mouse] = { MOUSE_INPUT_LEFT };
 }
 
 void InputManager::Update()

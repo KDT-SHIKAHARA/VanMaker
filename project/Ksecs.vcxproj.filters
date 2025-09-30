@@ -693,5 +693,11 @@
     <ClInclude Include="program\BGMSystem.h">
       <Filter>project\CORE\sound</Filter>
     </ClInclude>
+    <ClInclude Include="program\PauseScene.h">
+      <Filter>project\Game\scene\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="program\behaviour_pause.h">
+      <Filter>project\Game\scene\InGame\script</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,6 +9,7 @@
 #include"system_EventBus.h"
 #include"BGMSystem.h"
 
+
 #include"SceneManager.h"
 
 Title::Title()
@@ -30,6 +31,7 @@ void Title::Initialize()
 	createStartButton();
 
 	createTitleLogo();
+	createGuide();
 
 	EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::title_bgm,-1,1 });
 	BGMSystem::Instance().SetVolume(1,128);
@@ -70,6 +72,15 @@ void Title::createTitleLogo()
 	obj->AddComponent<SineWaveComponent>(20,0.5);
 	obj->AddComponent<ImageComponent>("data/texture/title/logo.png",0.3f,10,ImageComponent::Pivot::Center, ImageComponent::RenderSpace::Screen);
 	AddGameObject(obj);
+}
+
+void Title::createGuide()
+{
+	auto obj = std::make_shared<GameObject>();
+	obj->transform_.SetPosition({ (float)WindowData::m_sceneW  - 300,(float)WindowData::m_sceneH / 10 * 9});
+	obj->AddComponent<ImageComponent>(GH_FilePath::title_guide, 0.3f, 10, ImageComponent::Pivot::Center, ImageComponent::RenderSpace::Screen);
+	AddGameObject(obj);
+
 }
 
 

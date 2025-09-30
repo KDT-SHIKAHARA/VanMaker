@@ -70,6 +70,7 @@
     <ClInclude Include="program\AutoLevelUpHandler.h" />
     <ClInclude Include="program\base_levelUpHandler.h" />
     <ClInclude Include="program\Behaviour_GameOverAnim.h" />
+    <ClInclude Include="program\behaviour_pause.h" />
     <ClInclude Include="program\Behaviour_Thunderbolt.h" />
     <ClInclude Include="program\BGMSystem.h" />
     <ClInclude Include="program\Camera.h" />
@@ -131,6 +132,7 @@
     <ClInclude Include="program\MathUtils.h" />
     <ClInclude Include="program\MonoBehaviour.h" />
     <ClInclude Include="program\OverlayScene.h" />
+    <ClInclude Include="program\PauseScene.h" />
     <ClInclude Include="program\PlayerFactory.h" />
     <ClInclude Include="program\random.h" />
     <ClInclude Include="program\Rect.h" />

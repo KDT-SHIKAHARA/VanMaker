@@ -12,10 +12,12 @@
 #include"filePath.h"
 #include"system_EventBus.h"
 #include"BGMSystem.h"
+#include"behaviour_pause.h"
 
 InGame::InGame()
 {
 	scripts_.push_back(std::make_unique<InGameWaveScript>());
+	scripts_.push_back(std::make_unique<PauseBehaviour>());
 
 	//	後でステージIDを受け取ってください。
 	stageID_ = 801001;

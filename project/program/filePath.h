@@ -5,6 +5,7 @@ struct GH_FilePath
 {
 	//	ƒ^ƒCƒgƒ‹ŠÖŒW
 	inline static std::string title_bg = "data/texture/title/bg.jpeg";
+	inline static std::string title_guide = "data/texture/title/guide.png";
 
 };
 

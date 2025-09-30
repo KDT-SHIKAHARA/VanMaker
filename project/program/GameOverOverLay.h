@@ -3,6 +3,8 @@
 #include"vector2d.h"
 #include"data_Window.h"
 #include"GameObject.h"
+#include"UIClickableComponent.h"
+
 
 #include<memory>
 #include<functional>
@@ -33,6 +35,10 @@ private:
     Vector2Df textPos_;
     float stopY_ = WindowData::m_sceneH / 3.0f;
 
+    std::vector<std::weak_ptr<UIClickComponent>> menuButtons_;
+    int selectedIndex_ = 0;
+
     std::weak_ptr<GameObject> bg_;
     bool finishRequested_ = false;
+    bool useKeyboard_ = true; // É}ÉEÉXëÄçÏÇ™Ç†ÇÍÇŒ false Ç…Ç»ÇÈ
 };

@@ -23,29 +23,37 @@ public:
 
 
 	void Update()override {
-		//	マウス座標
+
 		const auto& mouse = Input::GetMousePos();
-		//	ゲームオブジェクトの座標取得
-		const auto& pos = GetGameObject()->transform_.WorldPosition();
-
-		// 中心基準での判定
-		float halfW = size_.x * 0.5f;
-		float halfH = size_.y * 0.5f;
-
-		bool hover = (mouse.x >= pos.x - halfW && mouse.x <= pos.x + halfW &&
-			mouse.y >= pos.y - halfH && mouse.y <= pos.y + halfH);
-
-		//	状態が変化したときのみ
-		if (hover != isHover_) { 
-			if (onHover_) onHover_(hover);
+		// --- マウス移動を検知したら強制モード解除 ---
+		if (mouse.x != lastMousePos_.x || mouse.y != lastMousePos_.y) {
+			forceHoverMode_ = false;
 		}
+		lastMousePos_ = mouse;
 
-		//	フラグの更新
-		isHover_ = hover;
 
-		//	重なっているとき＆決定入力されているとき
-		if (hover && Input::IsActionTriggered(Action::Select)) {
-			if (onClick_) onClick_();
+		if (!forceHoverMode_) {
+			// マウス座標
+			const auto& pos = GetGameObject()->transform_.WorldPosition();
+
+			float halfW = size_.x * 0.5f;
+			float halfH = size_.y * 0.5f;
+
+			bool hover = (mouse.x >= pos.x - halfW && mouse.x <= pos.x + halfW &&
+				mouse.y >= pos.y - halfH && mouse.y <= pos.y + halfH);
+
+			if (hover != isHover_) {
+				if (onHover_) onHover_(hover);
+				isHover_ = hover;
+			}
+
+			if (Input::IsActionTriggered(Action::Select)) {
+				if (onClick_) onClick_();
+			}
+
+			if (hover && Input::IsMouseOn(MOUSE_INPUT_LEFT)) {
+				if (onClick_) onClick_();
+			}
 		}
 
 	}
@@ -65,9 +73,23 @@ public:
 		DrawBox(draw1.x, draw1.y, draw2.x, draw2.y, RED, FALSE);
 	}
 
+	// キーボード用に強制的に Hover 状態を変更
+	void ForceHover(bool flag) {
+		forceHoverMode_ = true;
+		if (isHover_ != flag) {
+			isHover_ = flag;
+			if (onHover_) onHover_(flag);
+		}
+	}
+
+	CallBack GetOnClick() const { return onClick_; }
+
 protected:
 	Vector2Df size_;	//	サイズ
-	bool isHover_ = false;		//	マウス座標が上に載っているかどうか
+	Vector2Di lastMousePos_{ -1, -1 };
 	CallBack onClick_;	//	クリック処理
 	HoverCallBack  onHover_;	//	重なっているときの処理（色替えウィンドウなど）
+	bool forceHoverMode_ = false;  // キーボード操作中なら true
+	bool isHover_ = false;		//	マウス座標が上に載っているかどうか
+
 };

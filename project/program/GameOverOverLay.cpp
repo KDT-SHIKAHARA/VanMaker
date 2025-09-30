@@ -1,6 +1,5 @@
 #include "GameOverOverLay.h"
 #include"SceneManager.h"
-#include"UIClickableComponent.h"
 #include"InGame.h"
 #include"Title.h"
 #include"data_Window.h"
@@ -9,10 +8,12 @@
 #include"text.h"
 #include"Rect.h"
 #include"WaveManager.h"
+#include"InputManager.h"
 
 #include"filePath.h"
 #include"system_EventBus.h"
 #include"BGMSystem.h"
+
 
 void GameOverOverlay::CreateButtons()
 {
@@ -29,8 +30,11 @@ void GameOverOverlay::CreateButtons()
         SceneManager::Instance().ChangeScene<InGame>();
         this->isFinish = true;
         EventBus::Instance().Publish(StopBGMEvent{ 3 });
-
         });
+
+    menuButtons_.emplace_back(restartClick);
+
+
     //  フラグを一旦折る
     restartBtn->enable_.Set(Flag::Off);
     gameObjects_.push_back(restartBtn);
@@ -70,6 +74,9 @@ void GameOverOverlay::CreateButtons()
         this->RequestFinish();
         EventBus::Instance().Publish(StopBGMEvent{ 3 });
         });
+
+    menuButtons_.emplace_back(titleClick); // ★追加
+
     //  フラグを一旦折る
     titleBtn->enable_.Set(Flag::Off);
     gameObjects_.push_back(titleBtn);
@@ -184,6 +191,38 @@ void GameOverOverlay::Update()
         for (auto& obg : gameObjects_) {
             obg->Update();
         }
+
+
+        // キーボード選択
+        if (Input::IsKeyOn(KEY_INPUT_W)) {
+            selectedIndex_ = (selectedIndex_ - 1 + menuButtons_.size()) % menuButtons_.size();
+        }
+        if (Input::IsKeyOn(KEY_INPUT_S)) {
+            selectedIndex_ = (selectedIndex_ + 1) % menuButtons_.size();
+        }
+
+        // Hover 状態更新
+        for (size_t i = 0; i < menuButtons_.size(); ++i) {
+            if (auto btn = menuButtons_[i].lock()) {
+                btn->ForceHover(i == selectedIndex_);
+            }
+        }
+
+        // 決定キー
+        if (Input::IsKeyOn(KEY_INPUT_RETURN) || Input::IsKeyOn(KEY_INPUT_SPACE)) {
+            if (auto btn = menuButtons_[selectedIndex_].lock()) {
+                btn->ForceHover(true); // 念のため
+                if (btn->GetOnClick()) { // onClick_ が設定されていれば
+                    btn->GetOnClick()();
+                }
+            }
+        }
+
+        // マウス更新
+        for (auto& obg : gameObjects_) {
+            obg->Update();
+        }
+
         break;
     }
 
@@ -192,6 +231,9 @@ void GameOverOverlay::Update()
             rect->SetAlpha(fadeAlpha_);
         }
     }
+
+
+
 
     // 最後に finish 判定を反映
     if (finishRequested_) {
