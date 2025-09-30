@@ -436,7 +436,9 @@
     <ClCompile Include="program\KnifeWeapon.cpp">
       <Filter>project\Game\entity\Weapon\Knife</Filter>
     </ClCompile>
-    <ClCompile Include="program\comp_KnifeWeapon.cpp" />
+    <ClCompile Include="program\comp_KnifeWeapon.cpp">
+      <Filter>project\Game\entity\Weapon\Knife</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -727,5 +729,6 @@
     <ClInclude Include="program\comp_KnifeWeapon.h">
       <Filter>project\Game\entity\Weapon\Knife</Filter>
     </ClInclude>
+    <ClInclude Include="program\SESystem.h" />
   </ItemGroup>
 </Project>

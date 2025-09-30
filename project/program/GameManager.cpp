@@ -32,7 +32,7 @@ void GameManager::Initialize()
 {
 	//	Dxlib WindowsAPI&DirectXèâä˙âª 
 	SetOutApplicationLogValidFlag(FALSE);
-	ChangeWindowMode(WindowData::m_windowFlag);
+	ChangeWindowMode(FALSE);
 	SetGraphMode(WindowData::m_sceneW, WindowData::m_sceneH, WindowData::m_colorBit);
 	SetMainWindowText("NoName");
 	SetBackgroundColor(128, 128, 128);

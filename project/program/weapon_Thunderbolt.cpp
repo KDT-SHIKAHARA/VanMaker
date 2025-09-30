@@ -82,6 +82,10 @@ void Thunderbolt::create()
 
 Thunderbolt::Thunderbolt()
 {
+	//	ƒf[ƒ^“Ç‚Ýž‚Ý
+	auto id = 302000;
+	auto data = GameDataBase::Instance().GetWeaponData(id);
+	name_ = data->name;
 
 }
 

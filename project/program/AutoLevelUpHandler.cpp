@@ -108,14 +108,22 @@ std::string AutoLevelUpHandler::HandleLevelUp()
 	//	百分率で計算
 	int choice = Random::RandomInt(0, 99);
 
-	//	一旦デバック完了まで確率を固定するけどこれもエクセルで管理できるようにする。
+	// 強化判定が先
 	if (choice < 30) {
-		//	武器のランダム強化
-		return randomUpgradeExistingWeapon();
+		auto result = randomUpgradeExistingWeapon();
+		if (!result.empty()) {
+			return result; // 強化できた
+		}
+		// 強化できなければ新規入手にフォールバック
+		return addNewWeapon();
 	}
 	else {
-		//	ランダムで新しい武器の生成
-		return addNewWeapon();
+		auto result = addNewWeapon();
+		if (!result.empty()) {
+			return result; // 新規入手できた
+		}
+		// 新規入手できなければ強化にフォールバック
+		return randomUpgradeExistingWeapon();
 	}
 
 

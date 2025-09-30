@@ -60,7 +60,7 @@ void KnifeWeapon::create()
 	}
 }
 
-void KnifeWeapon::Initialize()
+KnifeWeapon::KnifeWeapon()
 {
 	//	データID
 	auto id = 304000;
@@ -70,6 +70,19 @@ void KnifeWeapon::Initialize()
 	//	初期化
 	name_ = data->name;
 	max_level_ = data->max_level;
+
+}
+
+void KnifeWeapon::Initialize()
+{
+	////	データID
+	//auto id = 304000;
+	////	データの取得
+	//const auto& data = GameDataBase::Instance().GetWeaponData(id);
+
+	////	初期化
+	//name_ = data->name;
+	//max_level_ = data->max_level;
 
 }
 

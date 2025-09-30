@@ -60,6 +60,15 @@ void ReflectionRing::create()
 
 }
 
+ReflectionRing::ReflectionRing()
+{
+	//	ƒf[ƒ^‚Ì“Ç‚Ýž‚Ý
+	auto id = 303000;
+	auto data = GameDataBase::Instance().GetWeaponData(id);
+	name_ = data->name;
+
+}
+
 void ReflectionRing::Initialize()
 {
 }

@@ -54,11 +54,11 @@ std::string WeaponComponent::CreateWeapon(int a_id)
 		//	生成クラスを生成
 		auto weapon = it->second();
 
-		//	名前取得
-		std::string name = weapon->GetName();
-
 		//
 		weapon->Initialize();
+
+		//	名前取得
+		std::string name = weapon->GetName();
 
 		//	インスタンスをコレクションに追加
 		weapons_.push_back(std::move(weapon));
