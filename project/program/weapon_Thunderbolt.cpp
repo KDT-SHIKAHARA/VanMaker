@@ -10,6 +10,12 @@
 #include"Behaviour_Thunderbolt.h"
 #include"Camera.h"
 
+
+#include"filePath.h"
+#include"system_EventBus.h"
+#include"BGMSystem.h"
+
+
 void Thunderbolt::create()
 {
 
@@ -64,6 +70,14 @@ void Thunderbolt::create()
 		GameObjectQueue::Instance().Enqueue(obj);
 	}
 
+	if (!targetPos.empty()) {
+		//	音を鳴らす
+		EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::thunder_se,1,5 });
+		BGMSystem::Instance().SetVolume(5, 180);
+	}
+
+
+
 }
 
 Thunderbolt::Thunderbolt()
@@ -95,6 +109,8 @@ void Thunderbolt::Update()
 		create();
 		//	クールタイムの設定
 		current_ct_ = max_ct_;
+
+
 	}
 
 }

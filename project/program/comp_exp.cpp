@@ -8,7 +8,10 @@
 #include"GetColor.h"
 #include"AutoLevelUpHandler.h"
 #include"EventStructs.h"
+
 #include"system_EventBus.h"
+#include"filePath.h"
+#include"BGMSystem.h"
 
 //	レベルアップの処理
 void ExpComp::levelUp()
@@ -109,6 +112,9 @@ void ExpComp::OnCollisionEnter(const Collision& collision)
 		AddExp(exp->GetDropExp());
 		collision.other->isDestory_.Set(Flag::On);
 
+		//	音を鳴らす
+		EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::exp_se,1,5 });
+		
 	}
 
 }

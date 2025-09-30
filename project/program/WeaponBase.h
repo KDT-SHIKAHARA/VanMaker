@@ -12,7 +12,7 @@ class WeaponBase {
 public:
 	//	‰Šú‰»
 	WeaponBase()
-		:max_ct_(0), current_ct_(0), enable_(Flag::On), level_(1), max_level_(1)
+		:max_ct_(0), current_ct_(1), enable_(Flag::On), level_(1), max_level_(1)
 	{ }
 
 	virtual ~WeaponBase() = default;
