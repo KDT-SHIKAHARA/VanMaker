@@ -29,6 +29,7 @@
     <ClCompile Include="program\comp_exp.cpp" />
     <ClCompile Include="program\comp_image.cpp" />
     <ClCompile Include="program\comp_input.cpp" />
+    <ClCompile Include="program\comp_ReflectionRingh.cpp" />
     <ClCompile Include="program\comp_Rigidbody.cpp" />
     <ClCompile Include="program\comp_state.cpp" />
     <ClCompile Include="program\comp_TriggerGameOver.cpp" />
@@ -52,6 +53,7 @@
     <ClCompile Include="program\loader_Texture.cpp" />
     <ClCompile Include="program\PlayerFactory.cpp" />
     <ClCompile Include="program\Rect.cpp" />
+    <ClCompile Include="program\ReflectionRing.cpp" />
     <ClCompile Include="program\SceneManager.cpp" />
     <ClCompile Include="program\script_InGameWave.cpp" />
     <ClCompile Include="program\system_Collision.cpp" />
@@ -91,6 +93,7 @@
     <ClInclude Include="program\comp_exp.h" />
     <ClInclude Include="program\comp_image.h" />
     <ClInclude Include="program\comp_input.h" />
+    <ClInclude Include="program\comp_ReflectionRingh.h" />
     <ClInclude Include="program\comp_SineWave.h" />
     <ClInclude Include="program\comp_state.h" />
     <ClInclude Include="program\comp_TriggerGameOver.h" />
@@ -136,6 +139,7 @@
     <ClInclude Include="program\PlayerFactory.h" />
     <ClInclude Include="program\random.h" />
     <ClInclude Include="program\Rect.h" />
+    <ClInclude Include="program\ReflectionRing.h" />
     <ClInclude Include="program\Resource.h" />
     <ClInclude Include="program\Scene.h" />
     <ClInclude Include="program\SceneManager.h" />

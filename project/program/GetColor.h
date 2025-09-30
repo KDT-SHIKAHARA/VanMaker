@@ -6,3 +6,4 @@
 #define WHITE	GetColor(255,255,255)
 #define BLUE	GetColor(0,0,255)
 #define LIGHTYELLOW	GetColor(255,255,160)
+#define LIGHTBLUE GetColor(187,255,255)

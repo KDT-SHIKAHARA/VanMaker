@@ -74,6 +74,7 @@ struct WeaponLevelData {
 	float speed;
 	float cooltime;
 	int create_num;
+	float duration;	//	攻撃の存在時間
 };
 
 //	ドロップする経験値のテーブル

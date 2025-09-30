@@ -287,6 +287,9 @@
     <Filter Include="project\CORE\sound">
       <UniqueIdentifier>{e260d349-08d6-487d-835a-06158cf0def0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\Weapon\ReflectionRing">
+      <UniqueIdentifier>{979d3d78-7487-4079-afc6-eee70380315a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -420,6 +423,12 @@
     </ClCompile>
     <ClCompile Include="program\Rect.cpp">
       <Filter>project\ECS\Canvas\Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_ReflectionRingh.cpp">
+      <Filter>project\Game\entity\Weapon\ReflectionRing</Filter>
+    </ClCompile>
+    <ClCompile Include="program\ReflectionRing.cpp">
+      <Filter>project\Game\entity\Weapon\ReflectionRing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -698,6 +707,12 @@
     </ClInclude>
     <ClInclude Include="program\behaviour_pause.h">
       <Filter>project\Game\scene\InGame\script</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_ReflectionRingh.h">
+      <Filter>project\Game\entity\Weapon\ReflectionRing</Filter>
+    </ClInclude>
+    <ClInclude Include="program\ReflectionRing.h">
+      <Filter>project\Game\entity\Weapon\ReflectionRing</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

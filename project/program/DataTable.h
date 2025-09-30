@@ -279,6 +279,7 @@ inline void DataTable<WeaponLevelData>::parseRecord(
 	record->speed = std::stof(cells[2]);
 	record->cooltime = std::stof(cells[3]);
 	record->create_num = std::stoi(cells[4]);
+	record->duration = std::stof(cells[5]);
 }
 
 
