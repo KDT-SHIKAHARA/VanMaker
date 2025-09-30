@@ -290,6 +290,9 @@
     <Filter Include="project\Game\entity\Weapon\ReflectionRing">
       <UniqueIdentifier>{979d3d78-7487-4079-afc6-eee70380315a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\Game\entity\Weapon\Knife">
+      <UniqueIdentifier>{850ad54e-3f01-456b-bfe8-2460b694c5ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\WinMain.cpp">
@@ -430,6 +433,10 @@
     <ClCompile Include="program\ReflectionRing.cpp">
       <Filter>project\Game\entity\Weapon\ReflectionRing</Filter>
     </ClCompile>
+    <ClCompile Include="program\KnifeWeapon.cpp">
+      <Filter>project\Game\entity\Weapon\Knife</Filter>
+    </ClCompile>
+    <ClCompile Include="program\comp_KnifeWeapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\GameManager.h">
@@ -713,6 +720,12 @@
     </ClInclude>
     <ClInclude Include="program\ReflectionRing.h">
       <Filter>project\Game\entity\Weapon\ReflectionRing</Filter>
+    </ClInclude>
+    <ClInclude Include="program\KnifeWeapon.h">
+      <Filter>project\Game\entity\Weapon\Knife</Filter>
+    </ClInclude>
+    <ClInclude Include="program\comp_KnifeWeapon.h">
+      <Filter>project\Game\entity\Weapon\Knife</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
