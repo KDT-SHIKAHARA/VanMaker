@@ -43,6 +43,8 @@ void GameManager::Initialize()
 	//	Dxlib WindowçÏê¨
 	SetDrawScreen(DX_SCREEN_BACK);
 
+	SetMouseDispFlag(TRUE);
+
 	SceneManager::Instance().ChangeScene<Title>();
 	SceneManager::Instance().Initialize();
 
