@@ -36,4 +36,10 @@ void InputComponent::Update()
 		isMove_ = Flag::On;
 	}
 
+
+	//	“ü—Í‚ª‡‚Á‚½‚çÅŒã‚Ì“ü—Í•ûŒü‚ÌXV
+	if (direction_.x != 0 || direction_.y != 0) {
+		lastDirection_ = direction_;
+	}
+
 }

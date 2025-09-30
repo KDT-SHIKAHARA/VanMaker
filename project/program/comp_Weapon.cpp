@@ -3,6 +3,7 @@
 #include"weapon_Thunderbolt.h"
 #include"GameObject.h"
 #include"ReflectionRing.h"
+#include"KnifeWeapon.h"
 
 /// <summary>
 /// ¶¬ƒƒ\ƒbƒh‚Ì‰Šú‰»
@@ -13,6 +14,7 @@ WeaponComponent::WeaponComponent(int a_use_weapon_list_id)
 	creates_[301000] = [] {return std::make_unique<DamageField>(); };
 	creates_[302000] = [] {return std::make_unique<Thunderbolt>(); };
 	creates_[303000] = [] {return std::make_unique<ReflectionRing>(); };
+	creates_[304000] = [] {return std::make_unique<KnifeWeapon>(); };
 }
 
 void WeaponComponent::Update()

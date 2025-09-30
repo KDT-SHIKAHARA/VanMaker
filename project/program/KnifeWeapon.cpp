@@ -5,7 +5,12 @@
 #include"GameObjectRequestAdd.h"
 #include"comp_input.h"
 #include"comp_Attack.h"
-
+#include"comp_KnifeWeapon.h"
+#include"comp_Collider.h"
+#include"DebugMacro.h"
+#include"comp_DrawCollider.h"
+#include"random.h"
+#include"comp_animation.h"
 
 void KnifeWeapon::create()
 {
@@ -15,6 +20,7 @@ void KnifeWeapon::create()
 	//	データの取得
 	const auto& data = GameDataBase::Instance().GetWeaponData(id);
 	const auto& level_data = GameDataBase::Instance().GetWeaponLevelData(id, level_);
+	const auto& anim_data = GameDataBase::Instance().GetAnimData(data->textureID);
 
 	//	今のレベルのクールタイム
 	max_ct_ = level_data->cooltime;
@@ -24,14 +30,31 @@ void KnifeWeapon::create()
 	const auto& playerPos = player[0]->transform_.WorldPosition();
 
 	//	プレイヤーの移動方向を取得
-	const auto& duration = player[0]->GetComponent<InputComponent>()->GetDirection();
+	const auto& duration = player[0]->GetComponent<InputComponent>()->GetLastDirection();
+
+	// ランダム生成位置
+	auto dir = duration;
+	Vector2Df perpendicular(-dir.y, dir.x);
+	float randomValue = 40;
+
+	float sideOffset = Random::RandomFloat(-randomValue, randomValue);
+	float forwardOffset = Random::RandomFloat(0.0f, randomValue);
+
+	Vector2Df spawnPos = playerPos + dir * forwardOffset + perpendicular * sideOffset;
 
 	//	個数分インスタンスの生成
 	for (size_t i = 0; i < level_data->create_num; i++) {
 		auto obj = std::make_shared<GameObject>();
-		obj->transform_.SetPosition(playerPos);
+		obj->transform_.SetPosition(spawnPos);
 		obj->AddComponent<AttackComp>(level_data->attack, data->slip_ct, id);
-		//	挙動
+		obj->AddComponent<CircleCollider>(data->radius);
+		auto anim = obj->AddComponent<AnimationComp>(anim_data->layer);
+		anim->AddAnim(anim_data->name, anim_data->filePath, anim_data->animFirstFrame, anim_data->animLastFrame, 0.2, 0.5, Anim2D::PlayMode::Loop);
+		if (DebugFlag::DrawCollider) {
+			obj->AddComponent<DrawCircleColliderComp>();
+		}
+
+		obj->AddComponent<KnifeBehaviour>(duration, level_data->speed);	//	挙動
 		obj->tag_ = GameObjectTag::Weapon;
 		GameObjectQueue::Instance().Enqueue(obj);
 	}

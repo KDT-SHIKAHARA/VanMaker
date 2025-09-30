@@ -82,6 +82,9 @@ void GameManager::Run()
 		fps_.Draw();						//	[debug] fps.render
 #endif // _DEBUG
 
+		if (Input::IsKeyPressed(KEY_INPUT_ESCAPE) && Input::IsKeyPressed(KEY_INPUT_RETURN)) {
+			break;
+		}
 
 		ScreenFlip();
 

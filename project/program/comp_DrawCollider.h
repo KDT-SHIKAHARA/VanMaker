@@ -45,7 +45,7 @@ private:
 class DrawCircleColliderComp : public MonoBehaviour, public Drawable {
 public:
 	DrawCircleColliderComp()
-		:Drawable(3){ }
+		:Drawable(5){ }
 
 	void Initialize()override {
 		collider_ = GetGameObject()->GetComponent<CircleCollider>();

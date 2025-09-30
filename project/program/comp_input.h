@@ -11,8 +11,10 @@ class InputComponent : public MonoBehaviour {
 public:
 	void Update() override;
 	Vector2Df GetDirection()const { return direction_; }
+	Vector2Df GetLastDirection()const { return lastDirection_; }
 private:
 	Vector2Df direction_;	//	“ü—Í•ûŒü
+	Vector2Df lastDirection_ = {1,0};
 public:
 	Flag isMove_ = Flag::Off;	//	“ü—Í‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
 	Flag canInput_ = Flag::On;	//	“ü—Í‰Â”\ƒtƒ‰ƒO
