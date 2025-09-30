@@ -26,7 +26,9 @@ void SceneManager::Update()
 		if (overlayScene_) {
 			overlayScene_->Update();
 			//	I—¹ƒtƒ‰ƒO‚Åíœ
-			if (overlayScene_->isFinish) overlayScene_.reset();
+			if (overlayScene_->isFinish) {
+				overlayScene_.reset();
+			}
 		}
 		else {
 			scene_->Update();

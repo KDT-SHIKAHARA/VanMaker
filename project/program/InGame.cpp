@@ -60,7 +60,7 @@ void InGame::Render()
 
 void InGame::End()
 {
-	EventBus::Instance().Publish(StopBGMEvent{ 2 });
+	//EventBus::Instance().Publish(StopBGMEvent{ 2 });
 
 }
 

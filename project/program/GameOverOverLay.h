@@ -13,6 +13,7 @@ class GameOverOverlay : public OverlayScene {
     void CreateButtons();
 public:
     GameOverOverlay();
+    virtual ~GameOverOverlay();
 
     void Initialize()override;
     void Update() override;

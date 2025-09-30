@@ -10,6 +10,10 @@
 #include"Rect.h"
 #include"WaveManager.h"
 
+#include"filePath.h"
+#include"system_EventBus.h"
+#include"BGMSystem.h"
+
 void GameOverOverlay::CreateButtons()
 {
     //  リスタートボタン
@@ -24,6 +28,8 @@ void GameOverOverlay::CreateButtons()
     restartClick->SetOnClick([this]() {
         SceneManager::Instance().ChangeScene<InGame>();
         this->isFinish = true;
+        EventBus::Instance().Publish(StopBGMEvent{ 3 });
+
         });
     //  フラグを一旦折る
     restartBtn->enable_.Set(Flag::Off);
@@ -62,6 +68,7 @@ void GameOverOverlay::CreateButtons()
     titleClick->SetOnClick([this]() {
         SceneManager::Instance().ChangeScene<Title>();
         this->RequestFinish();
+        EventBus::Instance().Publish(StopBGMEvent{ 3 });
         });
     //  フラグを一旦折る
     titleBtn->enable_.Set(Flag::Off);
@@ -84,7 +91,7 @@ void GameOverOverlay::CreateButtons()
         else {
             titleBg->SetAlpha(0);
             titleText->SetColor(WHITE);        }
-        });
+    });
 
 
 
@@ -120,6 +127,10 @@ GameOverOverlay::GameOverOverlay()
 
 }
 
+GameOverOverlay::~GameOverOverlay()
+{
+}
+
 void GameOverOverlay::Initialize()
 {
 
@@ -139,6 +150,13 @@ void GameOverOverlay::Initialize()
 
     // ボタン生成（非表示）
     CreateButtons();
+
+    //  前の音楽の停止
+    EventBus::Instance().Publish(StopBGMEvent{ 2 });
+
+    //  効果音を流す
+    EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::gameover_se,1,3 });
+    BGMSystem::Instance().SetVolume(3, 180);
 }
 
 void GameOverOverlay::Update()
