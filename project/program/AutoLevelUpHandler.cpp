@@ -109,7 +109,7 @@ std::string AutoLevelUpHandler::HandleLevelUp()
 	int choice = Random::RandomInt(0, 99);
 
 	//	一旦デバック完了まで確率を固定するけどこれもエクセルで管理できるようにする。
-	if (choice < 70) {
+	if (choice < 30) {
 		//	武器のランダム強化
 		return randomUpgradeExistingWeapon();
 	}

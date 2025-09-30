@@ -13,6 +13,7 @@
 #include "loader_Sound.h"
 #include "Title.h"
 #include "BGMSystem.h"
+#include "SESystem.h"
 
 GameManager::GameManager()
 	:isRunning_(true),
@@ -77,7 +78,7 @@ void GameManager::Run()
 		SceneManager::Instance().Render();		//	Scene.render
 		SceneManager::Instance().DestoryGameObjects(); //	Scene.removeDestroyedObjects
 		GameObjectRegistry::Instance().Update();	//	GameObject.update
-
+		SESystem::Instance().Update();	//	SeÇÃèIóπîªíË
 		fps_.Wait();						//	fps.wait
 
 #ifdef _DEBUG

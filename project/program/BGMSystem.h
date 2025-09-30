@@ -30,6 +30,7 @@ public:
         if (!res || !res->HasHandle()) return;
 
         int handle = res->GetHandle();
+
         int playType = (loopCount == -1) ? DX_PLAYTYPE_LOOP : DX_PLAYTYPE_BACK;
         PlaySoundMem(handle, playType, TRUE); // TRUE ‚Í”ñ“¯ŠúÄ¶—p‚¾‚æ
 

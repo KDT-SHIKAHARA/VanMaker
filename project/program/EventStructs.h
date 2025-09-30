@@ -38,3 +38,8 @@ struct PlayBGMEvent {
 struct StopBGMEvent {
 	int handleId = -1; // í‚é~Ç∑ÇÈBGMÇÃID
 };
+
+
+struct PlaySEEvent {
+	std::string filepath;
+};

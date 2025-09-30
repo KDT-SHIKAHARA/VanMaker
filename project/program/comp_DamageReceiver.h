@@ -43,7 +43,8 @@ public:
         // ƒ_ƒ[ƒW
         health->Damage(attack->Attack());
 
-        EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::hit_se, 1, 6 });
+        EventBus::Instance().Publish(PlaySEEvent{ SH_FilePath::hit_se });
+        //EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::hit_se, 1, 6 });
     }
 
 protected:

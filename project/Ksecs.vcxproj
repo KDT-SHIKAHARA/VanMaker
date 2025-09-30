@@ -149,6 +149,7 @@
     <ClInclude Include="program\SceneManager.h" />
     <ClInclude Include="program\SceneSclipt.h" />
     <ClInclude Include="program\script_InGameWave.h" />
+    <ClInclude Include="program\SESystem.h" />
     <ClInclude Include="program\singleton.h" />
     <ClInclude Include="program\system_Collision.h" />
     <ClInclude Include="program\system_EventBus.h" />
