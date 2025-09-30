@@ -14,4 +14,5 @@ struct SH_FilePath {
 	inline static std::string gameover_se = "data/sound/gameover/gameover.WAV";
 	inline static std::string exp_se = "data/sound/exp/se.MP3";
 	inline static std::string thunder_se = "data/sound/weapon/Thunder_se.MP3";
+	inline static std::string hit_se = "data/sound/hit/se.MP3";
 };

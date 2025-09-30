@@ -6,6 +6,10 @@
 #include"comp_Attack.h"
 #include"Time.h"
 
+#include"filePath.h"
+#include"system_EventBus.h"
+#include"BGMSystem.h"
+
 class DamageReceiver : public MonoBehaviour {
 public:
 	void Update()override {
@@ -32,6 +36,9 @@ public:
 
 		//	‘Ì—Í‚ðŒ¸‚ç‚·
 		health->Damage(attack->Attack());
+
+		EventBus::Instance().Publish(PlayBGMEvent{ SH_FilePath::hit_se,1,6 });
+
 
 	}
 
